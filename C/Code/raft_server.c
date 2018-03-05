@@ -11,7 +11,7 @@ int init_multicast_listener(const char *ip, uint16_t port){
 
     int option_value;
     /* create what looks like an ordinary UDP socket */
-    if ((multicastMessage.multicast_listener.fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+    if ((multicastMessage.multicast_listener.fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) < 0) {
         perror("socket");
         exit(1);
     }
@@ -50,7 +50,9 @@ int init_multicast_listener(const char *ip, uint16_t port){
 }
 
 void init_multicast_sender(const char *ip, uint16_t port){
-    if ((multicastMessage.multicast_sender.fd=socket(AF_INET,SOCK_DGRAM,0)) < 0) {
+    memset(&multicastMessage.multicast_sender,0,sizeof(multicastMessage.multicast_sender));
+
+    if ((multicastMessage.multicast_sender.fd=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP)) < 0) {
         perror("socket");
         exit(1);
     }
@@ -65,7 +67,7 @@ void init_multicast_sender(const char *ip, uint16_t port){
 
 int init_multicast_message(const char *ip, uint16_t port){
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"init multicast socket",NO_VALUES,0);
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"init multicast socket",NO_VALUES,0);
 #endif
     /* create what looks like an ordinary UDP socket */
 
@@ -105,14 +107,14 @@ int init_multicast_message(const char *ip, uint16_t port){
 
 
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"multicast was opened successfully",NO_VALUES,0);
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"multicast was opened successfully",NO_VALUES,0);
 #endif
     return 0;
 }
 
 int send_raft_message(void *message_obj, int message_size){
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"try to send msg",INT_VALUES,1,LOG(message_size));
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"try to send msg",INT_VALUES,1,LOG(message_size));
 #endif
 
 /*
@@ -134,7 +136,7 @@ int send_raft_message(void *message_obj, int message_size){
         return errno;
     }
 
-    if (sendto(multicastMessage.multicast_sender.fd,message_obj, message_size, 0, (struct sockaddr *)
+    if (sendto(multicastMessage.multicast_sender.fd, message_obj, message_size, 0, (struct sockaddr *)
             &multicastMessage.multicast_sender.addr, sizeof(multicastMessage.multicast_sender.addr)) < 0) {
         return errno;
     }
@@ -142,33 +144,33 @@ int send_raft_message(void *message_obj, int message_size){
 
 
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully sent",INT_VALUES,1,LOG(message_size));
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully sent",INT_VALUES,1,LOG(message_size));
 #endif
     return 0;
 }
 
 int get_raft_message(void *message_memory_obj){
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"try to read message",NO_VALUES,0);
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"try to read message",NO_VALUES,0);
 #endif
     ssize_t  message_size;
 
     if ((recvfrom(multicastMessage.multicast_listener.fd , &message_size, sizeof(message_size), 0,
-                         (struct sockaddr *) &multicastMessage.multicast_listener.addr,
-                         (socklen_t *) sizeof(multicastMessage.multicast_listener.addr))) < 0) {
+                  (struct sockaddr *) &multicastMessage.multicast_listener.addr,
+                  (socklen_t *) sizeof(multicastMessage.multicast_listener.addr))) < 0) {
         puts("33333333333333333333333333333");
         return errno;
     }
 
 
-    if ((recvfrom(multicastMessage.multicast_listener.fd , &message_memory_obj, message_size , 0,
-                         (struct sockaddr *) &multicastMessage.multicast_listener.addr,
-                         (socklen_t *) sizeof(multicastMessage.multicast_listener.addr))) < 0) {
+    if ((recvfrom(multicastMessage.multicast_listener.fd , message_memory_obj, message_size , 0,
+                  (struct sockaddr *) &multicastMessage.multicast_listener.addr,
+                  (socklen_t *) sizeof(multicastMessage.multicast_listener.addr))) < 0) {
         return errno;
     }
 
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully read",INT_VALUES,1,LOG(message_size));
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully read",INT_VALUES,1,LOG(message_size));
 #endif
     return 0;
 }
