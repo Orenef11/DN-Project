@@ -1,0 +1,13 @@
+#ifndef __HANDLERS__
+#define __HANDLERS__
+#include "C/Headers/general.h"
+#include "C/Headers/static_queue.h"
+int event_bits[STATE_AMMOUNT][EVENT_AMMOUNT] = 
+						{/*FOLLOWER*/{1,1,1,0,0,1,1,0,1,0},
+						/*CANDIDATE*/{1,1,0,0,0,0,0,1,0,0},
+						/*LEADER*/{1,1,0,0,1,0,0,0,1,1}};
+
+int is_relevant_message(Queue_node_data * node_message);
+//main.c
+void time_out_hendler(int sig);
+#endif

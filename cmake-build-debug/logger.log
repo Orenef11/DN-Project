@@ -1,0 +1,36 @@
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:23
+MESSAGE:start
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:59
+MESSAGE:end
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:68
+MESSAGE:init multicast socket
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:108
+MESSAGE:multicast was opened successfully
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/handlers_utils.c, FUNCTION:create_timeout_event, LINE:33
+MESSAGE:create new event timer
+VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=1685 
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:12
+MESSAGE:first time
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/raft_main.c, FUNCTION:init_raft, LINE:135
+MESSAGE:init succeed
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/raft_main.c, FUNCTION:run_raft, LINE:167
+MESSAGE:start raft...
+VARIABLES:  raft_ip=224.1.1.1 
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/raft_main.c, FUNCTION:run_raft, LINE:169
+MESSAGE:start raft...
+VARIABLES:  raft_port=6060  server_id=2  members_num=3  leader_timeout=1000 
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/raft_main.c, FUNCTION:run_raft, LINE:174
+MESSAGE:run raft...
+-----------------------------
+FILE:/home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:152
+MESSAGE:try to read message
+-----------------------------

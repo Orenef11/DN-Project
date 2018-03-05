@@ -1,0 +1,51 @@
+#include "handlers.h"
+//shany [difficulte = 3 ]
+
+//main.c
+void time_out_hendler(int sig){
+    //calloc set everything to 0
+    Queue_node_data new_node;
+    new_node.event  = TIMEOUT;
+    push_queue(&new_node);
+
+}
+
+int is_relevant_message(Queue_node_data * node_message)
+{
+    int is_relevant = event_bits[sharedRaftData.raft_state.current_state][node_message->event];
+
+    if(sharedRaftData.raft_state.current_state == CANDIDATE)
+    {
+        return is_relevant_for_candidate(node_message) && is_relevant;
+    }
+
+
+    else if(sharedRaftData.raft_state.current_state == LEADER)
+    {
+        return is_relevant_for_leader(node_message) && is_relevant;
+    }
+
+    return is_relevant;
+
+};
+
+int is_relevant_for_candidate(Queue_node_data * node_message)
+{
+    if(node_message->term < sharedRaftData.raft_state.term ||
+            ((node_message->event == VOTE) &&(node_message->message_sent_to != sharedRaftData.raft_state.server_id)))
+    {
+        return 0;
+    }
+    return 1;
+}
+
+
+int is_relevant_for_leader(Queue_node_data * node_message)
+{
+    if( ((node_message->event == KEEP_ALIVE_HB)&&(sharedRaftData.raft_state.term > node_message->term))
+        || ((node_message->event == SYNC_RES) && (node_message->message_sent_to != sharedRaftData.raft_state.server_id)))
+    {
+        return 0;
+    }
+    return 1;
+}
