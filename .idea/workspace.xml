@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c1cdd2-be5b-4aeb-87d0-db08ec5ceb46" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/C/Code/follower_handlers.c" afterPath="$PROJECT_DIR$/C/Code/follower_handlers.c" />
       <change beforePath="$PROJECT_DIR$/C/Code/static_queue.c" afterPath="$PROJECT_DIR$/C/Code/static_queue.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -74,8 +73,8 @@
       <file leaf-file-name="static_queue.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="118" column="75" lean-forward="false" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
+            <state relative-caret-position="297">
+              <caret line="119" column="75" lean-forward="false" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -252,7 +251,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17539000" />
+    <option name="totallyTimeSpent" value="17811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1615" height="937" extended-state="6" />
@@ -739,8 +738,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="118" column="75" lean-forward="false" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="75" />
+        <state relative-caret-position="297">
+          <caret line="119" column="75" lean-forward="false" selection-start-line="119" selection-start-column="75" selection-end-line="119" selection-end-column="75" />
           <folding />
         </state>
       </provider>

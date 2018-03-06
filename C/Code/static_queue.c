@@ -102,7 +102,6 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
 #endif
     msg_data_memory->event = event;
     msg_data_memory->term = sharedRaftData.raft_state.term;
-    msg_data_memory->message_sent_by = sharedRaftData.raft_state.server_id;
     if(event == KEEP_ALIVE_HB || event == COMMIT_OK || event == SET_LOG_RES){
         //msg_data is union
         msg_data_memory->msg_data.keep_alive_hb_msg.last_log_id = sharedRaftData.raft_state.last_log_index;
@@ -118,4 +117,5 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
     else if(event == VOTE){
         msg_data_memory->message_sent_to =msg_data_memory->message_sent_by;
     }
+    msg_data_memory->message_sent_by = sharedRaftData.raft_state.server_id;
 }
