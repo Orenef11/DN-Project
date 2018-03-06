@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/DN-Project
 CMAKE_BINARY_DIR = /home/ubuntu/Desktop/DN-Project/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/amir_raft1.dir
+# Target rules for target CMakeFiles/DN-Project.dir
 
 # All Build rule for target.
-CMakeFiles/amir_raft1.dir/all:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/depend
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target amir_raft1"
-.PHONY : CMakeFiles/amir_raft1.dir/all
+CMakeFiles/DN-Project.dir/all:
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/depend
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target DN-Project"
+.PHONY : CMakeFiles/DN-Project.dir/all
 
 # Include target in all.
-all: CMakeFiles/amir_raft1.dir/all
+all: CMakeFiles/DN-Project.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/amir_raft1.dir/rule: cmake_check_build_system
+CMakeFiles/DN-Project.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles 11
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/amir_raft1.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DN-Project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/amir_raft1.dir/rule
+.PHONY : CMakeFiles/DN-Project.dir/rule
 
 # Convenience name for target.
-amir_raft1: CMakeFiles/amir_raft1.dir/rule
+DN-Project: CMakeFiles/DN-Project.dir/rule
 
-.PHONY : amir_raft1
-
-# clean rule for target.
-CMakeFiles/amir_raft1.dir/clean:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/clean
-.PHONY : CMakeFiles/amir_raft1.dir/clean
+.PHONY : DN-Project
 
 # clean rule for target.
-clean: CMakeFiles/amir_raft1.dir/clean
+CMakeFiles/DN-Project.dir/clean:
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/clean
+.PHONY : CMakeFiles/DN-Project.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/DN-Project.dir/clean
 
 .PHONY : clean
 

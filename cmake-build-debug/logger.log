@@ -15,7 +15,7 @@ MESSAGE:first time
 -----------------------------
 FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:create_timeout_event, LINE:33
 MESSAGE:create new event timer
-VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=2927 
+VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=1918 
 -----------------------------
 FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:init_raft, LINE:138
 MESSAGE:init succeed
@@ -90,6 +90,81 @@ FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_me
 MESSAGE:try to send msg
 VARIABLES:  message_size=16 
 -----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=7 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
 FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
 MESSAGE:msg was successfully sent
 VARIABLES:  message_size=16 
@@ -106,6 +181,546 @@ FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_releva
 MESSAGE:check if msg is relevant
 VARIABLES:  sharedRaftData.raft_state.current_state=1 
 	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=3  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=7 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=3  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=1 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=8  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_vote_req_handler, LINE:88
+MESSAGE:candidate get vote request msg
+VARIABLES:  sharedRaftData.raft_state.term=5  sharedRaftData.raft_state.did_I_vote=1  node->term=5  node->message_sent_by=3 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:94
+MESSAGE:got msg with smaller term
+VARIABLES:  sharedRaftData.raft_state.term=8  sharedRaftData.raft_state.current_state=1  node_message->term=2  node_message->event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:123
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:100
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:135
+MESSAGE:candidate sending request for vote msg
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:87
+MESSAGE:try to send msg
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:103
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=8 
+	 is_relevant_rv=0 
+	
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=16 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/raft_main.c, FUNCTION:run_multicast_listener, LINE:13
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=1 
+-----------------------------
+FILE:/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:114
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+	 node_message->event=7 
 	 is_relevant_rv=0 
 	
 -----------------------------

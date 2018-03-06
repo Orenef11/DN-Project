@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named amir_raft1
+# Target rules for targets named DN-Project
 
 # Build rule for target.
-amir_raft1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 amir_raft1
-.PHONY : amir_raft1
+DN-Project: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DN-Project
+.PHONY : DN-Project
 
 # fast build rule for target.
-amir_raft1/fast:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/build
-.PHONY : amir_raft1/fast
+DN-Project/fast:
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/build
+.PHONY : DN-Project/fast
 
 C/Code/candidate_handlers.o: C/Code/candidate_handlers.c.o
 
@@ -129,7 +129,7 @@ C/Code/candidate_handlers.o: C/Code/candidate_handlers.c.o
 
 # target to build an object file
 C/Code/candidate_handlers.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/candidate_handlers.c.o
 .PHONY : C/Code/candidate_handlers.c.o
 
 C/Code/candidate_handlers.i: C/Code/candidate_handlers.c.i
@@ -138,7 +138,7 @@ C/Code/candidate_handlers.i: C/Code/candidate_handlers.c.i
 
 # target to preprocess a source file
 C/Code/candidate_handlers.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/candidate_handlers.c.i
 .PHONY : C/Code/candidate_handlers.c.i
 
 C/Code/candidate_handlers.s: C/Code/candidate_handlers.c.s
@@ -147,7 +147,7 @@ C/Code/candidate_handlers.s: C/Code/candidate_handlers.c.s
 
 # target to generate assembly for a file
 C/Code/candidate_handlers.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/candidate_handlers.c.s
 .PHONY : C/Code/candidate_handlers.c.s
 
 C/Code/follower_handlers.o: C/Code/follower_handlers.c.o
@@ -156,7 +156,7 @@ C/Code/follower_handlers.o: C/Code/follower_handlers.c.o
 
 # target to build an object file
 C/Code/follower_handlers.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/follower_handlers.c.o
 .PHONY : C/Code/follower_handlers.c.o
 
 C/Code/follower_handlers.i: C/Code/follower_handlers.c.i
@@ -165,7 +165,7 @@ C/Code/follower_handlers.i: C/Code/follower_handlers.c.i
 
 # target to preprocess a source file
 C/Code/follower_handlers.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/follower_handlers.c.i
 .PHONY : C/Code/follower_handlers.c.i
 
 C/Code/follower_handlers.s: C/Code/follower_handlers.c.s
@@ -174,7 +174,7 @@ C/Code/follower_handlers.s: C/Code/follower_handlers.c.s
 
 # target to generate assembly for a file
 C/Code/follower_handlers.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/follower_handlers.c.s
 .PHONY : C/Code/follower_handlers.c.s
 
 C/Code/handlers_utils.o: C/Code/handlers_utils.c.o
@@ -183,7 +183,7 @@ C/Code/handlers_utils.o: C/Code/handlers_utils.c.o
 
 # target to build an object file
 C/Code/handlers_utils.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/handlers_utils.c.o
 .PHONY : C/Code/handlers_utils.c.o
 
 C/Code/handlers_utils.i: C/Code/handlers_utils.c.i
@@ -192,7 +192,7 @@ C/Code/handlers_utils.i: C/Code/handlers_utils.c.i
 
 # target to preprocess a source file
 C/Code/handlers_utils.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/handlers_utils.c.i
 .PHONY : C/Code/handlers_utils.c.i
 
 C/Code/handlers_utils.s: C/Code/handlers_utils.c.s
@@ -201,7 +201,7 @@ C/Code/handlers_utils.s: C/Code/handlers_utils.c.s
 
 # target to generate assembly for a file
 C/Code/handlers_utils.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/handlers_utils.c.s
 .PHONY : C/Code/handlers_utils.c.s
 
 C/Code/leader_handlers.o: C/Code/leader_handlers.c.o
@@ -210,7 +210,7 @@ C/Code/leader_handlers.o: C/Code/leader_handlers.c.o
 
 # target to build an object file
 C/Code/leader_handlers.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/leader_handlers.c.o
 .PHONY : C/Code/leader_handlers.c.o
 
 C/Code/leader_handlers.i: C/Code/leader_handlers.c.i
@@ -219,7 +219,7 @@ C/Code/leader_handlers.i: C/Code/leader_handlers.c.i
 
 # target to preprocess a source file
 C/Code/leader_handlers.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/leader_handlers.c.i
 .PHONY : C/Code/leader_handlers.c.i
 
 C/Code/leader_handlers.s: C/Code/leader_handlers.c.s
@@ -228,7 +228,7 @@ C/Code/leader_handlers.s: C/Code/leader_handlers.c.s
 
 # target to generate assembly for a file
 C/Code/leader_handlers.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/leader_handlers.c.s
 .PHONY : C/Code/leader_handlers.c.s
 
 C/Code/logger.o: C/Code/logger.c.o
@@ -237,7 +237,7 @@ C/Code/logger.o: C/Code/logger.c.o
 
 # target to build an object file
 C/Code/logger.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/logger.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/logger.c.o
 .PHONY : C/Code/logger.c.o
 
 C/Code/logger.i: C/Code/logger.c.i
@@ -246,7 +246,7 @@ C/Code/logger.i: C/Code/logger.c.i
 
 # target to preprocess a source file
 C/Code/logger.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/logger.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/logger.c.i
 .PHONY : C/Code/logger.c.i
 
 C/Code/logger.s: C/Code/logger.c.s
@@ -255,7 +255,7 @@ C/Code/logger.s: C/Code/logger.c.s
 
 # target to generate assembly for a file
 C/Code/logger.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/logger.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/logger.c.s
 .PHONY : C/Code/logger.c.s
 
 C/Code/raft_server.o: C/Code/raft_server.c.o
@@ -264,7 +264,7 @@ C/Code/raft_server.o: C/Code/raft_server.c.o
 
 # target to build an object file
 C/Code/raft_server.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/raft_server.c.o
 .PHONY : C/Code/raft_server.c.o
 
 C/Code/raft_server.i: C/Code/raft_server.c.i
@@ -273,7 +273,7 @@ C/Code/raft_server.i: C/Code/raft_server.c.i
 
 # target to preprocess a source file
 C/Code/raft_server.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/raft_server.c.i
 .PHONY : C/Code/raft_server.c.i
 
 C/Code/raft_server.s: C/Code/raft_server.c.s
@@ -282,7 +282,7 @@ C/Code/raft_server.s: C/Code/raft_server.c.s
 
 # target to generate assembly for a file
 C/Code/raft_server.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/raft_server.c.s
 .PHONY : C/Code/raft_server.c.s
 
 C/Code/state_machine.o: C/Code/state_machine.c.o
@@ -291,7 +291,7 @@ C/Code/state_machine.o: C/Code/state_machine.c.o
 
 # target to build an object file
 C/Code/state_machine.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/state_machine.c.o
 .PHONY : C/Code/state_machine.c.o
 
 C/Code/state_machine.i: C/Code/state_machine.c.i
@@ -300,7 +300,7 @@ C/Code/state_machine.i: C/Code/state_machine.c.i
 
 # target to preprocess a source file
 C/Code/state_machine.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/state_machine.c.i
 .PHONY : C/Code/state_machine.c.i
 
 C/Code/state_machine.s: C/Code/state_machine.c.s
@@ -309,7 +309,7 @@ C/Code/state_machine.s: C/Code/state_machine.c.s
 
 # target to generate assembly for a file
 C/Code/state_machine.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/state_machine.c.s
 .PHONY : C/Code/state_machine.c.s
 
 C/Code/static_queue.o: C/Code/static_queue.c.o
@@ -318,7 +318,7 @@ C/Code/static_queue.o: C/Code/static_queue.c.o
 
 # target to build an object file
 C/Code/static_queue.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/static_queue.c.o
 .PHONY : C/Code/static_queue.c.o
 
 C/Code/static_queue.i: C/Code/static_queue.c.i
@@ -327,7 +327,7 @@ C/Code/static_queue.i: C/Code/static_queue.c.i
 
 # target to preprocess a source file
 C/Code/static_queue.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/static_queue.c.i
 .PHONY : C/Code/static_queue.c.i
 
 C/Code/static_queue.s: C/Code/static_queue.c.s
@@ -336,7 +336,7 @@ C/Code/static_queue.s: C/Code/static_queue.c.s
 
 # target to generate assembly for a file
 C/Code/static_queue.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/static_queue.c.s
 .PHONY : C/Code/static_queue.c.s
 
 C/Code/test.o: C/Code/test.c.o
@@ -345,7 +345,7 @@ C/Code/test.o: C/Code/test.c.o
 
 # target to build an object file
 C/Code/test.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/test.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/test.c.o
 .PHONY : C/Code/test.c.o
 
 C/Code/test.i: C/Code/test.c.i
@@ -354,7 +354,7 @@ C/Code/test.i: C/Code/test.c.i
 
 # target to preprocess a source file
 C/Code/test.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/test.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/test.c.i
 .PHONY : C/Code/test.c.i
 
 C/Code/test.s: C/Code/test.c.s
@@ -363,7 +363,7 @@ C/Code/test.s: C/Code/test.c.s
 
 # target to generate assembly for a file
 C/Code/test.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/C/Code/test.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/C/Code/test.c.s
 .PHONY : C/Code/test.c.s
 
 raft_main.o: raft_main.c.o
@@ -372,7 +372,7 @@ raft_main.o: raft_main.c.o
 
 # target to build an object file
 raft_main.c.o:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/raft_main.c.o
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/raft_main.c.o
 .PHONY : raft_main.c.o
 
 raft_main.i: raft_main.c.i
@@ -381,7 +381,7 @@ raft_main.i: raft_main.c.i
 
 # target to preprocess a source file
 raft_main.c.i:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/raft_main.c.i
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/raft_main.c.i
 .PHONY : raft_main.c.i
 
 raft_main.s: raft_main.c.s
@@ -390,7 +390,7 @@ raft_main.s: raft_main.c.s
 
 # target to generate assembly for a file
 raft_main.c.s:
-	$(MAKE) -f CMakeFiles/amir_raft1.dir/build.make CMakeFiles/amir_raft1.dir/raft_main.c.s
+	$(MAKE) -f CMakeFiles/DN-Project.dir/build.make CMakeFiles/DN-Project.dir/raft_main.c.s
 .PHONY : raft_main.c.s
 
 # Help Target
@@ -401,7 +401,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... amir_raft1"
+	@echo "... DN-Project"
 	@echo "... C/Code/candidate_handlers.o"
 	@echo "... C/Code/candidate_handlers.i"
 	@echo "... C/Code/candidate_handlers.s"

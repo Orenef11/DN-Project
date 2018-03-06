@@ -111,7 +111,7 @@ int get_raft_message(void *message_memory_obj){
     WRITE_TO_LOGGER(DEBUG_LEVEL,"try to read message",NO_VALUES,0);
 #endif
 
-    ssize_t message_size;
+    int message_size;
     int addrlen = sizeof(multicastMessage.multicast_listener.addr);
 
     if ((recvfrom(multicastMessage.multicast_listener.fd , &message_size, sizeof(message_size), 0,

@@ -76,10 +76,22 @@ int is_relevant_for_leader(Queue_node_data * node_message)
 */
 int is_relevant_for_candidate(Queue_node_data * node_message)
 {
+#if DEBUG_MODE == 1
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate check if msg is relevant", INT_VALUES,5,
+                    LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.server_id),
+                    LOG(node_message->message_sent_to),LOG(node_message->term),
+                    LOG(node_message->event));
+#endif
     if(((node_message->event == VOTE) &&(node_message->message_sent_to != sharedRaftData.raft_state.server_id)))
     {
+#if DEBUG_MODE == 1
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got's irrelevant msg", NO_VALUES,0);
+#endif
         return 0;
     }
+#if DEBUG_MODE == 1
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate:relevant msg", NO_VALUES,0);
+#endif
     return 1;
 }
 
