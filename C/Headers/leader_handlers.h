@@ -19,5 +19,6 @@ void leader_send_log_hb_handler(Queue_node_data* node);
 
 void leader_log_res_handler(Queue_node_data* node);
 
+void leader_vote_req_handler(Queue_node_data* node)
 
 #endif //RAFT_PROJECT_LEADER_HANDLERS_H

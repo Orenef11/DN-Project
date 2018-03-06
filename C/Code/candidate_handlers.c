@@ -80,6 +80,42 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
 }
 
 
+void candidate_vote_req_handler(Queue_node_data* node)
+{
+#if DEBUG_MODE == 1
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate get vote request msg",INT_VALUES,4,
+                    LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.did_I_vote),
+                    LOG(node->term),LOG(node->message_sent_by));
+
+#endif
+    if(node->term > sharedRaftData.raft_state.term)
+    {
+
+        sharedRaftData.raft_state.wakeup_counter = 0;
+
+        sharedRaftData.raft_state.term = node->term;
+        update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
+
+
+        create_new_queue_node_data(VOTE, node);
+#if DEBUG_MODE == 1
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending vote msg",NO_VALUES,0);
+#endif
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
+        sharedRaftData.raft_state.did_I_vote = 1;
+
+        clear_queue();
+        sharedRaftData.raft_state.vote_counter = 0;
+
+
+        sharedRaftData.raft_state.current_state = FOLLOWER;
+        update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+    }
+
+}
+
+
+
 //relevant fileds from state term
 void candidate_time_out_handler(Queue_node_data* node)
 {
@@ -102,3 +138,4 @@ void candidate_time_out_handler(Queue_node_data* node)
     }
 
 }
+

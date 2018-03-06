@@ -2,8 +2,8 @@
 
 int relevant_event_bits[STATE_AMMOUNT][EVENT_AMMOUNT] = {
 						/*FOLLOWER*/{1,1,1,0,0,1,1,0,1,0},
-						/*CANDIDATE*/{1,1,0,0,0,0,0,1,0,0},
-						/*LEADER*/{1,1,0,0,1,0,0,0,1,1}
+						/*CANDIDATE*/{1,1,0,0,0,0,0,1,1,0},
+						/*LEADER*/{1,1,0,1,1,0,0,1,1,1}
 						};
 
 char const * const states_name[] = (char const *[]){"follower","candidate","leader"};
@@ -109,9 +109,9 @@ int is_relevant_message(Queue_node_data * node_message)
 	else{
 				is_relevant_rv = is_not_my_message & is_relevant & is_relevant_term;
 	}
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"check if msg is relevant",INT_VALUES,4,
+	WRITE_TO_LOGGER(DEBUG_LEVEL,"check if msg is relevant",INT_VALUES,3,
 		LOG(sharedRaftData.raft_state.current_state),LOG(node_message->event),
-		LOG(sharedRaftData.raft_state.current_state),LOG(is_relevant_rv));
+		LOG(is_relevant_rv));
 	return is_relevant_rv;
 #else
     return is_not_my_message & is_relevant & is_relevant_term;

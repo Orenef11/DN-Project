@@ -82,7 +82,7 @@ typedef enum EventType{TIMEOUT=0, KEEP_ALIVE_HB, SET_LOG_HB, SET_LOG_RES, SYNC_R
 typedef enum StateType{FOLLOWER=0,CANDIDATE,LEADER}stateType;
 
 typedef struct State{
-    char term;
+    int term;
     int last_log_index;
     int last_commit_index;
     char current_state; //F/C/L //TBD- why not enum?????

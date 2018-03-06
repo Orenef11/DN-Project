@@ -153,7 +153,7 @@ void follower_vote_req_handler(Queue_node_data* node)
         if(node->term > sharedRaftData.raft_state.term)
         {
 
-            sharedRaftData.raft_state.term++;
+            sharedRaftData.raft_state.term = node->term;
             sharedRaftData.raft_state.did_I_vote = 1;
             update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
 

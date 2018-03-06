@@ -76,22 +76,25 @@ void leader_vote_handler(Queue_node_data *node)
 }
 
 
-void cancel_commit_proccess(Queue_node_data* message_mem){
-	WRITE_TO_LOGGER(INFO_LEVEL,"leader cancel commit",INT_VALUES,5,
-			LOG(sharedRaftData.raft_state.current_state),LOG(sharedRaftData.raft_state.members_amount),
-			LOG(sharedRaftData.raft_state.commit_counter),LOG(sharedRaftData.raft_state.last_commit_index),
-			LOG(sharedRaftData.raft_state.last_log_index));
-	//send signal to inform CLI user
-	raise(SIGUSR2);
-	//delete enrty from redis log and decrease last_log_index
-	sharedRaftData.python_functions.clear_log_from_log_id(sharedRaftData.raft_state.last_log_index--);
-    update_DB(DB_STATUS,LAST_APPLIED,sharedRaftData.raft_state.last_log_index);
-	//send hb with new last_log_index to inform the follower to cance the last log entry
-	create_new_queue_node_data(KEEP_ALIVE_HB, message_mem);
-#if DEBUG_MODE == 1
-		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending keep alive hb msg",NO_VALUES,0);
-#endif
-    send_raft_message(message_mem, CONST_QUEUE_MSG_SIZE + sizeof(message_mem->msg_data.keep_alive_hb_msg));//TBD - check returned value
+void cancel_commit_proccess(Queue_node_data* message_mem) {
+    WRITE_TO_LOGGER(INFO_LEVEL, "leader cancel commit", INT_VALUES, 5,
+                    LOG(sharedRaftData.raft_state.current_state), LOG(sharedRaftData.raft_state.members_amount),
+                    LOG(sharedRaftData.raft_state.commit_counter), LOG(sharedRaftData.raft_state.last_commit_index),
+                    LOG(sharedRaftData.raft_state.last_log_index));
+    //send signal to inform CLI user
+    raise(SIGUSR2);
+    //delete enrty from redis log and decrease last_log_index
+    sharedRaftData.python_functions.clear_log_from_log_id(sharedRaftData.raft_state.last_log_index--);
+    update_DB(DB_STATUS, LAST_APPLIED, sharedRaftData.raft_state.last_log_index);
+    //send hb with new last_log_index to inform the follower to cance the last log entry
+    if (sharedRaftData.raft_state.current_state == LEADER) {
+        create_new_queue_node_data(KEEP_ALIVE_HB, message_mem);
+    #if DEBUG_MODE == 1
+        WRITE_TO_LOGGER(DEBUG_LEVEL, "leader sending keep alive hb msg", NO_VALUES, 0);
+    #endif
+        send_raft_message(message_mem, CONST_QUEUE_MSG_SIZE +
+                                       sizeof(message_mem->msg_data.keep_alive_hb_msg));//TBD - check returned value
+}
     sharedRaftData.raft_state.commit_counter = 0;
 }
 
@@ -202,4 +205,47 @@ void  leader_log_res_handler(Queue_node_data* node)
         raise(SIGUSR1);
     }
 
-};
+}
+
+
+
+void leader_vote_req_handler(Queue_node_data* node)
+{
+#if DEBUG_MODE == 1
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"leader get vote request msg",INT_VALUES,3,
+                    LOG(sharedRaftData.raft_state.term),LOG(node->term),
+                    LOG(node->message_sent_by));
+
+#endif
+    if(node->term > sharedRaftData.raft_state.term)
+    {
+
+        //leader is in the middle of commit process
+        if(sharedRaftData.raft_state.last_log_index > sharedRaftData.raft_state.last_commit_index){
+            //leader must become a follower because there is a candidate with a grater term
+            sharedRaftData.raft_state.current_state = FOLLOWER;
+            cancel_commit_proccess(node);
+        }
+        sharedRaftData.raft_state.wakeup_counter = 0;
+
+        sharedRaftData.raft_state.term = node->term;
+        update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
+
+
+        create_new_queue_node_data(VOTE, node);
+#if DEBUG_MODE == 1
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending vote msg",NO_VALUES,0);
+#endif
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
+        sharedRaftData.raft_state.did_I_vote = 1;
+
+        clear_queue();
+        sharedRaftData.raft_state.vote_counter = 0;
+
+
+        sharedRaftData.raft_state.current_state = FOLLOWER;
+        update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+    }
+
+}
+
