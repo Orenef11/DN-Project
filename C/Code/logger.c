@@ -88,6 +88,6 @@ void add_logger_msg(void (*write_to_logger)(int logger_level,char* logger_info),
 	//30 bytes
 	sprintf(logger_msg+loc+1,"-----------------------------\n");
 	logger_msg[loc+31]=0;
-	puts(logger_msg);
+	//puts(logger_msg);
 	write_to_logger(logger_level,logger_msg);
 }
