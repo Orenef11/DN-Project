@@ -188,8 +188,9 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
 
     }
 
-    if(node->msg_data.keep_alive_hb_msg.last_log_id > sharedRaftData.raft_state.last_commit_index)
+    if(node->msg_data.keep_alive_hb_msg.last_log_id > sharedRaftData.raft_state.last_log_index)
     {
+        sharedRaftData.raft_state.last_log_index = node->msg_data.keep_alive_hb_msg.last_log_id;
         create_new_queue_node_data(SYNC_REQ, node);
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending sync request msg",NO_VALUES,0);

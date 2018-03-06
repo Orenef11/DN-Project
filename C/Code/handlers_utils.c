@@ -97,6 +97,8 @@ int is_relevant_for_candidate(Queue_node_data * node_message)
 
 int is_relevant_message(Queue_node_data * node_message)
 {
+    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@is relevant message check for event number: %d", node_message->event);
+
     int is_relevant = relevant_event_bits[sharedRaftData.raft_state.current_state][node_message->event];
 	int is_relevant_term = node_message->term >= sharedRaftData.raft_state.term;
 	int is_not_my_message = node_message->message_sent_by != sharedRaftData.raft_state.server_id;
