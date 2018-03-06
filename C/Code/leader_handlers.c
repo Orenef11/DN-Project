@@ -133,7 +133,7 @@ void  leader_hb_handler(Queue_node_data* node)
 
         //change timeout for leader
         sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
-        create_timeout_event(sharedRaftData.raft_state.timeout);
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
 
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);

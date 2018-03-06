@@ -9,7 +9,7 @@ void operate_machine_state(Queue_node_data * node){
 #endif
 	puts("got event");
     handlers_functions_arr[sharedRaftData.raft_state.current_state][node->event](node);
-    puts("handel event");
+    puts("handle event");
 }
 
 void do_nothing(Queue_node_data * node){
@@ -24,7 +24,7 @@ void init_state_functions_handler()
 #endif
 
     /*FOLLOWER{1,1,1,0,0,1,1,0,1,0},
-    /*CANDIDATE{1,1,0,0,0,0,0,0,1,0},
+    /*CANDIDATE{1,1,0,0,0,0,0,1,1,0},
     /*LEADER{1,1,0,1,1,0,0,1,1,1}*/
     //init follower functions
     handlers_functions_arr[FOLLOWER][TIMEOUT] = follower_time_out_handler;
@@ -45,7 +45,7 @@ void init_state_functions_handler()
     handlers_functions_arr[CANDIDATE][SYNC_REQ] = NO_FUNCTION;
     handlers_functions_arr[CANDIDATE][SYNC_RES] = NO_FUNCTION;
     handlers_functions_arr[CANDIDATE][COMMIT_OK] = NO_FUNCTION;
-    handlers_functions_arr[CANDIDATE][VOTE] = NO_FUNCTION;
+    handlers_functions_arr[CANDIDATE][VOTE] = candidate_vote_for_me_handler;
     handlers_functions_arr[CANDIDATE][REQUEST_FOR_VOTE] = candidate_vote_req_handler;
     handlers_functions_arr[CANDIDATE][PY_SEND_LOG] = NO_FUNCTION;
 

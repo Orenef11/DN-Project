@@ -20,7 +20,7 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         {
             //change timeout for leader
             sharedRaftData.raft_state.timeout = sharedRaftData.raft_configuration.leader_timeout;
-            create_timeout_event(sharedRaftData.raft_state.timeout);
+            create_alarm_timer(sharedRaftData.raft_state.timeout);
 
             clear_queue();
             sharedRaftData.raft_state.vote_counter = 0;

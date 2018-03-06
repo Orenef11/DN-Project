@@ -28,9 +28,9 @@ int calculate_raft_rand_timeout(){
     return MIN_RAFT_TIMEOUT + rand()%(MAX_RAFT_TIMEOUT-MIN_RAFT_TIMEOUT);
 }
 
-void create_timeout_event(int timeout){
+void create_alarm_timer(int timeout){
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"create new event timer",INT_VALUES,2,LOG(sharedRaftData.raft_state.current_state),LOG(timeout));
+	WRITE_TO_LOGGER(DEBUG_LEVEL,"create new alarm timer",INT_VALUES,2,LOG(sharedRaftData.raft_state.current_state),LOG(timeout));
 #endif
     struct itimerval timer;
     memset(&timer,0,sizeof(struct itimerval));
@@ -60,7 +60,7 @@ void time_out_hendler(int sig){
     push_queue(&new_node);
     
 #if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"add new timeout event",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
+	WRITE_TO_LOGGER(DEBUG_LEVEL,"add new timeout event- now in queue",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
 #endif
 }
 

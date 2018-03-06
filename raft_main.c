@@ -129,7 +129,7 @@ int init_raft(char* raft_ip,int raft_port,int id,int members_num,int leader_time
         exit_raft(rv);
     }
 
-    create_timeout_event(sharedRaftData.raft_state.timeout);
+    create_alarm_timer(sharedRaftData.raft_state.timeout);
     if((rv=init_sig_handler())){
 		exit_raft(rv);
     }

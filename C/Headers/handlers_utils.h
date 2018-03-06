@@ -14,7 +14,7 @@
 
 int update_DB(char * DB_flag,char * key, int value);
 int calculate_raft_rand_timeout();
-void create_timeout_event(int timeout);
+void create_alarm_timer(int timeout);
 int is_relevant_message(Queue_node_data * node_message);
 //main.c
 void time_out_hendler(int sig);
