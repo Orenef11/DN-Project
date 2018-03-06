@@ -11,7 +11,8 @@ void *run_multicast_listener(void * args){
         if(is_valid && is_relevant_message(&new_node)){
 
 #if DEBUG_MODE == 1
-            WRITE_TO_LOGGER(DEBUG_LEVEL,"entering push queue from multicast..",NO_VALUES,0);
+            WRITE_TO_LOGGER(DEBUG_LEVEL,"got new message and ids as followed:",INT_VALUES,2,LOG(new_node.message_sent_by),
+            LOG(sharedRaftData.raft_state.server_id));
 #endif
             push_queue(&new_node);
         }
@@ -124,13 +125,16 @@ int init_raft(char* raft_ip,int raft_port,int id,int members_num,int leader_time
     if((rv=init_multicast_message(raft_ip,raft_port))){
 		exit_raft(rv);
     }
+
+    if((rv=init_raft_queue())){
+        exit_raft(rv);
+    }
+
     create_timeout_event(sharedRaftData.raft_state.timeout);
     if((rv=init_sig_handler())){
 		exit_raft(rv);
     }
-    if((rv=init_raft_queue())){
-		exit_raft(rv);
-    }
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"init succeed",NO_VALUES,0);
 #endif
