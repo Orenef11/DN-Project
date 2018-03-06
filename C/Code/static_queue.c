@@ -95,8 +95,7 @@ inline int get_const_queue_msg_size(){
 */
 void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memory)
 {
-    memset(&msg_data_memory,0,sizeof(msg_data_memory));
-
+    
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"create new msg",INT_VALUES,1,
 			LOG(event),LOG(sharedRaftData.raft_state.current_state));

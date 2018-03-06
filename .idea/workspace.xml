@@ -12,10 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c1cdd2-be5b-4aeb-87d0-db08ec5ceb46" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/C/Code/follower_handlers.c" afterPath="$PROJECT_DIR$/C/Code/follower_handlers.c" />
       <change beforePath="$PROJECT_DIR$/C/Code/handlers_utils.c" afterPath="$PROJECT_DIR$/C/Code/handlers_utils.c" />
       <change beforePath="$PROJECT_DIR$/C/Code/static_queue.c" afterPath="$PROJECT_DIR$/C/Code/static_queue.c" />
-      <change beforePath="$PROJECT_DIR$/C/Headers/test.h" afterPath="$PROJECT_DIR$/C/Headers/test.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,20 +30,20 @@
         <entry file="file://$PROJECT_DIR$/C/Code/raft_server.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handlers_utils.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="handlers_utils.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C/Code/handlers_utils.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="99" column="114" lean-forward="false" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+              <caret line="99" column="92" lean-forward="false" selection-start-line="99" selection-start-column="92" selection-end-line="99" selection-end-column="92" />
               <folding>
-                <element signature="e#4151#4232#0" expanded="true" />
-                <element signature="e#4530#4568#0" expanded="true" />
+                <element signature="e#4153#4234#0" expanded="true" />
+                <element signature="e#4532#4570#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,7 +52,7 @@
       <file leaf-file-name="test.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C/Headers/test.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="211">
               <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding>
                 <element signature="e#33#52#0" expanded="true" />
@@ -73,21 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="static_queue.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="static_queue.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+            <state relative-caret-position="279">
+              <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leader_handlers.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C/Code/leader_handlers.c">
+      <file leaf-file-name="general.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/C/Headers/general.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            <state relative-caret-position="661">
+              <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -105,26 +103,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="state_machine.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C/Code/state_machine.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="state_machine.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C/Headers/state_machine.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -136,6 +114,7 @@
       <find>term</find>
       <find>got event</find>
       <find>/2</find>
+      <find>create</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,8 +135,8 @@
         <option value="$PROJECT_DIR$/C/Code/leader_handlers.c" />
         <option value="$PROJECT_DIR$/C/Headers/test.h" />
         <option value="$PROJECT_DIR$/C/Code/follower_handlers.c" />
-        <option value="$PROJECT_DIR$/C/Code/static_queue.c" />
         <option value="$PROJECT_DIR$/C/Code/handlers_utils.c" />
+        <option value="$PROJECT_DIR$/C/Code/static_queue.c" />
       </list>
     </option>
   </component>
@@ -273,7 +252,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16133000" />
+    <option name="totallyTimeSpent" value="17025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1615" height="937" extended-state="6" />
@@ -284,8 +263,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5086849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5086849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -344,7 +323,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -442,8 +423,8 @@
         <state relative-caret-position="585">
           <caret line="115" column="6" lean-forward="true" selection-start-line="115" selection-start-column="6" selection-end-line="115" selection-end-column="6" />
           <folding>
-            <element signature="e#4151#4232#0" expanded="true" />
-            <element signature="e#4530#4568#0" expanded="true" />
+            <element signature="e#4153#4234#0" expanded="true" />
+            <element signature="e#4532#4570#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -578,8 +559,8 @@
         <state relative-caret-position="27">
           <caret line="76" column="12" lean-forward="false" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
           <folding>
-            <element signature="e#4151#4232#0" expanded="true" />
-            <element signature="e#4530#4568#0" expanded="true" />
+            <element signature="e#4153#4234#0" expanded="true" />
+            <element signature="e#4532#4570#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -667,14 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Headers/general.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="80" column="108" lean-forward="false" selection-start-line="80" selection-start-column="108" selection-end-line="80" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/C/Headers/handlers_utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -693,44 +666,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/state_machine.c">
+    <entry file="file://$PROJECT_DIR$/C/Code/handlers_utils.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C/Headers/test.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="108">
+          <caret line="99" column="92" lean-forward="false" selection-start-line="99" selection-start-column="92" selection-end-line="99" selection-end-column="92" />
           <folding>
-            <element signature="e#33#52#0" expanded="true" />
+            <element signature="e#4153#4234#0" expanded="true" />
+            <element signature="e#4532#4570#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/candidate_handlers.c">
+    <entry file="file://$PROJECT_DIR$/C/Code/state_machine.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/leader_handlers.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/raft_server.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="-49">
+          <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -745,22 +695,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
+    <entry file="file://$PROJECT_DIR$/C/Code/leader_handlers.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
+        <state relative-caret-position="720">
+          <caret line="40" column="19" lean-forward="false" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/handlers_utils.c">
+    <entry file="file://$PROJECT_DIR$/C/Code/candidate_handlers.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="99" column="114" lean-forward="false" selection-start-line="99" selection-start-column="114" selection-end-line="99" selection-end-column="114" />
+        <state relative-caret-position="284">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Code/raft_server.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Headers/test.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
-            <element signature="e#4151#4232#0" expanded="true" />
-            <element signature="e#4530#4568#0" expanded="true" />
+            <element signature="e#33#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Headers/general.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="173" column="13" lean-forward="false" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
