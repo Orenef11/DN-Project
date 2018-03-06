@@ -150,7 +150,7 @@ void follower_vote_req_handler(Queue_node_data* node)
     if(!sharedRaftData.raft_state.did_I_vote)//I didnt vote
     {
 
-        if(node->term > sharedRaftData.raft_state.term)
+        if(node->term >= sharedRaftData.raft_state.term)
         {
 
             sharedRaftData.raft_state.term = node->term;

@@ -95,7 +95,7 @@ inline int get_const_queue_msg_size(){
 */
 void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memory)
 {
-    
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"create new msg",INT_VALUES,1,
 			LOG(event),LOG(sharedRaftData.raft_state.current_state));
@@ -114,5 +114,8 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
     else if(event == SYNC_REQ){
         msg_data_memory->msg_data.sync_req_msg.start_log_index = sharedRaftData.raft_state.last_log_index;
         msg_data_memory->msg_data.sync_req_msg.last_log_id = sharedRaftData.raft_state.last_log_index;
+    }
+    else if(event == VOTE){
+        msg_data_memory->message_sent_to =msg_data_memory->message_sent_by;
     }
 }
