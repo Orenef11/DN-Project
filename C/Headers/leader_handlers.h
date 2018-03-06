@@ -1,7 +1,7 @@
 #ifndef RAFT_PROJECT_LEADER_HANDLERS_H
 #define RAFT_PROJECT_LEADER_HANDLERS_H
+
 #include "handlers_utils.h"
-//#include "logger.h"
 #include "static_queue.h"
 #include "raft_server.h"
 

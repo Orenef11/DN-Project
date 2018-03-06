@@ -1,9 +1,8 @@
 
 #include "../Headers/candidate_handlers.h"
 
-///candidate:
 
-//itay relevant fileds from Node_queue - byte term [difficulte = 1 ]
+
 void candidate_vote_for_me_handler(Queue_node_data * node)
 {
     if(node->term == sharedRaftData.raft_state.term)
@@ -15,9 +14,9 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         {
 
 #if DEBUG_MODE == 1
-            WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got majority- becoming leader",INT_VALUES,6,LOG(node->event),LOG(sharedRaftData.raft_state.term),
-                            LOG(sharedRaftData.raft_state.current_state),LOG(sharedRaftData.raft_state.vote_counter),
-                            LOG(node->message_sent_by),LOG(node->term));
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got majority- becoming leader",INT_VALUES,6,LOG(node->event),LOG(sharedRaftData.raft_state.term),
+                        LOG(sharedRaftData.raft_state.current_state),LOG(sharedRaftData.raft_state.vote_counter),
+                        LOG(node->message_sent_by),LOG(node->term));
 #endif
 
             //change timeout for leader
@@ -36,9 +35,11 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
             update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
 
             create_new_queue_node_data(KEEP_ALIVE_HB,node);
+
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending keep alive hb msg",NO_VALUES,0);
 #endif
+
             send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg));
 
         }
@@ -58,19 +59,23 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
 
 
     }
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"end of vote event",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
 #endif
+
 }
 
 
-//ido byte term [difficulte = 1 ]
+
 void candidate_keep_alive_hb_handler(Queue_node_data *node)
 {
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"keep_alive HB event",INT_VALUES,4,LOG(node->event),LOG(sharedRaftData.raft_state.term),
 	LOG(node->message_sent_by),LOG(node->term));
 #endif
+
     if(node->term >= sharedRaftData.raft_state.term)
     {
         clear_queue();
@@ -87,14 +92,17 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
 }
 
 
+
 void candidate_vote_req_handler(Queue_node_data* node)
 {
+
 #if DEBUG_MODE == 1
     WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate get vote request msg",INT_VALUES,4,
                     LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.did_I_vote),
                     LOG(node->term),LOG(node->message_sent_by));
 
 #endif
+
     if(node->term > sharedRaftData.raft_state.term)
     {
 
@@ -103,12 +111,13 @@ void candidate_vote_req_handler(Queue_node_data* node)
         sharedRaftData.raft_state.term = node->term;
         update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
 
-
         create_new_queue_node_data(VOTE, node);
+
 #if DEBUG_MODE == 1
         WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending vote msg",NO_VALUES,0);
 #endif
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
+
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE);
         sharedRaftData.raft_state.did_I_vote = 1;
 
         clear_queue();
@@ -125,12 +134,13 @@ void candidate_vote_req_handler(Queue_node_data* node)
 
 
 
-//relevant fileds from state term
 void candidate_time_out_handler(Queue_node_data* node)
 {
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"timeout event",INT_VALUES,1,LOG(sharedRaftData.raft_state.wakeup_counter));
 #endif
+
     if(++sharedRaftData.raft_state.wakeup_counter >= 2 )
     {
         sharedRaftData.raft_state.term++;
@@ -141,11 +151,13 @@ void candidate_time_out_handler(Queue_node_data* node)
         update_DB(DB_STATUS, TERM, sharedRaftData.raft_state.term);
 
         create_new_queue_node_data(REQUEST_FOR_VOTE,node);
+
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending request for vote msg",INT_VALUES,1,
                         LOG(sharedRaftData.raft_state.term));
 #endif
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.req_for_vote_msg)*/);
+
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE);
     }
 
 }
