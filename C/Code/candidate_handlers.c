@@ -6,11 +6,6 @@
 //itay relevant fileds from Node_queue - byte term [difficulte = 1 ]
 void candidate_vote_for_me_handler(Queue_node_data * node)
 {
-#if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"vote event",INT_VALUES,6,LOG(node->event),LOG(sharedRaftData.raft_state.term),
-	LOG(sharedRaftData.raft_state.current_state),LOG(sharedRaftData.raft_state.vote_counter),
-	LOG(node->message_sent_by),LOG(node->term));
-#endif
     if(node->term == sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.vote_counter++;
@@ -18,6 +13,13 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         //candidate got majority increase vote_counter and check majority
         if(sharedRaftData.raft_state.vote_counter >= ((sharedRaftData.raft_state.members_amount/2) + 1))
         {
+
+#if DEBUG_MODE == 1
+            WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got majority- becoming leader",INT_VALUES,6,LOG(node->event),LOG(sharedRaftData.raft_state.term),
+                            LOG(sharedRaftData.raft_state.current_state),LOG(sharedRaftData.raft_state.vote_counter),
+                            LOG(node->message_sent_by),LOG(node->term));
+#endif
+
             //change timeout for leader
             sharedRaftData.raft_state.timeout = sharedRaftData.raft_configuration.leader_timeout;
             create_alarm_timer(sharedRaftData.raft_state.timeout);
@@ -28,9 +30,10 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
             sharedRaftData.raft_state.did_I_vote = 0;
 
             //update DAL
+            sharedRaftData.raft_state.leader_id = sharedRaftData.raft_state.server_id;
             sharedRaftData.raft_state.current_state = LEADER;
             update_DB(DB_STATUS,STATUS,LEADER_VALUE);
-            update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.server_id);
+            update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
 
             create_new_queue_node_data(KEEP_ALIVE_HB,node);
 #if DEBUG_MODE == 1
@@ -48,6 +51,8 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
 
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
@@ -73,6 +78,8 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
 
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
@@ -108,6 +115,8 @@ void candidate_vote_req_handler(Queue_node_data* node)
         sharedRaftData.raft_state.vote_counter = 0;
 
 
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
     }

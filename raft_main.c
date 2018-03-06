@@ -106,6 +106,7 @@ void set_raft_data(int id,int members_num,int leader_timeout,void(*set_callback_
     sharedRaftData.raft_state.server_id              = id;
     sharedRaftData.raft_state.members_amount         = members_num;
     sharedRaftData.raft_state.timeout                = calculate_raft_rand_timeout();
+    sharedRaftData.raft_state.leader_id              = 0;
 
     //set sharedRaftData.raft_configuration
     sharedRaftData.raft_configuration.leader_timeout = leader_timeout;

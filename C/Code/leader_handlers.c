@@ -68,6 +68,8 @@ void leader_vote_handler(Queue_node_data *node)
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
 
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
@@ -94,7 +96,7 @@ void cancel_commit_proccess(Queue_node_data* message_mem) {
     #endif
         send_raft_message(message_mem, CONST_QUEUE_MSG_SIZE +
                                        sizeof(message_mem->msg_data.keep_alive_hb_msg));//TBD - check returned value
-}
+    }
     sharedRaftData.raft_state.commit_counter = 0;
 }
 
@@ -135,6 +137,8 @@ void  leader_hb_handler(Queue_node_data* node)
         sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
         create_alarm_timer(sharedRaftData.raft_state.timeout);
 
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
@@ -154,7 +158,7 @@ void  leader_send_log_hb_handler(Queue_node_data* node)
 {
 #if DEBUG_MODE == 1
 		int new_log_commit_id =node->msg_data.set_log_hb_msg.commit_id;
-		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send new log enrty",INT_VALUES,4,
+		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send new log entry",INT_VALUES,4,
 			LOG(sharedRaftData.raft_state.last_commit_index),LOG(sharedRaftData.raft_state.last_log_index),
 			LOG(sharedRaftData.raft_state.commit_counter),LOG(new_log_commit_id));
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send sync log msg",CHARS_VALUES,3,
@@ -235,7 +239,7 @@ void leader_vote_req_handler(Queue_node_data* node)
 
         create_new_queue_node_data(VOTE, node);
 #if DEBUG_MODE == 1
-        WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending vote msg",NO_VALUES,0);
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending vote msg because someone else has a bigger term and now he's becoming a follower",NO_VALUES,0);
 #endif
         send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
         sharedRaftData.raft_state.did_I_vote = 1;
@@ -243,7 +247,8 @@ void leader_vote_req_handler(Queue_node_data* node)
         clear_queue();
         sharedRaftData.raft_state.vote_counter = 0;
 
-
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
     }

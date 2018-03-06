@@ -3,7 +3,6 @@
 
 void follower_hb_set_log_handler(Queue_node_data* node)
 {
-
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"follower get set log msg",CHARS_VALUES,3,
 			LOG(node->msg_data.set_log_hb_msg.cmd),LOG(node->msg_data.set_log_hb_msg.key),
@@ -185,7 +184,12 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
         sharedRaftData.raft_state.term = node->term;
         update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
         sharedRaftData.raft_state.did_I_vote = 0;
+    }
 
+    if(sharedRaftData.raft_state.leader_id != node->message_sent_by)
+    {
+        sharedRaftData.raft_state.leader_id = node->message_sent_by;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
     }
 
     if(node->msg_data.keep_alive_hb_msg.last_log_id > sharedRaftData.raft_state.last_log_index)
@@ -197,7 +201,7 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
 #endif
         send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg));//TBD - check returned value
     }
-    //the leader cancle the commit proccess and this follower already get the update
+    //the leader cancel the commit process and this follower already get the update
 	else if(node->msg_data.keep_alive_hb_msg.last_log_id < sharedRaftData.raft_state.last_commit_index){
 		sharedRaftData.raft_state.last_commit_index = node->msg_data.keep_alive_hb_msg.last_log_id;
 		sharedRaftData.python_functions.clear_log_from_log_id(sharedRaftData.raft_state.last_commit_index + 1);
@@ -224,6 +228,9 @@ void follower_time_out_handler(Queue_node_data * node)
         sharedRaftData.raft_state.term++;
         update_DB(DB_STATUS, TERM, sharedRaftData.raft_state.term);
         update_DB(DB_STATUS, STATUS, CANDIDATE_VALUE);
+
+        sharedRaftData.raft_state.leader_id = 0;
+        update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
 /*
         #if DEBUG_MODE == 1
 			if(sharedRaftData.raft_state.members_amount == 1)

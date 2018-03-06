@@ -103,6 +103,8 @@ typedef struct State{
     //if wakeup_counter == 2 , follower -> candidate
     int wakeup_counter;
 
+    int leader_id;
+
     //all 10 options
     eventType event_type;
     //not nedded for now
