@@ -187,7 +187,7 @@ void  leader_log_res_handler(Queue_node_data* node)
     sharedRaftData.raft_state.commit_counter++;
 
     //check if he has the most votes and if he has, sends commit ok
-    if( sharedRaftData.raft_state.commit_counter == ((sharedRaftData.raft_state.members_amount/2) +1) )
+    if( sharedRaftData.raft_state.commit_counter >= ((sharedRaftData.raft_state.members_amount/2) +1) )
     {
         sharedRaftData.raft_state.last_commit_index++;
 
@@ -200,6 +200,7 @@ void  leader_log_res_handler(Queue_node_data* node)
         update_DB(DB_STATUS, COMMIT_INDEX,sharedRaftData.raft_state.last_commit_index );
         sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
 
+        sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
         //inform python that commit proccess success
         raise(SIGUSR1);

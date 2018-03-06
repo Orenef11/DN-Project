@@ -16,7 +16,7 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         sharedRaftData.raft_state.vote_counter++;
 
         //candidate got majority increase vote_counter and check majority
-        if(sharedRaftData.raft_state.vote_counter > ((sharedRaftData.raft_state.members_amount/2) + 1))
+        if(sharedRaftData.raft_state.vote_counter >= ((sharedRaftData.raft_state.members_amount/2) + 1))
         {
             //change timeout for leader
             sharedRaftData.raft_state.timeout = sharedRaftData.raft_configuration.leader_timeout;
