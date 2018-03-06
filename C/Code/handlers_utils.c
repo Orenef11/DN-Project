@@ -100,9 +100,6 @@ int is_relevant_message(Queue_node_data * node_message)
     if(sharedRaftData.raft_state.current_state == CANDIDATE)
     {
 #if DEBUG_MODE == 1
-		WRITE_TO_LOGGER(DEBUG_LEVEL,"check if msg is relevant",INT_VALUES,4,
-			LOG(sharedRaftData.raft_state.current_state),LOG(node_message->event),
-			LOG(sharedRaftData.raft_state.current_state),LOG(is_relevant_rv));
 		is_relevant_rv = is_not_my_message & is_relevant & is_relevant_term & is_relevant_for_candidate(node_message);
 #else
 		return is_not_my_message & is_relevant & is_relevant_term & is_relevant_for_candidate(node_message);

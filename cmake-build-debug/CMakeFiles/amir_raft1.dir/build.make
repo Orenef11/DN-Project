@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/ubuntu/Desktop/CLion/clion-2017.3.1/bin/cmake/bin/cmake
+CMAKE_COMMAND = /opt/clion-2017.3.1/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/ubuntu/Desktop/CLion/clion-2017.3.1/bin/cmake/bin/cmake -E remove -f
+RM = /opt/clion-2017.3.1/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/CLionProjects/amir_raft1
+CMAKE_SOURCE_DIR = /home/ubuntu/Desktop/DN-Project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ubuntu/Desktop/DN-Project/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/amir_raft1.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/amir_raft1.dir/flags.make
 
 CMakeFiles/amir_raft1.dir/raft_main.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/raft_main.c.o: ../raft_main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/amir_raft1.dir/raft_main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/raft_main.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/raft_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/amir_raft1.dir/raft_main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/raft_main.c.o   -c /home/ubuntu/Desktop/DN-Project/raft_main.c
 
 CMakeFiles/amir_raft1.dir/raft_main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/raft_main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/raft_main.c > CMakeFiles/amir_raft1.dir/raft_main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/raft_main.c > CMakeFiles/amir_raft1.dir/raft_main.c.i
 
 CMakeFiles/amir_raft1.dir/raft_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/raft_main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/raft_main.c -o CMakeFiles/amir_raft1.dir/raft_main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/raft_main.c -o CMakeFiles/amir_raft1.dir/raft_main.c.s
 
 CMakeFiles/amir_raft1.dir/raft_main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/amir_raft1.dir/raft_main.c.o.provides.build: CMakeFiles/amir_raft1.di
 
 CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o: ../C/Code/candidate_handlers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/candidate_handlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c
 
 CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/candidate_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/candidate_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/amir_raft1.dir/C/Code/candidate_handlers.c.o.provides.build: CMakeFil
 
 CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o: ../C/Code/follower_handlers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/follower_handlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/follower_handlers.c
 
 CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/follower_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/follower_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/follower_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/follower_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/amir_raft1.dir/C/Code/follower_handlers.c.o.provides.build: CMakeFile
 
 CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o: ../C/Code/handlers_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/handlers_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c
 
 CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/handlers_utils.c > CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c > CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/handlers_utils.c -o CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c -o CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/amir_raft1.dir/C/Code/handlers_utils.c.o.provides.build: CMakeFiles/a
 
 CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o: ../C/Code/leader_handlers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/leader_handlers.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/leader_handlers.c
 
 CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/leader_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/leader_handlers.c > CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/leader_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/leader_handlers.c -o CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/amir_raft1.dir/C/Code/leader_handlers.c.o.provides.build: CMakeFiles/
 
 CMakeFiles/amir_raft1.dir/C/Code/logger.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/logger.c.o: ../C/Code/logger.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/amir_raft1.dir/C/Code/logger.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/logger.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/logger.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/amir_raft1.dir/C/Code/logger.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/logger.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/logger.c
 
 CMakeFiles/amir_raft1.dir/C/Code/logger.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/logger.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/logger.c > CMakeFiles/amir_raft1.dir/C/Code/logger.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/logger.c > CMakeFiles/amir_raft1.dir/C/Code/logger.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/logger.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/logger.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/logger.c -o CMakeFiles/amir_raft1.dir/C/Code/logger.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/logger.c -o CMakeFiles/amir_raft1.dir/C/Code/logger.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/logger.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/amir_raft1.dir/C/Code/logger.c.o.provides.build: CMakeFiles/amir_raft
 
 CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o: ../C/Code/raft_server.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c
 
 CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c > CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c > CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c -o CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c -o CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/amir_raft1.dir/C/Code/raft_server.c.o.provides.build: CMakeFiles/amir
 
 CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o: ../C/Code/state_machine.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c
 
 CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c > CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c > CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c -o CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c -o CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/amir_raft1.dir/C/Code/state_machine.c.o.provides.build: CMakeFiles/am
 
 CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o: ../C/Code/static_queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/static_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c
 
 CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/static_queue.c > CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c > CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/static_queue.c -o CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c -o CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o.provides.build: CMakeFiles/ami
 
 CMakeFiles/amir_raft1.dir/C/Code/test.c.o: CMakeFiles/amir_raft1.dir/flags.make
 CMakeFiles/amir_raft1.dir/C/Code/test.c.o: ../C/Code/test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/amir_raft1.dir/C/Code/test.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/test.c.o   -c /home/ubuntu/CLionProjects/amir_raft1/C/Code/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/amir_raft1.dir/C/Code/test.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/amir_raft1.dir/C/Code/test.c.o   -c /home/ubuntu/Desktop/DN-Project/C/Code/test.c
 
 CMakeFiles/amir_raft1.dir/C/Code/test.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/amir_raft1.dir/C/Code/test.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/CLionProjects/amir_raft1/C/Code/test.c > CMakeFiles/amir_raft1.dir/C/Code/test.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ubuntu/Desktop/DN-Project/C/Code/test.c > CMakeFiles/amir_raft1.dir/C/Code/test.c.i
 
 CMakeFiles/amir_raft1.dir/C/Code/test.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/amir_raft1.dir/C/Code/test.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/CLionProjects/amir_raft1/C/Code/test.c -o CMakeFiles/amir_raft1.dir/C/Code/test.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ubuntu/Desktop/DN-Project/C/Code/test.c -o CMakeFiles/amir_raft1.dir/C/Code/test.c.s
 
 CMakeFiles/amir_raft1.dir/C/Code/test.c.o.requires:
 
@@ -325,7 +325,7 @@ amir_raft1: CMakeFiles/amir_raft1.dir/C/Code/static_queue.c.o
 amir_raft1: CMakeFiles/amir_raft1.dir/C/Code/test.c.o
 amir_raft1: CMakeFiles/amir_raft1.dir/build.make
 amir_raft1: CMakeFiles/amir_raft1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable amir_raft1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable amir_raft1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/amir_raft1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -351,6 +351,6 @@ CMakeFiles/amir_raft1.dir/clean:
 .PHONY : CMakeFiles/amir_raft1.dir/clean
 
 CMakeFiles/amir_raft1.dir/depend:
-	cd /home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/CLionProjects/amir_raft1 /home/ubuntu/CLionProjects/amir_raft1 /home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug /home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug /home/ubuntu/CLionProjects/amir_raft1/cmake-build-debug/CMakeFiles/amir_raft1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/Desktop/DN-Project/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/Desktop/DN-Project /home/ubuntu/Desktop/DN-Project /home/ubuntu/Desktop/DN-Project/cmake-build-debug /home/ubuntu/Desktop/DN-Project/cmake-build-debug /home/ubuntu/Desktop/DN-Project/cmake-build-debug/CMakeFiles/amir_raft1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/amir_raft1.dir/depend
 

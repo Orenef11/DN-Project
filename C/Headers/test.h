@@ -13,8 +13,8 @@
 
 #define _TEST_MULTICAST_IP "224.1.1.1"
 #define _TEST_MULTICAST_PORT 6060
-#define _TEST_SERVER_ID 2
-#define _TEST_MEMBERS_NUM 3
+#define _TEST_SERVER_ID 1
+#define _TEST_MEMBERS_NUM 2
 #define _TEST_LEADER_TIMEOUT 1000 /*miliseconds*/
 
 #define LOGGER_FILE "./logger.log"

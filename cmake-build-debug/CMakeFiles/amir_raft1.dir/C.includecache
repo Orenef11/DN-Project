@@ -6,59 +6,59 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/candidate_handlers.c
+/home/ubuntu/Desktop/DN-Project/C/Code/candidate_handlers.c
 ../Headers/candidate_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/candidate_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/candidate_handlers.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/follower_handlers.c
+/home/ubuntu/Desktop/DN-Project/C/Code/follower_handlers.c
 ../Headers/follower_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/follower_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/follower_handlers.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/handlers_utils.c
+/home/ubuntu/Desktop/DN-Project/C/Code/handlers_utils.c
 ../Headers/handlers_utils.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/handlers_utils.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/handlers_utils.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/leader_handlers.c
+/home/ubuntu/Desktop/DN-Project/C/Code/leader_handlers.c
 ../Headers/leader_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/leader_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/leader_handlers.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/logger.c
+/home/ubuntu/Desktop/DN-Project/C/Code/logger.c
 ../Headers/logger.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/logger.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/logger.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/raft_server.c
+/home/ubuntu/Desktop/DN-Project/C/Code/raft_server.c
 ../Headers/raft_server.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/raft_server.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/raft_server.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/state_machine.c
+/home/ubuntu/Desktop/DN-Project/C/Code/state_machine.c
 ../Headers/state_machine.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/state_machine.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/state_machine.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/static_queue.c
+/home/ubuntu/Desktop/DN-Project/C/Code/static_queue.c
 ../Headers/static_queue.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Code/test.c
+/home/ubuntu/Desktop/DN-Project/C/Code/test.c
 ../Headers/test.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/test.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/test.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/candidate_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/candidate_handlers.h
 handlers_utils.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/handlers_utils.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/handlers_utils.h
 static_queue.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 raft_server.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/raft_server.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/raft_server.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/follower_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/follower_handlers.h
 handlers_utils.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/handlers_utils.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/handlers_utils.h
 static_queue.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 raft_server.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/raft_server.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/raft_server.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/general.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/general.h
 stdio.h
 -
 stdlib.h
@@ -76,25 +76,25 @@ signal.h
 sys/time.h
 -
 logger.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/logger.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/logger.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/handlers_utils.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/handlers_utils.h
 unistd.h
 -
 general.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/general.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/general.h
 static_queue.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/leader_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/leader_handlers.h
 handlers_utils.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/handlers_utils.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/handlers_utils.h
 static_queue.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 raft_server.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/raft_server.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/raft_server.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/logger.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/logger.h
 stdlib.h
 -
 stdio.h
@@ -102,7 +102,7 @@ stdio.h
 stdarg.h
 -
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/raft_server.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/raft_server.h
 arpa/inet.h
 -
 stdlib.h
@@ -116,25 +116,25 @@ netinet/in.h
 string.h
 -
 general.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/general.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/general.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/state_machine.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/state_machine.h
 stdio.h
 -
 malloc.h
 -
 candidate_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/candidate_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/candidate_handlers.h
 follower_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/follower_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/follower_handlers.h
 leader_handlers.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/leader_handlers.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/leader_handlers.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/static_queue.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/static_queue.h
 general.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/general.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/general.h
 
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/test.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/test.h
 unistd.h
 -
 string.h
@@ -144,13 +144,13 @@ sys/stat.h
 fcntl.h
 -
 ../../raft_main.h
-/home/ubuntu/CLionProjects/amir_raft1/raft_main.h
+/home/ubuntu/Desktop/DN-Project/raft_main.h
 
-/home/ubuntu/CLionProjects/amir_raft1/raft_main.c
+/home/ubuntu/Desktop/DN-Project/raft_main.c
 raft_main.h
-/home/ubuntu/CLionProjects/amir_raft1/raft_main.h
+/home/ubuntu/Desktop/DN-Project/raft_main.h
 
-/home/ubuntu/CLionProjects/amir_raft1/raft_main.h
+/home/ubuntu/Desktop/DN-Project/raft_main.h
 C/Headers/state_machine.h
-/home/ubuntu/CLionProjects/amir_raft1/C/Headers/state_machine.h
+/home/ubuntu/Desktop/DN-Project/C/Headers/state_machine.h
 
