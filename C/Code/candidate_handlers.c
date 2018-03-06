@@ -127,12 +127,14 @@ void candidate_time_out_handler(Queue_node_data* node)
         sharedRaftData.raft_state.term++;
         sharedRaftData.raft_state.vote_counter =1;
         sharedRaftData.raft_state.did_I_vote = 1;
-
         sharedRaftData.raft_state.wakeup_counter = 0;
+
+        update_DB(DB_STATUS, TERM, sharedRaftData.raft_state.term);
 
         create_new_queue_node_data(REQUEST_FOR_VOTE,node);
 #if DEBUG_MODE == 1
-		WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending request for vote msg",NO_VALUES,0);
+		WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending request for vote msg",INT_VALUES,1,
+                        LOG(sharedRaftData.raft_state.term));
 #endif
         send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.req_for_vote_msg)*/);
     }

@@ -14,11 +14,6 @@
     <list default="true" id="08c1cdd2-be5b-4aeb-87d0-db08ec5ceb46" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/C/Code/candidate_handlers.c" afterPath="$PROJECT_DIR$/C/Code/candidate_handlers.c" />
       <change beforePath="$PROJECT_DIR$/C/Code/follower_handlers.c" afterPath="$PROJECT_DIR$/C/Code/follower_handlers.c" />
-      <change beforePath="$PROJECT_DIR$/C/Code/handlers_utils.c" afterPath="$PROJECT_DIR$/C/Code/handlers_utils.c" />
-      <change beforePath="$PROJECT_DIR$/C/Code/leader_handlers.c" afterPath="$PROJECT_DIR$/C/Code/leader_handlers.c" />
-      <change beforePath="$PROJECT_DIR$/C/Code/state_machine.c" afterPath="$PROJECT_DIR$/C/Code/state_machine.c" />
-      <change beforePath="$PROJECT_DIR$/C/Headers/handlers_utils.h" afterPath="$PROJECT_DIR$/C/Headers/handlers_utils.h" />
-      <change beforePath="$PROJECT_DIR$/raft_main.c" afterPath="$PROJECT_DIR$/raft_main.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="candidate_handlers.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="candidate_handlers.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/C/Code/candidate_handlers.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="117">
+              <caret line="131" column="67" lean-forward="false" selection-start-line="131" selection-start-column="67" selection-end-line="131" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -67,17 +62,19 @@
       <file leaf-file-name="follower_handlers.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C/Code/follower_handlers.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-148">
-              <caret line="224" column="45" lean-forward="true" selection-start-line="224" selection-start-column="45" selection-end-line="224" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="158">
+              <caret line="223" column="67" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="67" />
+              <folding>
+                <element signature="e#9204#9312#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="state_machine.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="state_machine.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/C/Code/state_machine.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
+            <state relative-caret-position="-49">
               <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
@@ -102,6 +99,7 @@
       <find>check if msg is rel</find>
       <find>got msg with smaller term</find>
       <find>current_state=1</find>
+      <find>term</find>
       <find>got event</find>
     </findStrings>
   </component>
@@ -119,11 +117,11 @@
         <option value="$PROJECT_DIR$/C/Headers/test.h" />
         <option value="$PROJECT_DIR$/raft_main.c" />
         <option value="$PROJECT_DIR$/C/Headers/handlers_utils.h" />
-        <option value="$PROJECT_DIR$/C/Code/candidate_handlers.c" />
         <option value="$PROJECT_DIR$/C/Code/leader_handlers.c" />
         <option value="$PROJECT_DIR$/C/Code/handlers_utils.c" />
-        <option value="$PROJECT_DIR$/C/Code/follower_handlers.c" />
         <option value="$PROJECT_DIR$/C/Code/state_machine.c" />
+        <option value="$PROJECT_DIR$/C/Code/follower_handlers.c" />
+        <option value="$PROJECT_DIR$/C/Code/candidate_handlers.c" />
       </list>
     </option>
   </component>
@@ -238,11 +236,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14052000" />
+    <option name="totallyTimeSpent" value="14679000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1615" height="937" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2495356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -250,7 +247,7 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5086849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5086849" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287841" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -662,22 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/follower_handlers.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="224" column="45" lean-forward="true" selection-start-line="224" selection-start-column="45" selection-end-line="224" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C/Code/candidate_handlers.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/C/Code/static_queue.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
@@ -725,8 +706,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/C/Code/state_machine.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
+        <state relative-caret-position="-49">
           <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Code/follower_handlers.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="223" column="67" lean-forward="false" selection-start-line="223" selection-start-column="8" selection-end-line="223" selection-end-column="67" />
+          <folding>
+            <element signature="e#9204#9312#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/C/Code/candidate_handlers.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="131" column="67" lean-forward="false" selection-start-line="131" selection-start-column="67" selection-end-line="131" selection-end-column="67" />
           <folding />
         </state>
       </provider>

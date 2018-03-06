@@ -247,7 +247,7 @@ void follower_time_out_handler(Queue_node_data * node)
 */
         create_new_queue_node_data(REQUEST_FOR_VOTE, node);
 #if DEBUG_MODE == 1
-        WRITE_TO_LOGGER(DEBUG_LEVEL, "follower sending request for vote msg", NO_VALUES, 0);
+        WRITE_TO_LOGGER(DEBUG_LEVEL, "follower became candidate and is sending request for vote msg", NO_VALUES, 0);
 #endif
         send_raft_message(node, CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.req_for_vote_msg)*/);
 
