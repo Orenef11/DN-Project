@@ -160,7 +160,8 @@ void start_commit_proccess(int log_id,char * cmd,char * key, char * value){
 
 //main.c
 //pyhton start raft process, call init_raft()
-int run_raft(char* raft_ip,int raft_port,int server_id,int members_num,int leader_timeout,void(*set_callback_function)(void))
+int run_raft(char* raft_ip,int raft_port,int server_id,int members_num,
+                int leader_timeout,void(*set_callback_function)(void))
 {
     pthread_t server_thread,raft_handler_thread;
     init_raft(raft_ip,raft_port,server_id,members_num,leader_timeout,set_callback_function);
