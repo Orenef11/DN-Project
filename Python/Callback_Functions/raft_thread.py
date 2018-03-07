@@ -4,45 +4,42 @@ import signal
 import global_variables
 from os import path, getcwd
 
+commit_flag = False
 
-
-
-global commit_flag
-
-_raft = ctypes.CDLL(path.join(getcwd() ,"Callback_Functions","raft.so"))
+_raft = ctypes.CDLL(path.join(getcwd(), "Callback_Functions", "raft.so"))
 
 
 def add_to_log_DB(log_id, command, key, val):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
         if len(global_variables.redis_db_obj.redis_db_obj["logs"]) == log_id:
-            global_variables.redis_db_obj.redis_db_obj["logs"].append((command, key, val))
+            py_cmd = ctypes.string_at(command).decode("utf-8")
+            py_key = ctypes.string_at(key).decode("utf-8")
+            py_val = ctypes.string_at(val).decode("utf-8")
+            global_variables.redis_db_obj.redis_db_obj["logs"].append((py_cmd, py_key, py_val))
             return 0
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
-
     return 1
 
 
 # updates configuration or status db
 def update_DB(db_flag, key, val):
-    if global_variables.redis_db_obj.is_valid_command(str(db_flag), str(key)):
-        global_variables.redis_db_obj.redis_db_obj[str(db_flag)][str(key)] = str(val)
+    py_db_flag = ctypes.string_at(db_flag).decode("utf-8")
+    py_key = ctypes.string_at(key).decode("utf-8")
+    py_val = ctypes.string_at(val).decode("utf-8")
+    if global_variables.redis_db_obj.is_valid_command(py_db_flag, py_key):
+        global_variables.redis_db_obj.redis_db_obj[py_db_flag][py_key] = py_val
         return 0
     return 1
 
 
 def get_log_by_diff(start, end):
     #we need +2. 1 to get real size of the list and 1 mode for null pointer
-    log_list = (ctypes.c_wchar_p * (1 + 2))()
-    if global_variables.redis_db_obj.is_valid_command("logs", None) and len(global_variables.redis_db_obj["logs"]) >= end:
+    log_list = (ctypes.c_wchar_p * (end - start + 2))()
+    if global_variables.redis_db_obj.is_valid_command("logs", None) and\
+            len(global_variables.redis_db_obj["logs"]) >= end:
         for entry in range(start, end + 1):
             log_list.append(str.encode(','.join(global_variables.redis_db_obj["logs"][entry])))
-
-            # str = global_variables.dal_object.redis_db_obj["logs"][entry][0] + "," + \
-            #       global_variables.dal_object.redis_db_obj["logs"][entry][1] + "," + \
-            #       global_variables.dal_object.redis_db_obj["logs"][entry][2]
-            #
-            # log_list.append(str)
 
         log_list[:-1] = log_list
         log_list[-1] = None
@@ -53,10 +50,10 @@ def get_log_by_diff(start, end):
 def write_to_logger(logger_level, logger_message):
     py_logger_message = "\n"+ctypes.string_at(logger_message).decode("utf-8")
     levels = {0: logging.debug(py_logger_message),
-               1: logging.info(py_logger_message),
-               2: logging.warning(py_logger_message),
-               3: logging.error(py_logger_message),
-               4: logging.critical(py_logger_message)}
+              1: logging.info(py_logger_message),
+              2: logging.warning(py_logger_message),
+              3: logging.error(py_logger_message),
+              4: logging.critical(py_logger_message)}
     levels.get(logger_level, 'Logger level not exist ')
 
 def execute_log(log_id):
