@@ -9,7 +9,7 @@
 #include "../../raft_main.h"
 //#include "general.h"
 
-#define MAIN_TEST 1
+#define MAIN_TEST 0
 
 #define _TEST_MULTICAST_IP "224.1.1.1"
 #define _TEST_MULTICAST_PORT 6060

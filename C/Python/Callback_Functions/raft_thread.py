@@ -9,7 +9,7 @@ from os import path, getcwd
 
 global commit_flag
 
-_raft = ctypes.CDLL(path.join(getcwd() ,"Callback_Functions","raft.so"))
+_raft = ctypes.CDLL(path.join(getcwd(),"C" ,"Callback_Functions","raft.so"))
 
 
 def add_to_log_DB(log_id, command, key, val):
@@ -25,7 +25,6 @@ def add_to_log_DB(log_id, command, key, val):
 
 # updates configuration or status db
 def update_DB(db_flag, key, val):
-    print( "222222222222222222222222222222222222222222222222222222")
     if global_variables.redis_db_obj.is_valid_command(str(db_flag), str(key)):
         global_variables.redis_db_obj.redis_db_obj[str(db_flag)][str(key)] = str(val)
         return 0
@@ -35,12 +34,9 @@ def update_DB(db_flag, key, val):
 def get_log_by_diff(start, end):
     #we need +2. 1 to get real size of the list and 1 mode for null pointer
     log_list = (ctypes.c_wchar_p * (1 + 2))()
-    log_list1 = ["oren", "ido"]
-    print( "11111111111111111111111111111111111111111111111111111111111111111")
-    # log_list = ctypes.c_char_p
     if global_variables.redis_db_obj.is_valid_command("logs", None) and len(global_variables.redis_db_obj["logs"]) >= end:
         for entry in range(start, end + 1):
-            log_list1.append(str.encode(','.join(global_variables.redis_db_obj["logs"][entry])))
+            log_list.append(str.encode(','.join(global_variables.redis_db_obj["logs"][entry])))
 
             # str = global_variables.dal_object.redis_db_obj["logs"][entry][0] + "," + \
             #       global_variables.dal_object.redis_db_obj["logs"][entry][1] + "," + \
@@ -48,7 +44,7 @@ def get_log_by_diff(start, end):
             #
             # log_list.append(str)
 
-        log_list[:-1] = log_list1
+        log_list[:-1] = log_list
         log_list[-1] = None
     # log_list.append(ctypes.c_char_p)
     return log_list[0]
@@ -62,8 +58,6 @@ def write_to_logger(logger_level, logger_message):
                3: logging.error(py_logger_message),
                4: logging.critical(py_logger_message)}
     levels.get(logger_level, 'Logger level not exist ')
-    print()
-
 
 def execute_log(log_id):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
@@ -149,7 +143,8 @@ def run_raft(raft_ip, raft_port, server_id, members_num, leader_timeout, funcs):
 
 def sig_handler(signum, frame):
     global commit_flag
-
+    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    print(signum)
     if signum == 10:
         commit_flag = True
 
