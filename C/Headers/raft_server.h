@@ -39,6 +39,5 @@ extern MulticastMessage multicastMessage;
 int init_multicast_message(const char *ip, uint16_t port);
 int send_raft_message(void *message_obj, int message_size);
 int get_raft_message(void *message_memory_obj);
-//ErrorMessage delete_multicast_message(MulticastMessage *multicastMessage);
 
 #endif //AMIRPROJEXT_MULTICAST_MESSAGE_H
