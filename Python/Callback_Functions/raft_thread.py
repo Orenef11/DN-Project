@@ -168,14 +168,6 @@ def start_commit_process(log_id, cmd, key, val):
 # -----------------------------------------------------------------------------------------
 
 def python_run_raft():
-    # log_list = [b"Oren", b"Itay", b"BlaBla"]
-    # words = (ctypes.c_char_p * (len(log_list) + 1))()
-    # words[:-1] = log_list
-    # words[-1] = None
-    # print(words[:])
-    # print(type(words))
-    # return words
-
     run_raft(b"224.1.1.1", 6060, 1, 2, 1000, c_set_callback_funcs)
 #
 # if __name__ == '__main__':
