@@ -9,7 +9,7 @@ from os import path, getcwd
 
 global commit_flag
 
-_raft = ctypes.CDLL(path.join(getcwd() ,"Callback_Functions","raft.so"))
+_raft = ctypes.CDLL(path.join(getcwd(),"raft.so"))
 
 
 def add_to_log_DB(log_id, command, key, val):

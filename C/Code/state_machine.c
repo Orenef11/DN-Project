@@ -7,14 +7,8 @@ void operate_machine_state(Queue_node_data * node)
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"enter state function",INT_VALUES,2,
 			LOG(node->event),LOG(sharedRaftData.raft_state.current_state));
 #endif
-<<<<<<< HEAD
-	//puts("got event");
-=======
 
-	puts("got event");
->>>>>>> 693b538f2e6a6bca362a98e4b7afe14e717023be
     handlers_functions_arr[sharedRaftData.raft_state.current_state][node->event](node);
-    //puts("handle event");
 }
 
 

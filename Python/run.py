@@ -10,11 +10,11 @@ from pygtrie import StringTrie
 from typing import Tuple
 from concurrent.futures import ThreadPoolExecutor
 
-from DAL import RedisDB
-import config_parser
-from RAFTCmd import RAFTCmd
-import logger
-from cli_callback import init_trie_function_and_info
+from Moudles import RedisDB
+from Moudles import config_parser
+from Moudles import RAFTCmd
+from Moudles import logger
+from Callback_Functions import cli_callback
 import global_variables
 
 
@@ -30,12 +30,12 @@ def main():
     makedirs(logs_folder_path)
 
     logger.setting_up_logger("debug", "critical", common_logic_file_path)
-    config_dict = config_parser.get_config_variables(path.join("Configuration", "config.ini"))
+    config_dict = config_parser.get_config_variables(path.join(getcwd(),"Python","Configuration", "config.ini"))
     if config_dict["commandline"]["separator"] == '':
         config_dict["commandline"]["separator"] = ' '
 
     commands_trie, commands_info_trie, special_words_dict = \
-        init_trie_function_and_info(config_dict["commandline"]["separator"])
+        cli_callback.init_trie_function_and_info(config_dict["commandline"]["separator"])
     global_variables.raft_cmd_obj = RAFTCmd(commands_trie, commands_info_trie, special_words_dict)
     name_and_value_db_list = \
         [("config", {}), ("logs", [("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"),
