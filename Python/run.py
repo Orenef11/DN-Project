@@ -18,18 +18,6 @@ from cli_callback import init_trie_function_and_info
 import global_variables
 
 
-def xxx():
-    for i in range(20):
-        print(i)
-        sleep(0.5)
-
-
-def yyy():
-    for i in range(10):
-        print(i)
-        sleep(1)
-
-
 def main():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
           "Common Logic!!!!!\n"
@@ -56,31 +44,16 @@ def main():
     global_variables.redis_db_obj =\
         RedisDB(config_dict["raft"]["ip"], config_dict["raft"]["port"], name_and_value_db_list)
 
-    # import ctypes
-    # log_list = (ctypes.c_wchar_p * (1 + 2))()
-    # log_list1 = ["oren", "ido"]
-    # log_list[:-1] = log_list1
-    # log_list[-1] = None
-    # x = ctypes.cast(log_list, ctypes.POINTER(ctypes.c_wchar_p))
-    # print(x[3])
-    # exit()
-    #
-    # should be in Oren's main
     signal.signal(signal.SIGUSR1, signal.SIG_IGN)
     signal.signal(signal.SIGUSR2, signal.SIG_IGN)
-    #sudo docker run -d -p 7777:6379 redis
-    #redis should be running before python
+    
     with ThreadPoolExecutor(max_workers=2) as e:
-        e.submit(raft_thread.python_run_raft).done()
+        e.submit(python_run_raft).done()
         e.submit(global_variables.raft_cmd_obj.cmdloop).done()
 
-    # python_run_raft()
     print("exit successfully")
 
-    # with Pool() as p:
-    #     p.apply_async()
 
-    # raft_cmd_obj
 
 
 if __name__ == "__main__":
