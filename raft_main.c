@@ -139,6 +139,7 @@ int init_raft(char* raft_ip,int raft_port,int id,int members_num,int leader_time
     update_DB(DB_STATUS,COMMIT_INDEX, 0 );
     update_DB(DB_STATUS, LAST_APPLIED, 0);
     update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+    update_DB(DB_STATUS, TERM, 0);
 
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"init succeed",NO_VALUES,0);

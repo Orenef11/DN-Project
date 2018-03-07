@@ -48,16 +48,16 @@
 
 
 //db types
-#define DB_LOG "log db"
-#define DB_VAL "valuse db"
-#define DB_CONFIG "config db"
-#define DB_STATUS "status db"
+#define DB_LOG "logs"
+#define DB_VAL "values"
+#define DB_CONFIG "config"
+#define DB_STATUS "status"
 
 //redis STATUS  DB fields
 #define STATUS "status"
-#define LEADER_ID "leader id"
-#define LAST_APPLIED "last applied"
-#define COMMIT_INDEX "commit index"
+#define LEADER_ID "leader_id"
+#define LAST_APPLIED "applied_last_idx"
+#define COMMIT_INDEX "commit_idx"
 #define TERM "term"
 
 

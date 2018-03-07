@@ -28,7 +28,7 @@ def update_DB(db_flag, key, val):
     py_key = ctypes.string_at(key).decode("utf-8")
     py_val = ctypes.string_at(val).decode("utf-8")
     if global_variables.redis_db_obj.is_valid_command(py_db_flag, py_key):
-        global_variables.redis_db_obj.redis_db_obj[(py_db_flag, py_key)] = py_val
+        global_variables.redis_db_obj[(py_db_flag, py_key)] = py_val
         return 0
     return 1
 

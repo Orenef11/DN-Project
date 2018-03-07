@@ -39,7 +39,7 @@ def main():
     global_variables.raft_cmd_obj = RAFTCmd.RAFTCmd(commands_trie, commands_info_trie, special_words_dict)
     name_and_value_db_list = \
         [("config", {}), ("logs", []), ("values", {}),
-         ("status", {"status": "follower", "leader_id": -1, "applied_last_idx": -1, "commit_idx": -1})]
+         ("status", {"status": "follower", "leader_id": -1, "applied_last_idx": -1, "commit_idx": -1,"term":-1})]
     global_variables.redis_db_obj =\
         RedisDB.RedisDB(config_dict["raft"]["ip"], config_dict["raft"]["port"], name_and_value_db_list)
 
