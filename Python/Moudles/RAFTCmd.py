@@ -2,6 +2,7 @@ from cmd import Cmd
 from pygtrie import StringTrie
 from typing import Tuple
 from colorama import Style, Fore
+import os, signal
 from global_variables import UNSUCESS_COMMAND_MSG
 
 
@@ -45,18 +46,22 @@ class RAFTCmd(Cmd):
         [print("{}. - {}".format(idx + 1, func)) for idx, func in enumerate(self.__commands_trie.keys())]
 
     def do_EOF(self, *args) -> bool:
+        os.kill(os.getpid(), signal.SIG_IGN)
         self.__warning_msg("Close the RAFT command line")
         return True
 
     def do_close(self, *args) -> bool:
+        os.kill(os.getpid(), signal.SIG_IGN)
         self.__warning_msg("Close the RAFT command line")
         return True
 
     def do_exit(self, *args) -> bool:
+        os.kill(os.getpid(), signal.SIG_IGN)
         self.__warning_msg("Close the RAFT command line")
         return True
 
     def do_quit(self, *args) -> bool:
+        os.kill(os.getpid(), signal.SIG_IGN)
         self.__warning_msg("Close the RAFT command line")
         return True
 
