@@ -49,12 +49,12 @@ def get_log_by_diff(start, end):
 
 def write_to_logger(logger_level, logger_message):
     py_logger_message = "\n"+ctypes.string_at(logger_message).decode("utf-8")
-    levels = {0: logging.debug(py_logger_message),
-              1: logging.info(py_logger_message),
-              2: logging.warning(py_logger_message),
-              3: logging.error(py_logger_message),
-              4: logging.critical(py_logger_message)}
-    levels.get(logger_level, 'Logger level not exist ')
+    levels = {0: logging.debug,
+              1: logging.info,
+              2: logging.warning,
+              3: logging.error,
+              4: logging.critical}
+    levels.get(logger_level, logging.debug)(py_logger_message)
 
 def execute_log(log_id):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
