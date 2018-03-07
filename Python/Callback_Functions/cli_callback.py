@@ -1,7 +1,8 @@
 from pygtrie import StringTrie
 from typing import Tuple
 import global_variables
-from raft_thread import start_commit_process
+from Callback_Functions import raft_thread
+
 
 
 def __show_logs_all() -> bool:
@@ -133,9 +134,9 @@ def __add_new_entry(special_word: str, args: list) -> bool:
         else:
             log_id = len(global_variables.redis_db_obj["logs"])
             if special_word == "delete":
-                result = start_commit_process(log_id, special_word, args[0], None)
+                result = raft_thread.start_commit_process(log_id, special_word, args[0], None)
             else:
-                result = start_commit_process(log_id, special_word, args[0], args[1])
+                result = raft_thread.start_commit_process(log_id, special_word, args[0], args[1])
             if result:
                 print("command was successfully executed!")
             else:
