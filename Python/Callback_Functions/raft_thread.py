@@ -28,7 +28,7 @@ def update_DB(db_flag, key, val):
     py_key = ctypes.string_at(key).decode("utf-8")
     py_val = ctypes.string_at(val).decode("utf-8")
     if global_variables.redis_db_obj.is_valid_command(py_db_flag, py_key):
-        global_variables.redis_db_obj.redis_db_obj[py_db_flag][py_key] = py_val
+        global_variables.redis_db_obj.redis_db_obj[(py_db_flag, py_key)] = py_val
         return 0
     return 1
 
@@ -39,7 +39,7 @@ def get_log_by_diff(start, end):
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
             len(global_variables.redis_db_obj["logs"]) >= end:
         for entry in range(start, end + 1):
-            log_list.append(str.encode(','.join(global_variables.redis_db_obj["logs"][entry])))
+            log_list.append(str.encode(','.join(global_variables.redis_db_obj[("logs", entry)])))
 
         log_list[:-1] = log_list
         log_list[-1] = None
@@ -58,18 +58,17 @@ def write_to_logger(logger_level, logger_message):
 
 def execute_log(log_id):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
-        cmd = global_variables.redis_db_obj.redis_db_obj["logs"][log_id][0]
+        cmd = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)][0]
 
         if len(global_variables.redis_db_obj.redis_db_obj["logs"]) == log_id:
             if cmd == "add" or cmd == "edit":
-                key = global_variables.redis_db_obj.redis_db_obj["logs"][log_id][1]
-                val = global_variables.redis_db_obj.redis_db_obj["logs"][log_id][2]
-                global_variables.redis_db_obj.redis_db_obj["values"][key] = val
+                key, val = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)]
+                global_variables.redis_db_obj.redis_db_obj[("values", key)] = val
                 return 0
 
             elif cmd == "delete":
-                key = global_variables.redis_db_obj.redis_db_obj["logs"][log_id][1]
-                del global_variables.redis_db_obj.redis_db_obj["values"][key]
+                key = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)][1]
+                del global_variables.redis_db_obj.redis_db_obj[("values", key)]
                 return 0
 
             else:

@@ -118,7 +118,6 @@ def __show_system_status():
 #     return True
 
 def __add_new_entry(special_word: str, args: list) -> bool:
-    result = False
     if special_word in ["timer", "ip"]:
         if not (global_variables.redis_db_obj.is_valid_command("config", special_word)):
             print(global_variables.UNKNOW_VAR_REDIS_MSG.format(special_word, "config"))
@@ -126,22 +125,25 @@ def __add_new_entry(special_word: str, args: list) -> bool:
             <= global_variables.HIGH_RANGE_TIMER) or special_word == "ip":
             global_variables.redis_db_obj["config"][special_word] = args[0]
 
-    if not global_variables.redis_db_obj["status"]["status"] == "leader":
-        print(global_variables.PERMISSION_DENIED)
-    else:
-        if not (global_variables.redis_db_obj.is_valid_command("values", args[0])):
-            print(global_variables.UNKNOW_VAR_REDIS_MSG.format(args[0], "values"))
+    elif special_word in ["add", "edit", "delete"]:
+        if not global_variables.redis_db_obj["status"]["status"] == "leader":
+            print(global_variables.PERMISSION_DENIED)
+        # elif not (global_variables.redis_db_obj.is_valid_command("values", None)):
+        #     print(global_variables.UNKNOW_VAR_REDIS_MSG.format(args[0], "values"))
         else:
             log_id = len(global_variables.redis_db_obj["logs"])
-            if special_word == "delete":
-                result = raft_thread.start_commit_process(log_id, special_word, args[0], None)
-            else:
-                result = raft_thread.start_commit_process(log_id, special_word, args[0], args[1])
+            if len(args) == 1:
+                args.append(None)
+
+            result = raft_thread.start_commit_process(log_id, special_word, args[0], args[1])
             if result:
                 print("command was successfully executed!")
             else:
                 print("Oh no! something went wrong... your command was not executed.")
+    else:
+        return False
     return True
+
 
 def init_trie_function_and_info(separator: str) -> Tuple[StringTrie, StringTrie, dict]:
     if len(separator) != 1:

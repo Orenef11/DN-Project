@@ -30,7 +30,7 @@ def main():
     makedirs(logs_folder_path)
 
     logger.setting_up_logger("debug", "critical", common_logic_file_path)
-    config_dict = config_parser.get_config_variables(path.join(getcwd(),"Python","Configuration", "config.ini"))
+    config_dict = config_parser.get_config_variables(path.join(getcwd(), "Configuration", "config.ini"))
     if config_dict["commandline"]["separator"] == '':
         config_dict["commandline"]["separator"] = ' '
 
@@ -38,12 +38,14 @@ def main():
         cli_callback.init_trie_function_and_info(config_dict["commandline"]["separator"])
     global_variables.raft_cmd_obj = RAFTCmd.RAFTCmd(commands_trie, commands_info_trie, special_words_dict)
     name_and_value_db_list = \
-        [("config", {}), ("logs", [("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"),
-                                   ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren")]), ("values", {}),
-         ("status", {"status": "leader", "leader_id": 2, "applied_last_idx": -1, "commit_idx": -1})]
+        [("config", {}), ("logs", []), ("values", {}),
+         ("status", {"status": "follower", "leader_id": -1, "applied_last_idx": -1, "commit_idx": -1})]
     global_variables.redis_db_obj =\
         RedisDB.RedisDB(config_dict["raft"]["ip"], config_dict["raft"]["port"], name_and_value_db_list)
 
+    #print(global_variables.redis_db_obj["logs"][-1][0])
+    #global_variables.redis_db_obj[("logs", -1)] = ("add", 22)
+    #print(global_variables.redis_db_obj["logs"][-1][0])
     signal.signal(signal.SIGUSR1, signal.SIG_IGN)
     signal.signal(signal.SIGUSR2, signal.SIG_IGN)
     

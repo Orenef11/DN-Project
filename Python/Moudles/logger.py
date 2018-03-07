@@ -32,14 +32,14 @@ def setting_up_logger(file_logging_level, console_logging_level, file_path):
     logging.basicConfig(level=LEVELS[file_logging_level], format=format_logging, datefmt='%d/%m/%Y %I:%M:%S %p',
                         filename=file_path, filemode=MODE)
     # define a Handler which writes INFO messages or higher to the sys.stderr
-    # console = logging.StreamHandler()
-    # console.setLevel(LEVELS[console_logging_level])
-    # # set a format which is simpler for console use
-    # formatter = logging.Formatter(format_logging)
-    # # tell the handler to use this format
-    # console.setFormatter(formatter)
-    # # add the handler to the root logger
-    # logging.getLogger('').addHandler(console)
+    console = logging.StreamHandler()
+    console.setLevel(LEVELS[console_logging_level])
+    # set a format which is simpler for console use
+    formatter = logging.Formatter(format_logging)
+    # tell the handler to use this format
+    console.setFormatter(formatter)
+    # add the handler to the root logger
+    logging.getLogger('').addHandler(console)
 
     if create_log_file:
         logging.info(SPACE + "Create '{0}' folder in {1} path".format(folder_path, getcwd()))

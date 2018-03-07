@@ -22,7 +22,7 @@ class RedisDB(MutableMapping):
 
     def __setitem__(self, key, value):
         if type(key) is tuple or type(key) is list:
-            keys_tuple = tuple(sub_key.lower() for sub_key in key)
+            keys_tuple = tuple(sub_key.lower() if type(sub_key) is True else sub_key for sub_key in key)
             sub_dict_temp = loads(self.__db_data[dumps(keys_tuple[0])])
             temp = sub_dict_temp
             for sub_key in keys_tuple[1: -1]:
