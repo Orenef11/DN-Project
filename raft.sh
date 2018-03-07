@@ -2,7 +2,7 @@
 
 #create raft.so file
 echo 'compile C code'
-gcc -shared -o ./C/Python/Callback_Functions/raft.so -fPIC ./*.c ./C/Code/*.c
+gcc -shared -o ./raft.so -fPIC ./*.c ./C/Code/*.c
 
 #run redis
 echo 'open Redis server'

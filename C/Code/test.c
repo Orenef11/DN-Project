@@ -2,20 +2,14 @@
 
 #if MAIN_TEST == 1
 
-int logger_fd ;
-
 
 void init_logger()
 {
-	logger_fd = open(LOGGER_FILE,O_WRONLY | O_CREAT | O_TRUNC | O_SYNC, 0660);
-	sharedRaftData.logger_fd = logger_fd;
 }
 
 
 void _test_write_to_logger(int logger_level,char * logger_info)
 {
-	write(logger_fd,logger_info,strlen(logger_info));
-	fsync(logger_fd);
 }
 
 void _test_add_to_log_DB(int log_id,char* cmd,char* key,char* value)

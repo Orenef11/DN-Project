@@ -36,19 +36,19 @@ def main():
 
     commands_trie, commands_info_trie, special_words_dict = \
         cli_callback.init_trie_function_and_info(config_dict["commandline"]["separator"])
-    global_variables.raft_cmd_obj = RAFTCmd(commands_trie, commands_info_trie, special_words_dict)
+    global_variables.raft_cmd_obj = RAFTCmd.RAFTCmd(commands_trie, commands_info_trie, special_words_dict)
     name_and_value_db_list = \
         [("config", {}), ("logs", [("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"),
                                    ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren"), ("Delete", "Oren")]), ("values", {}),
          ("status", {"status": "leader", "leader_id": 2, "applied_last_idx": -1, "commit_idx": -1})]
     global_variables.redis_db_obj =\
-        RedisDB(config_dict["raft"]["ip"], config_dict["raft"]["port"], name_and_value_db_list)
+        RedisDB.RedisDB(config_dict["raft"]["ip"], config_dict["raft"]["port"], name_and_value_db_list)
 
     signal.signal(signal.SIGUSR1, signal.SIG_IGN)
     signal.signal(signal.SIGUSR2, signal.SIG_IGN)
     
     with ThreadPoolExecutor(max_workers=2) as e:
-        e.submit(python_run_raft).done()
+        e.submit(raft_thread.python_run_raft).done()
         e.submit(global_variables.raft_cmd_obj.cmdloop).done()
 
     print("exit successfully")
