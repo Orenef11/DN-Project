@@ -15,7 +15,7 @@
 #include "logger.h"
 //IMPORTANT!!! should be 1 if we are in DEBOG_MODE
 ///////////////////////////////////////////
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
 //////////////////////////////////////////
 //#define LEADER
 //#define CANDIDATE

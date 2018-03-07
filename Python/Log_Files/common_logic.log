@@ -1,28 +1,28 @@
-07/03/2018 05:50:09 PM	[raft_thread.py write_to_logger 52]  945 root [DEBUG] 
+07/03/2018 06:07:58 PM	[raft_thread.py write_to_logger 52]  870 root [DEBUG] 
 FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
 MESSAGE:clearing queue
 VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-07/03/2018 05:50:09 PM	[raft_thread.py write_to_logger 53]  945 root [INFO ] 
+07/03/2018 06:07:58 PM	[raft_thread.py write_to_logger 53]  870 root [INFO ] 
 FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
 MESSAGE:clearing queue
 VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-07/03/2018 05:50:09 PM	[raft_thread.py write_to_logger 54]  945 root [WARNI] 
+07/03/2018 06:07:58 PM	[raft_thread.py write_to_logger 54]  871 root [WARNI] 
 FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
 MESSAGE:clearing queue
 VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-07/03/2018 05:50:09 PM	[raft_thread.py write_to_logger 55]  945 root [ERROR] 
+07/03/2018 06:07:58 PM	[raft_thread.py write_to_logger 55]  871 root [ERROR] 
 FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
 MESSAGE:clearing queue
 VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-07/03/2018 05:50:09 PM	[raft_thread.py write_to_logger 56]  945 root [CRITI] 
+07/03/2018 06:07:58 PM	[raft_thread.py write_to_logger 56]  871 root [CRITI] 
 FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
 MESSAGE:clearing queue
 VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 

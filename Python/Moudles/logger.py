@@ -39,7 +39,7 @@ def setting_up_logger(file_logging_level, console_logging_level, file_path):
     # tell the handler to use this format
     console.setFormatter(formatter)
     # add the handler to the root logger
-    logging.getLogger('').addHandler(console)
+    #logging.getLogger('').addHandler(console)
 
     if create_log_file:
         logging.info(SPACE + "Create '{0}' folder in {1} path".format(folder_path, getcwd()))

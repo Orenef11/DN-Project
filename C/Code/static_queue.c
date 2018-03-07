@@ -94,8 +94,6 @@ void pop_queue(Queue_node_data *ret)
 
 void clear_queue()
 {
-	WRITE_TO_LOGGER(INFO_LEVEL,"clearing queue",INT_VALUES,2,
-		LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.current_state));
     init_raft_queue();
 }
 

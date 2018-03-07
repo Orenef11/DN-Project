@@ -176,7 +176,6 @@ def python_run_raft():
     # print(type(words))
     # return words
 
-
     run_raft(b"224.1.1.1", 6060, 1, 2, 1000, c_set_callback_funcs)
 #
 # if __name__ == '__main__':
