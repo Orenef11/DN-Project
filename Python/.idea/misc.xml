@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5 (Python)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5 virtualenv at ~/Desktop/DN-Project/Python/venv" project-jdk-type="Python SDK" />
+>>>>>>> f8828a40ddf4f5c4bf23c7e12352a21fdc08f0ac
 </project>

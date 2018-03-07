@@ -2,6 +2,7 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+<<<<<<< HEAD
       <sourceFolder url="file://$MODULE_DIR$/Moudles" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Callback_Functions" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
@@ -12,5 +13,15 @@
   <component name="TestRunnerService">
     <option name="projectConfiguration" value="py.test" />
     <option name="PROJECT_TEST_RUNNER" value="py.test" />
+=======
+      <sourceFolder url="file://$MODULE_DIR$/Callback_Functions" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Moudles" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
+>>>>>>> f8828a40ddf4f5c4bf23c7e12352a21fdc08f0ac
   </component>
 </module>
