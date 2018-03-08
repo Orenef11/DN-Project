@@ -168,7 +168,7 @@ def start_commit_process(log_id, cmd, key, val):
 # -----------------------------------------------------------------------------------------
 
 def python_run_raft():
-    run_raft(b"224.1.1.1", 6060, 1, 2, 1000, c_set_callback_funcs)
+    run_raft(b"224.1.1.1", 6060, 2, 2, 1000, c_set_callback_funcs)
 #
 # if __name__ == '__main__':
 #     main()

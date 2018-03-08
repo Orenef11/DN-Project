@@ -138,6 +138,8 @@ int get_raft_message(void *message_memory_obj)
                   (struct sockaddr *) &multicastMessage.multicast_listener.addr,
                   &addrlen)) < 0)
     {
+
+        WRITE_TO_LOGGER(FATAL_LEVEL,"failed to read message",INT_VALUES,1,LOG(errno));
         return errno;
     }
 
@@ -145,6 +147,7 @@ int get_raft_message(void *message_memory_obj)
                   (struct sockaddr *) &multicastMessage.multicast_listener.addr,
                   &addrlen)) < 0)
     {
+        WRITE_TO_LOGGER(FATAL_LEVEL,"failed to read message",INT_VALUES,1,LOG(errno));
         return errno;
     }
 

@@ -56,7 +56,10 @@ int exit_raft(int exit_rv){
 		puts(strerror(exit_rv));
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"ERROR Message",CHARS_VALUES,1,LOG(strerror(errno)));
 	}
-	close(sharedRaftData.logger_fd);
+	//close(sharedRaftData.logger_fd);
+    close(multicastMessage.multicast_sender.fd);
+    close(multicastMessage.multicast_listener.fd);
+
 #endif
 	exit(exit_rv);
 }

@@ -109,6 +109,7 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
 
     msg_data_memory->event = event;
     msg_data_memory->term = sharedRaftData.raft_state.term;
+    msg_data_memory->message_sent_to =0;
     if(event == KEEP_ALIVE_HB || event == COMMIT_OK || event == SET_LOG_RES)
     {
         //msg_data is union so the filed is shared between the 3 struct

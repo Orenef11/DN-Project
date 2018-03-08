@@ -108,23 +108,30 @@ int is_relevant_for_candidate(Queue_node_data * node_message)
     return 1;
 }
 
+int check_if_my_message(int sent_to){
+    if(sent_to)
+    {
+#if DEBUG_MODE == 1
+        if(sent_to == sharedRaftData.raft_state.server_id)
+        {
+            WRITE_TO_LOGGER(INFO_LEVEL,"This is my msg- ignore!", NO_VALUES,0);
+        }
+#endif
+        return sent_to == sharedRaftData.raft_state.server_id;
+    }
 
+    return 1;
+}
 
 int is_relevant_message(Queue_node_data * node_message)
 {
-    int is_relevant = relevant_event_bits[sharedRaftData.raft_state.current_state][node_message->event];
-	int is_relevant_term = node_message->term >= sharedRaftData.raft_state.term;
-	int is_not_my_message = node_message->message_sent_by != sharedRaftData.raft_state.server_id;
-
-    if(!is_not_my_message)
-    {
-
-#if DEBUG_MODE == 1
-        WRITE_TO_LOGGER(INFO_LEVEL,"This is my msg- ignore!", NO_VALUES,0);
-#endif
-
+    int is_my_message = check_if_my_message(node_message->message_sent_by);
+    if(!is_my_message){
         return 0;
     }
+
+    int is_relevant = relevant_event_bits[sharedRaftData.raft_state.current_state][node_message->event];
+	int is_relevant_term = node_message->term >= sharedRaftData.raft_state.term;
 
     if(!is_relevant_term)
     {
@@ -154,9 +161,9 @@ int is_relevant_message(Queue_node_data * node_message)
 				is_relevant_rv = is_relevant & is_relevant_term;
 	}
 
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"check if msg is relevant",INT_VALUES,3,
+	WRITE_TO_LOGGER(DEBUG_LEVEL,"check if msg is relevant",INT_VALUES,4,
 		LOG(sharedRaftData.raft_state.current_state),LOG(node_message->event),
-		LOG(is_relevant_rv));
+		LOG(is_relevant_rv), LOG(node_message->term));
 	return is_relevant_rv;
 
 #else
