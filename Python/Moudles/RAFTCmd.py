@@ -143,6 +143,7 @@ class RAFTCmd(Cmd):
 
     def default(self, command: str) -> None:
         command = command.lower()
+        command_copy = command
 
         if '?' == command[-1]:
             command, is_command_complete_flag = command[:-1].strip(), True
@@ -169,6 +170,52 @@ class RAFTCmd(Cmd):
                     is_command_success_flag = True
 
             if not is_command_success_flag:
-                self.__error_msg("Unrecognized command")
+                if command_copy.find("fuck") != -1:
+                    x = "   ________   __    __    _______   __    __ \n" \
+                        "  |	       | |  |  |  |  /	     | |  |  /  / \n" \
+                        "  |  ------' |  |  |  |  |   ____| |  | /  / \n" \
+                        "  |  |___    |  |  |  |  |  |	   |  |/  / \n" \
+                        "  |   ___|   |  |  |  |  |  |	   |	 / \n" \
+                        "  |  |       |  |  |  |  |  |____  |	 \ \n" \
+                        "  |  |       |   --   |  |	     | |  |\  \ \n" \
+                        "  |__|       \________/   \______| |__| \__\ \n" \
+                        "                                              \n" \
+                        "                                              \n" \
+                        "                    _____                     \n" \
+                        "                   | |  | |                   \n" \
+                        "                   | \__/ |                    \n" \
+                        "                   |	  |                    \n" \
+                        "                   |	  |                    \n" \
+                        "                   |	  |                    \n" \
+                        "                   |	  |                    \n" \
+                        "                   |	  |                    \n" \
+                        "                   |	  |                     \n" \
+                        "               ____|      |_____                 \n" \
+                        "          ___ /    |	  |	    \                   \n" \
+                        "        /    |     |	  |	    | \                 \n" \
+                        "        |    |     |	  |	    |  |                \n" \
+                        "        |    |     |	  |	    |  |                \n" \
+                        "        |	   	   |      |     |  |                \n" \
+                        "        |			            |  |                \n" \
+                        "        |			            |  /                \n" \
+                        "        |			              /                 \n" \
+                        "         \		                /                   \n" \
+                        "          \		               /                    \n" \
+                        "           |		          |                     \n" \
+                        "           |		          |                     \n" \
+                        "                                                   \n" \
+                        "                                                   \n" \
+                        "                    ____     ____  _________	___	    ___     \n" \
+                        "                    \   \   /	/ /	        \  |   |   |   |    \n" \
+                        "                     \   \ /   /  |  _____   | |   |   |   |    \n" \
+                        "                      \       /   | |	   | | |   |   |   |    \n" \
+                        "                       \     /    | |	   | | |   |   |   |    \n" \
+                        "                        |   |	  | |	   | | |   |   |   |    \n" \
+                        "                        |   |	  | |_____ | | |   |___|   |    \n" \
+                        "                        |   |	  |	         | |	       |    \n" \
+                        "                        |___|	   \_________/ \___________/    \n"
+                    print(x)
+                else:
+                    self.__error_msg("Unrecognized command")
 
 

@@ -2,14 +2,8 @@ from redis import Redis
 from collections import MutableMapping
 from pickle import loads, dumps
 
+
 class RedisDB(MutableMapping):
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(RedisDB, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
-
     def __init__(self,  host: str, port: int, db_name_and_obj_list: list):
         self.__db_data = Redis(host=host, port=port)
         self.__db_data.flushdb()

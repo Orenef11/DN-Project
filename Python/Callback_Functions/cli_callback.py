@@ -1,8 +1,7 @@
 from pygtrie import StringTrie
 from typing import Tuple
 import global_variables
-from Callback_Functions import raft_thread
-
+from Callback_Functions import raft_python_callback
 
 
 def __show_logs_all() -> bool:
@@ -81,48 +80,12 @@ def __show_system_status():
     print("Show system status")
 
 
-# def __add_new_entry(special_word, args) -> bool:
-#
-#     if len(args) == 1:
-#         if special_word in ["timer", "ip"]:
-#             if not (global_variables.redis_db_obj.is_valid_command("config", special_word)):
-#                 print(global_variables.UNKNOW_VAR_REDIS_MSG.format(special_word, "config"))
-#             if (special_word == "timer" and global_variables.LOW_RANGE_TIMER <= args[0]
-#                     <= global_variables.HIGH_RANGE_TIMER) or special_word == "ip":
-#                 global_variables.redis_db_obj["config"][special_word] = args[0]
-#
-#         elif special_word == "delete":
-#             if not global_variables.redis_db_obj["status"]["status"] == "leader":
-#                 print(global_variables.PERMISSION_DENIED)
-#             else:
-#                 if not (global_variables.redis_db_obj.is_valid_command("values", args[0])):
-#                     print(global_variables.UNKNOW_VAR_REDIS_MSG.format(special_word, "config"))
-#                 else:
-#                     del global_variables.redis_db_obj["values"][args[0]]
-#                     global_variables.redis_db_obj["logs"].append(("delete", args[0]))
-#     elif len(args) == 2 and special_word in ["add", "edit"]:
-#         # if redis_db_obj.is_valid_command("status", "status" or
-#         #         (redis_db_obj.is_valid_command("values", None) and redis_db_obj.is_valid_command("logs", None))):
-#         print(global_variables.redis_db_obj["status"]["status"])
-#         if global_variables.redis_db_obj.is_valid_command("status", "status") and \
-#                 global_variables.redis_db_obj["status"]["status"] == "leader":
-#             print(global_variables.redis_db_obj["values"])
-#             global_variables.redis_db_obj[("values", args[0])] = args[1]
-#             print(global_variables.redis_db_obj["values"])
-#             global_variables.redis_db_obj["logs"].append((special_word, args[0], args[1]))
-#         else:
-#             print(global_variables.PERMISSION_DENIED)
-#     else:
-#         return False
-#
-#     return True
-
 def __add_new_entry(special_word: str, args: list) -> bool:
     if special_word in ["timer", "ip"]:
         if not (global_variables.redis_db_obj.is_valid_command("config", special_word)):
             print(global_variables.UNKNOW_VAR_REDIS_MSG.format(special_word, "config"))
         if (special_word == "timer" and global_variables.LOW_RANGE_TIMER <= args[0]
-            <= global_variables.HIGH_RANGE_TIMER) or special_word == "ip":
+                <= global_variables.HIGH_RANGE_TIMER) or special_word == "ip":
             global_variables.redis_db_obj["config"][special_word] = args[0]
 
     elif special_word in ["add", "edit", "delete"]:
@@ -135,7 +98,7 @@ def __add_new_entry(special_word: str, args: list) -> bool:
             if len(args) == 1:
                 args.append(None)
 
-            result = raft_thread.start_commit_process(log_id, special_word, args[0], args[1])
+            result = raft_python_callback.start_commit_process(log_id, special_word, args[0], args[1])
             if result:
                 print("command was successfully executed!")
             else:
@@ -145,7 +108,7 @@ def __add_new_entry(special_word: str, args: list) -> bool:
     return True
 
 
-def init_trie_function_and_info(separator: str) -> Tuple[StringTrie, StringTrie, dict]:
+def init_trie_functions_and_info(separator: str) -> Tuple[StringTrie, StringTrie, dict]:
     if len(separator) != 1:
         raise ValueError("SeparatorError: the separator must be char and not string!")
 

@@ -58,6 +58,7 @@ def __config_parser(config_file_path, config_variables_type_dict):
 def get_config_variables(config_file_path):
     config_variables_type_dict = {"Multicast": [str, int],
                                   "CommandLine": [str, str],
-                                  "RAFT": [str, int, int, float],
+                                  "Redis": [str, int],
+                                  "RAFT": [int, int, int],
                                   "Debug": [bool]}
     return __config_parser(config_file_path, config_variables_type_dict)

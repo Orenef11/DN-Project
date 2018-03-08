@@ -11,11 +11,11 @@ _raft = ctypes.CDLL(path.join(getcwd(), "raft.so"))
 
 def add_to_log_DB(log_id, command, key, val):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
-        if len(global_variables.redis_db_obj.redis_db_obj["logs"]) == log_id:
+        if len(global_variables.redis_db_obj["logs"]) == log_id:
             py_cmd = ctypes.string_at(command).decode("utf-8")
             py_key = ctypes.string_at(key).decode("utf-8")
             py_val = ctypes.string_at(val).decode("utf-8")
-            global_variables.redis_db_obj.redis_db_obj["logs"].append((py_cmd, py_key, py_val))
+            global_variables.redis_db_obj["logs"].append((py_cmd, py_key, py_val))
             return 0
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
@@ -27,24 +27,27 @@ def update_DB(db_flag, key, val):
     py_db_flag = ctypes.string_at(db_flag).decode("utf-8")
     py_key = ctypes.string_at(key).decode("utf-8")
     py_val = ctypes.string_at(val).decode("utf-8")
-    if global_variables.redis_db_obj.is_valid_command(py_db_flag, py_key):
+    if global_variables.redis_db_obj.is_valid_command(py_db_flag, None):
         global_variables.redis_db_obj[(py_db_flag, py_key)] = py_val
         return 0
     return 1
 
 
 def get_log_by_diff(start, end):
-    #we need +2. 1 to get real size of the list and 1 mode for null pointer
-    log_list = (ctypes.c_wchar_p * (end - start + 2))()
+    # we need +2. 1 to get real size of the list and 1 mode for null pointer
+    c_log_array, log_list = (ctypes.c_wchar_p * (end - start + 1))(), []
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
             len(global_variables.redis_db_obj["logs"]) >= end:
-        for entry in range(start, end + 1):
-            log_list.append(str.encode(','.join(global_variables.redis_db_obj[("logs", entry)])))
+        for entry in range(start, end):
 
-        log_list[:-1] = log_list
-        log_list[-1] = None
+            entry_data = [str(value) if type(value) is not str else value for value in
+                          global_variables.redis_db_obj["logs"][entry]]
+            log_list.append(','.join(entry_data))
+
+        c_log_array[:-1] = log_list
+        c_log_array[-1] = None
     # log_list.append(ctypes.c_char_p)
-    return log_list[0]
+    return c_log_array[0]
 
 
 def write_to_logger(logger_level, logger_message):
@@ -56,19 +59,21 @@ def write_to_logger(logger_level, logger_message):
               4: logging.critical}
     levels.get(logger_level, logging.debug)(py_logger_message)
 
+
 def execute_log(log_id):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
-        cmd = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)][0]
+        if len(global_variables.redis_db_obj["logs"]) == log_id:
+            log_id -= 1
+            cmd = global_variables.redis_db_obj["logs"][log_id][0]
 
-        if len(global_variables.redis_db_obj.redis_db_obj["logs"]) == log_id:
-            if cmd == "add" or cmd == "edit":
-                key, val = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)]
-                global_variables.redis_db_obj.redis_db_obj[("values", key)] = val
+            if cmd in ["add", "edit"]:
+                key, val = global_variables.redis_db_obj["logs"][log_id][:2]
+                global_variables.redis_db_obj[("values", key)] = val
                 return 0
 
             elif cmd == "delete":
-                key = global_variables.redis_db_obj.redis_db_obj[("logs", log_id)][1]
-                del global_variables.redis_db_obj.redis_db_obj[("values", key)]
+                key = global_variables.redis_db_obj["logs"][log_id][1]
+                del global_variables.redis_db_obj["values"][key]
                 return 0
 
             else:
@@ -78,8 +83,10 @@ def execute_log(log_id):
 
     return 1
 
+
 def clear_log_from_log_id(log_id):
     pass
+
 
 def set_callback_funcs():
     global _raft
@@ -124,14 +131,14 @@ callback_type7 = ctypes.CFUNCTYPE(ctypes.c_void_p)
 c_set_callback_funcs = callback_type7(set_callback_funcs)
 
 
-def run_raft(raft_ip, raft_port, server_id, members_num, leader_timeout, funcs):
-    global _raft
+def python_run_raft(raft_ip: bytes, raft_port: int, server_id: int, members_num: int, leader_timeout: int):
+    global _raft, c_set_callback_funcs
     return _raft.run_raft(ctypes.c_char_p(raft_ip),
                           ctypes.c_int(raft_port),
                           ctypes.c_int(server_id),
                           ctypes.c_int(members_num),
                           ctypes.c_int(leader_timeout),
-                            funcs)
+                          c_set_callback_funcs)
 
 
 # -----------------------------------------------------------------------------------------
@@ -139,7 +146,6 @@ def run_raft(raft_ip, raft_port, server_id, members_num, leader_timeout, funcs):
 
 def sig_handler(signum, frame):
     global commit_flag
-    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     print(signum)
     if signum == 10:
         commit_flag = True
@@ -149,18 +155,16 @@ def sig_handler(signum, frame):
 
 
 def start_commit_process(log_id, cmd, key, val):
-    global _raft
     global commit_flag
     commit_flag = False
 
-    print("python in func!!!")
-    #if len(global_variables.redis_db_obj.redis_db_obj["logs"]) == log_id:
-    _raft.start_commit_process(ctypes.c_int(log_id),
-                               ctypes.c_char_p(cmd),
-                               ctypes.c_char_p(key),
-                               ctypes.c_char_p(val))
+    if len(global_variables.redis_db_obj["logs"]) == log_id:
+        _raft.start_commit_process(ctypes.c_int(log_id),
+                                   ctypes.POINTER(ctypes.c_char(cmd)),
+                                   ctypes.POINTER(ctypes.c_char(key)),
+                                   ctypes.POINTER(ctypes.c_char(val)))
 
-    #signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
+    signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
     if commit_flag:
         return True
@@ -169,8 +173,8 @@ def start_commit_process(log_id, cmd, key, val):
 
 # -----------------------------------------------------------------------------------------
 
-def python_run_raft():
-    run_raft(b"224.1.1.1", 6060, 1, 2, 1000, c_set_callback_funcs)
+# def python_run_raft():
+#     run_raft(b"224.1.1.1", 6060, 1, 2, 1000, c_set_callback_funcs)
 #
 # if __name__ == '__main__':
 #     main()
