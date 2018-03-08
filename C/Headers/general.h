@@ -33,8 +33,8 @@
 #define LEADER_STATE_VALUE "leader"
 
 #if DEBUG_MODE == 1
-	#define MAX_RAFT_TIMEOUT 3000
-	#define MIN_RAFT_TIMEOUT 1000
+	#define MAX_RAFT_TIMEOUT 800000
+	#define MIN_RAFT_TIMEOUT 400000
 #else
 	#define MAX_RAFT_TIMEOUT 300
 	#define MIN_RAFT_TIMEOUT 150
@@ -45,7 +45,6 @@
 #define PYTHON_DELIMITER ","
 
 #define MILISEC_CONVERT 1000
-
 
 
 //db types
@@ -72,7 +71,6 @@
 #define REDIS_PORT "redis port"
 
 
-
 #define STATE_AMMOUNT 3
 #define EVENT_AMMOUNT 10
 
@@ -86,7 +84,7 @@ typedef struct State{
     int term;
     int last_log_index;
     int last_commit_index;
-    char current_state; //F/C/L //TBD- why not enum?????
+    char current_state;
     int members_amount;
     int server_id;
 
@@ -105,11 +103,6 @@ typedef struct State{
     int wakeup_counter;
 
     int leader_id;
-
-    //all 10 options
-    eventType event_type;
-    //not nedded for now
-    //State (*hendler)();
 }state;
 
 
@@ -142,19 +135,9 @@ typedef struct Commit_ok{
 }commit_ok;
 
 typedef struct Set_log_res{
+    //its not uses because we set different struct from the msg_data union
     int to_be_commit_index;
 }set_log_res;
-/*
-typedef struct Vote{
-    int message_sent_by;
-}vote;
-
-typedef struct Req_for_vote{
-    int message_sent_by;
-}req_for_vote;
-
-*/
-
 
 #define CONST_QUEUE_MSG_SIZE (sizeof(((Queue_node_data *)0)->event) +sizeof(((Queue_node_data *)0)->term) +\
 				sizeof(((Queue_node_data *)0)->message_sent_by) +sizeof(((Queue_node_data *)0)->message_sent_to))
@@ -171,9 +154,6 @@ typedef struct queue_node_data{
         sync_res sync_res_msg;
         commit_ok commit_ok_msg;
         set_log_res set_log_res_msg;
-        //vote vote_msg;
-        //req_for_vote req_for_vote_msg;
-
     }msg_data;
 
 }Queue_node_data;
@@ -194,9 +174,11 @@ typedef struct Python_function{
 }python_function;
 
 
-typedef struct Shared_raft_data{ //contains all the shared structures needed
-
-    struct{
+//contains all the shared structures needed
+typedef struct Shared_raft_data
+{
+    struct
+    {
         Queue_node_data queue[QUEUE_SIZE];
         int queue_start;
         int queue_end;
@@ -207,16 +189,15 @@ typedef struct Shared_raft_data{ //contains all the shared structures needed
 
     state raft_state;//my state
     python_function python_functions;
-    configuration raft_configuration;//raft configure - leader time out,
+    configuration raft_configuration;//raft configure - leader time out
+
 #if DEBUG_MODE ==1 
 	int logger_fd;
 #endif
+
 }shared_raft_data;
 
-
-
-shared_raft_data sharedRaftData;
-
-
+extern int local_term;
+extern shared_raft_data sharedRaftData;
 
 #endif //RAFT_PROJECT_GENERAL_H

@@ -1,17 +1,17 @@
 
 #include "../Headers/leader_handlers.h"
 
-///leader:
 
-//ido relevant fileds from Node_queue - byte term, last_log_id, sender_id [difficulte = 3 ]
 void leader_sync_req_handler(Queue_node_data *node)
 {
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"leader get sync request msg",INT_VALUES,5,
 			LOG(sharedRaftData.raft_state.last_commit_index),LOG(sharedRaftData.raft_state.last_log_index),
 			LOG(node->msg_data.sync_req_msg.start_log_index),LOG(node->msg_data.sync_req_msg.last_log_id),
 			LOG(node->message_sent_by));
 #endif
+
     int start_diff_index = node->msg_data.sync_req_msg.start_log_index;
     int end_diff_index = node->msg_data.sync_req_msg.last_log_id;
     int current_index = start_diff_index;
@@ -24,20 +24,25 @@ void leader_sync_req_handler(Queue_node_data *node)
     //python return null at the end of the list
     while(*diff){
         elem = strtok(*diff, PYTHON_DELIMITER);
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"first elemnt - command",CHARS_VALUES,1,
 			LOG(elem));
 #endif
+
         while(elem){
             strcpy(msg_pointer,elem);
             elem = strtok(NULL, PYTHON_DELIMITER);
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"message pointer and element key/value",CHARS_VALUES,2,
 			LOG(msg_pointer),LOG(elem));
 #endif
+
             msg_pointer+=MAX_ELEM_SIZE;
         }
 		node->msg_data.sync_res_msg.commit_id = current_index;
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send sync log msg",CHARS_VALUES,3,
 			LOG(node->msg_data.sync_res_msg.cmd),LOG(node->msg_data.sync_res_msg.key),
@@ -45,9 +50,11 @@ void leader_sync_req_handler(Queue_node_data *node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send sync log msg",INT_VALUES,2,
 			LOG(node->msg_data.sync_res_msg.commit_id),LOG(current_index));	
 #endif
+
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending sync response msg",NO_VALUES,0);
 #endif
+
         send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg));
         current_index++;
         diff++;

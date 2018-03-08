@@ -1,5 +1,7 @@
-
 #include "raft_main.h"
+
+shared_raft_data sharedRaftData;
+int local_term=0;
 
 
 //main.c
@@ -66,7 +68,7 @@ int exit_raft(int exit_rv){
 int signal_cnt =0;
 #endif
 void signal_handler(int sig){
-
+	//puts("signal");
 	if(sig == SIGINT){
 		exit_raft(0);
 	}
@@ -107,7 +109,7 @@ void set_raft_data(int id,int members_num,int leader_timeout,void(*set_callback_
     sharedRaftData.raft_state.members_amount         = members_num;
     sharedRaftData.raft_state.timeout                = calculate_raft_rand_timeout();
     sharedRaftData.raft_state.leader_id              = 0;
-    sharedRaftData.raft_state.term	             = 0;
+    sharedRaftData.raft_state.term                   = 0;
 
     //set sharedRaftData.raft_configuration
     sharedRaftData.raft_configuration.leader_timeout = leader_timeout;
@@ -135,6 +137,12 @@ int init_raft(char* raft_ip,int raft_port,int id,int members_num,int leader_time
     if((rv=init_sig_handler())){
 		exit_raft(rv);
     }
+    //INIT DB VALUES
+    update_DB(DB_STATUS,LEADER_ID, 0);
+    update_DB(DB_STATUS,COMMIT_INDEX, 0 );
+    update_DB(DB_STATUS, LAST_APPLIED, 0);
+    update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+    update_DB(DB_STATUS, TERM, 0);
 
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"init succeed",NO_VALUES,0);
@@ -155,6 +163,7 @@ void create_new_log_command(int log_id,char * cmd,char * key, char * value,Queue
 
 //main.c
 void start_commit_proccess(int log_id,char * cmd,char * key, char * value){
+	puts("11111111111111111dwedwdwdw");
     Queue_node_data new_node;
     create_new_log_command(log_id,cmd,key,value,&new_node);
     push_queue(&new_node);
