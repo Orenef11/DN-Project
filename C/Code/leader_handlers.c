@@ -18,7 +18,7 @@ void leader_sync_req_handler(Queue_node_data *node)
     char * msg_pointer, *elem;
 
     char *x =NULL;
-    x[0] = "T";
+    x[0] = 'T';
 
     /*
     char** diff = sharedRaftData.python_functions.get_log_by_diff(start_diff_index, end_diff_index);
@@ -29,7 +29,7 @@ void leader_sync_req_handler(Queue_node_data *node)
     //python return null at the end of the list
     while(*diff){
         elem = strtok(*diff, PYTHON_DELIMITER);
-*/
+
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"first elemnt - command",CHARS_VALUES,1,
 			LOG(elem));
@@ -64,6 +64,7 @@ void leader_sync_req_handler(Queue_node_data *node)
         current_index++;
         diff++;
     }
+     */
 }
 
 //ido term [difficulte = 1 ]

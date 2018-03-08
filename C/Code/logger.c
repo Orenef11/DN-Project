@@ -24,7 +24,7 @@ char * get_data_after_last_seperator(char * data,char seperator){
 
 
 //do not call this function directly - call WRITE_TO_LOGGER
-void add_logger_msg(void (*write_to_logger)(int logger_level,char* logger_info),int logger_level,const char * file,const char *func_name,const int line,
+int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),int logger_level,const char * file,const char *func_name,const int line,
 				const char* problem_desc, int msg_type,int args_num,...){
 	char logger_msg[MAX_LOGGER_MSG];
 	int loc=0,is_valid = MAX_LOGGER_MSG;
@@ -58,5 +58,5 @@ void add_logger_msg(void (*write_to_logger)(int logger_level,char* logger_info),
 	sprintf(logger_msg+loc+1,"-----------------------------\n");
 	logger_msg[loc+31]=0;
 	//puts(logger_msg);
-	write_to_logger(logger_level,logger_msg);
+	return write_to_logger(logger_level,logger_msg);
 }

@@ -91,7 +91,7 @@ def clear_log_from_log_id(log_id):
 
 def set_callback_funcs():
     global _raft
-    _raft.transfer_callback_function(callback_func1, callback_func2, callback_func3, callback_func4, callback_func5)
+    _raft.transfer_callback_function(callback_func1, callback_func2, callback_func3, callback_func4, callback_func5, callback_func6)
 
 
 # -----------------------------------------------------------------------------------------

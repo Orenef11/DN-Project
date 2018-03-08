@@ -18,7 +18,7 @@
 #define __WRITE_TO_LOGGER__(write_to_logger,logger_level,problem_desc,msg_type,args_num,...) ( \
 				add_logger_msg(write_to_logger,logger_level,__FILE__,__func__,__LINE__,problem_desc,msg_type,args_num,##__VA_ARGS__) )
 				
-void add_logger_msg(void (*write_to_logger)(int logger_level,char* logger_info),int logger_level,const char * file,const char *func_name,const int line,
+int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),int logger_level,const char * file,const char *func_name,const int line,
 				const char* problem_desc,int msg_type, int args_num,...);
 
 #endif
