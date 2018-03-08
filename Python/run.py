@@ -40,10 +40,7 @@ def main():
          ("status", {"status": "follower", "leader_id": -1, "applied_last_idx": -1, "commit_idx": -1,"term":-1})]
     global_variables.redis_db_obj = \
         RedisDB.RedisDB(config_dict["redis"]["ip"], config_dict["redis"]["port"], name_and_value_db_list)
-    import Callback_Functions.raft_python_callback as pyhon_callback
-    pyhon_callback.update_DB("values", "x", 10)
-    print(global_variables.redis_db_obj)
-    exit()
+    
     signal.signal(signal.SIGUSR1, signal.SIG_IGN)
     signal.signal(signal.SIGUSR2, signal.SIG_IGN)
 
