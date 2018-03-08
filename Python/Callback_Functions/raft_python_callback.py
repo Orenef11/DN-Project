@@ -10,12 +10,17 @@ _raft = ctypes.CDLL(path.join(getcwd(), "raft.so"))
 
 
 def add_to_log_DB(log_id, command, key, val):
+    print("entering add to log db!!!!!!!!!!!!!!!")
     if global_variables.redis_db_obj.is_valid_command("logs", None):
         if len(global_variables.redis_db_obj["logs"]) == log_id:
             py_cmd = ctypes.string_at(command).decode("utf-8")
             py_key = ctypes.string_at(key).decode("utf-8")
             py_val = ctypes.string_at(val).decode("utf-8")
+            print(py_cmd, type(py_cmd))
+            print(py_key, type(py_key))
+            print(py_val, type(py_val))
             global_variables.redis_db_obj["logs"].append((py_cmd, py_key, py_val))
+            print(global_variables.redis_db_obj["logs"])
             return 0
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
@@ -167,11 +172,12 @@ def start_commit_process(log_id, cmd, key, val):
                                    ctypes.c_char_p(str.encode(key)),
                                    ctypes.c_char_p(str.encode(str(val))))
 
-    signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
+    #signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
-    if commit_flag:
-        return True
-    return False
+    # if commit_flag:
+    #     return True
+    # return False
+    return True
 
 
 # -----------------------------------------------------------------------------------------

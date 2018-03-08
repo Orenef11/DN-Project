@@ -178,13 +178,13 @@ void  leader_send_log_hb_handler(Queue_node_data* node)
 			LOG(node->msg_data.set_log_hb_msg.cmd),LOG(node->msg_data.set_log_hb_msg.key),
 			LOG(node->msg_data.set_log_hb_msg.value));
 #endif
-    sharedRaftData.raft_state.last_log_index++;
-    sharedRaftData.raft_state.commit_counter++;//count himself for majority
-
     sharedRaftData.python_functions.add_to_log_DB(node->msg_data.python_send_log_hb_msg.log_index,
                                                   node->msg_data.python_send_log_hb_msg.cmd,
                                                   node->msg_data.python_send_log_hb_msg.key,
                                                   node->msg_data.python_send_log_hb_msg.value);
+
+    sharedRaftData.raft_state.last_log_index++;
+    sharedRaftData.raft_state.commit_counter++;//count himself for majority
 
     update_DB(DB_STATUS,LAST_APPLIED,sharedRaftData.raft_state.last_log_index);
 
