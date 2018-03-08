@@ -27,7 +27,7 @@ def main():
     makedirs(logs_folder_path)
 
     logger.setting_up_logger("debug", "critical", common_logic_file_path)
-    config_dict = config_parser.get_config_variables(path.join(getcwd(),"Configuration", "config.ini"))
+    config_dict = config_parser.get_config_variables(path.join(getcwd(), "Python", "Configuration", "config.ini"))
     if config_dict["commandline"]["separator"] == '':
         config_dict["commandline"]["separator"] = ' '
 
@@ -48,7 +48,7 @@ def main():
         e.submit(python_run_raft, config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
                  config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
                  config_dict["raft"]["leader_timeout"])
-        # e.submit(global_variables.raft_cmd_obj.cmdloop).done()
+        e.submit(global_variables.raft_cmd_obj.cmdloop).done()
 
     print("exit successfully")
 
