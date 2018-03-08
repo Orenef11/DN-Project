@@ -161,10 +161,6 @@ class RAFTCmd(Cmd):
             if special_word in self.__special_words_dict:
                 self.__error_msg("The command expects to receive '{}' arguments of the following types '{}'".format(
                     *self.__special_words_dict[special_word]))
-            else:
-                self.__commands_trie[command]()
-            # if not self.__commands_trie[command]():
-            #     self.__error_msg("The command was not executed!")
 
         else:
             has_valid_command_flag, command_args_list, special_word, command = self.__parser_and_run_command(command)
