@@ -166,12 +166,12 @@ typedef struct configuration{
 
 
 typedef struct Python_function{
-    void (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value);
-    void (*update_DB)(char * DB_flag,char * key,char* value);
-    void (*execute_log)(int last_log_index);
-    char** (*get_log_by_diff)(int from,int to);
-    void (*write_to_logger)(int logger_level,char* logger_info);
-    void (*clear_log_from_log_id)(int);
+    int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value);
+    int (*update_DB)(char * DB_flag,char * key,char* value);
+    char* (*get_log_by_diff)(int from,int to);
+    int (*write_to_logger)(int logger_level,char* logger_info);
+    int (*execute_log)(int last_log_index);
+    int (*clear_log_from_log_id)(int);
 }python_function;
 
 

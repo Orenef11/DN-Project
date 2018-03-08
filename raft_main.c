@@ -32,12 +32,12 @@ void* raft_manager(void * args){
 
 //c calls py func
 //set the callback function in the shared_raft_data struct
-void transfer_callback_function(void (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),
-							void (*update_DB)(char * DB_flag,char * key,char* value),
-                               char** (*get_log_by_diff)(int from,int to),
-							   void (*write_to_logger)(int logger_level,char * logger_info),
-							void (*execute_log)(int),
-							void (*clear_log_from_log_id)(int))
+void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),
+							int (*update_DB)(char * DB_flag,char * key,char* value),
+                               char* (*get_log_by_diff)(int from,int to),
+							   int (*write_to_logger)(int logger_level,char * logger_info),
+							int (*execute_log)(int),
+							int (*clear_log_from_log_id)(int))
 {
     sharedRaftData.python_functions.add_to_log_DB         = add_to_log_DB;
     sharedRaftData.python_functions.update_DB             = update_DB;

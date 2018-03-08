@@ -58,6 +58,7 @@ def write_to_logger(logger_level, logger_message):
               3: logging.error,
               4: logging.critical}
     levels.get(logger_level, logging.debug)(py_logger_message)
+    return 1
 
 
 def execute_log(log_id):
@@ -85,7 +86,7 @@ def execute_log(log_id):
 
 
 def clear_log_from_log_id(log_id):
-    pass
+    return 1
 
 
 def set_callback_funcs():
@@ -101,30 +102,30 @@ def set_callback_funcs():
 
 callback_type1 = ctypes.CFUNCTYPE(ctypes.c_int,
                                   ctypes.c_int,
-                                  ctypes.POINTER(ctypes.c_char),
-                                  ctypes.POINTER(ctypes.c_char),
-                                  ctypes.POINTER(ctypes.c_char))
+                                  ctypes.c_char_p,
+                                  ctypes.c_char_p,
+                                  ctypes.c_char_p)
 callback_func1 = callback_type1(add_to_log_DB)
 
 callback_type2 = ctypes.CFUNCTYPE(ctypes.c_int,
-                                  ctypes.POINTER(ctypes.c_char),
-                                  ctypes.POINTER(ctypes.c_char),
-                                  ctypes.POINTER(ctypes.c_char))
+                                  ctypes.c_char_p,
+                                  ctypes.c_char_p,
+                                  ctypes.c_char_p)
 callback_func2 = callback_type2(update_DB)
 
-callback_type3 = ctypes.CFUNCTYPE(ctypes.c_wchar_p,  ctypes.c_int, ctypes.c_int)
+callback_type3 = ctypes.CFUNCTYPE(ctypes.c_char_p,  ctypes.c_int, ctypes.c_int)
 callback_func3 = callback_type3(get_log_by_diff)
 
-callback_type4 = ctypes.CFUNCTYPE(ctypes.c_void_p,
+callback_type4 = ctypes.CFUNCTYPE(ctypes.c_int,
                                   ctypes.c_int,
-                                  ctypes.POINTER(ctypes.c_char))
+                                  ctypes.c_char_p)
 callback_func4 = callback_type4(write_to_logger)
 
 callback_type5 = ctypes.CFUNCTYPE(ctypes.c_int,
                                   ctypes.c_int)
 callback_func5 = callback_type5(execute_log)
 
-callback_type6 = ctypes.CFUNCTYPE(ctypes.c_void_p,ctypes.c_int)
+callback_type6 = ctypes.CFUNCTYPE(ctypes.c_int,ctypes.c_int)
 callback_func6 = callback_type6(clear_log_from_log_id)
 
 callback_type7 = ctypes.CFUNCTYPE(ctypes.c_void_p)
