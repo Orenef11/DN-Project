@@ -2,7 +2,10 @@ from cmd import Cmd
 from pygtrie import StringTrie
 from typing import Tuple
 from colorama import Style, Fore
-import os, signal
+import os
+import signal
+from inspect import getfullargspec
+
 from global_variables import UNSUCESS_COMMAND_MSG
 
 
@@ -144,6 +147,7 @@ class RAFTCmd(Cmd):
     def default(self, command: str) -> None:
         command = command.lower()
         command_copy = command
+
         if '?' == command[-1]:
             command, is_command_complete_flag = command[:-1].strip(), True
             if self.__has_valid_command(command):
@@ -153,15 +157,14 @@ class RAFTCmd(Cmd):
             if is_command_complete_flag:
                 self.__command_complete(command)
         elif self.__has_valid_command(command):
-
-            # UNKNOW_VAR_REDIS_MSG = "The '{}' variable does not exist in the '{}' REDIS database"
-            # UNKNOW_REDIS_DB_MSG = "The '{}' REDIS database does not exist"
-            # UNSUCESS_COMMAND_MSG = "CommandFailed: Please check the entered values or check command exists ('?' char)"
             special_word = command.split(self.__separator)[-1]
             if special_word in self.__special_words_dict:
                 self.__error_msg("The command expects to receive '{}' arguments of the following types '{}'".format(
                     *self.__special_words_dict[special_word]))
-
+            elif len(getfullargspec(self.__commands_trie[command])[0]) == 0:
+                    self.__commands_trie[command]()
+            else:
+                print(UNSUCESS_COMMAND_MSG)
         else:
             has_valid_command_flag, command_args_list, special_word, command = self.__parser_and_run_command(command)
             is_command_success_flag = False
