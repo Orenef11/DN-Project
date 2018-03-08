@@ -117,7 +117,7 @@ def init_trie_functions_and_info(separator: str) -> Tuple[StringTrie, StringTrie
     # Defining commands according to the amount of words in the command
     # 2 words command
     commands_trie["show log"] = __show_log
-    commands_trie["show logs"] = __show_logs
+    # commands_trie["show logs"] = __show_logs
     commands_trie["set timer"] = __add_new_entry
 
     # 3 words command
