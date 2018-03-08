@@ -125,7 +125,7 @@ int check_if_my_message(int sent_to){
 
 int is_relevant_message(Queue_node_data * node_message)
 {
-    int is_my_message = check_if_my_message(node_message->message_sent_by);
+    int is_my_message = check_if_my_message(node_message->message_sent_to);
     if(!is_my_message){
         return 0;
     }
