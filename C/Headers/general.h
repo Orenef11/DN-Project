@@ -139,6 +139,14 @@ typedef struct Set_log_res{
     int to_be_commit_index;
 }set_log_res;
 
+typedef struct Python_send_log_hb{
+    int log_index;
+    char cmd[MAX_ELEM_SIZE];
+    char key[MAX_ELEM_SIZE];
+    char value[MAX_ELEM_SIZE];
+
+}python_send_log_hb;
+
 #define CONST_QUEUE_MSG_SIZE (sizeof(((Queue_node_data *)0)->padding) + sizeof(((Queue_node_data *)0)->event) +sizeof(((Queue_node_data *)0)->term) +\
 				sizeof(((Queue_node_data *)0)->message_sent_by) +sizeof(((Queue_node_data *)0)->message_sent_to))
 
@@ -155,6 +163,7 @@ typedef struct queue_node_data{
         sync_res sync_res_msg;
         commit_ok commit_ok_msg;
         set_log_res set_log_res_msg;
+        python_send_log_hb python_send_log_hb_msg;
     }msg_data;
 
 }Queue_node_data;
