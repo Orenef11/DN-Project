@@ -33,8 +33,8 @@
 #define LEADER_STATE_VALUE "leader"
 
 #if DEBUG_MODE == 1
-	#define MAX_RAFT_TIMEOUT 3000
-	#define MIN_RAFT_TIMEOUT 1000
+	#define MAX_RAFT_TIMEOUT 8000
+	#define MIN_RAFT_TIMEOUT 4000
 #else
 	#define MAX_RAFT_TIMEOUT 300
 	#define MIN_RAFT_TIMEOUT 150
@@ -139,10 +139,11 @@ typedef struct Set_log_res{
     int to_be_commit_index;
 }set_log_res;
 
-#define CONST_QUEUE_MSG_SIZE (sizeof(((Queue_node_data *)0)->event) +sizeof(((Queue_node_data *)0)->term) +\
+#define CONST_QUEUE_MSG_SIZE (sizeof(((Queue_node_data *)0)->padding) + sizeof(((Queue_node_data *)0)->event) +sizeof(((Queue_node_data *)0)->term) +\
 				sizeof(((Queue_node_data *)0)->message_sent_by) +sizeof(((Queue_node_data *)0)->message_sent_to))
 
 typedef struct queue_node_data{
+    int padding;
     int event;
     int term;
     int message_sent_by;
