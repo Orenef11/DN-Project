@@ -156,6 +156,7 @@ def sig_handler(signum, frame):
 
 
 def start_commit_process(log_id, cmd, key, val):
+    global _raft
     global commit_flag
     commit_flag = False
 
