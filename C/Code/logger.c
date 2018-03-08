@@ -5,6 +5,11 @@
 				__WRITE_TO_LOGGER__(sharedRaftData.python_functions.write_to_logger,logger_level,problem_desc,msg_type,args_num,...) )
 ////////////////////////////////////////////////////////////////
 
+typedef struct thread_data{
+	char logger_msg[MAX_LOGGER_MSG];
+	int logger_level;
+	int (*write_to_logger)(int logger_level,char* logger_info);
+}thread_data;
 
 char * get_data_after_last_seperator(char * data,char seperator){
 	char * pointer = data;
@@ -22,10 +27,22 @@ char * get_data_after_last_seperator(char * data,char seperator){
 	return data +rv_loc;
 }
 
-
+void * write_to_logger_thread(void * args)
+{
+	thread_data *data = (thread_data *)args;
+	data->write_to_logger(data->logger_level,data->logger_msg);
+	free(data);
+}
 //do not call this function directly - call WRITE_TO_LOGGER
 int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),int logger_level,const char * file,const char *func_name,const int line,
 				const char* problem_desc, int msg_type,int args_num,...){
+	pthread_t IO_thread;
+/*
+	thread_data *data= (thread_data *)malloc(sizeof(thread_data));
+	if(!data){
+		return 0;
+	}
+*/
 	char logger_msg[MAX_LOGGER_MSG];
 	int loc=0,is_valid = MAX_LOGGER_MSG;
 	va_list ap;
@@ -58,5 +75,8 @@ int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),in
 	sprintf(logger_msg+loc+1,"-----------------------------\n");
 	logger_msg[loc+31]=0;
 	//puts(logger_msg);
+	//puts("1111111111111111111111111");
+    	//pthread_create(&IO_thread, NULL, write_to_logger_thread, (void*)data);
+	//return 0;
 	return write_to_logger(logger_level,logger_msg);
 }

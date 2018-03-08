@@ -27,9 +27,9 @@ def setting_up_logger(file_logging_level, console_logging_level, file_path):
         makedirs(folder_path)
         create_log_file = True
     # set up logging to file - see previous section for more details
-    format_logging = "%(asctime)s\t[%(filename)s %(funcName)s %(lineno)d]  %(msecs)d %(name)s [%(levelname)-5.5s] " \
+    format_logging = "%(asctime)s.%(msecs)04d\t[%(filename)s %(funcName)s %(lineno)d]  %(msecs)d %(name)s [%(levelname)-5.5s] " \
                      "%(message)s"
-    logging.basicConfig(level=LEVELS[file_logging_level], format=format_logging, datefmt='%d/%m/%Y %I:%M:%S %p',
+    logging.basicConfig(level=LEVELS[file_logging_level], format=format_logging, datefmt='%d/%m/%Y %H:%M:%S',
                         filename=file_path, filemode=MODE)
     # define a Handler which writes INFO messages or higher to the sys.stderr
     console = logging.StreamHandler()

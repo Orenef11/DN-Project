@@ -76,6 +76,7 @@ void leader_vote_handler(Queue_node_data *node)
 #endif
     if(node->term > sharedRaftData.raft_state.term)
     {
+        sharedRaftData.raft_state.current_state = FOLLOWER;
         clear_queue();
         sharedRaftData.raft_state.commit_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
@@ -83,7 +84,6 @@ void leader_vote_handler(Queue_node_data *node)
 
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
-        sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
     }
@@ -141,6 +141,7 @@ void  leader_hb_handler(Queue_node_data* node)
 #endif
     if(node->term > sharedRaftData.raft_state.term)
     {
+        sharedRaftData.raft_state.current_state = FOLLOWER;
         clear_queue();
         sharedRaftData.raft_state.did_I_vote = 0;
         sharedRaftData.raft_state.commit_counter = 0;
@@ -152,7 +153,6 @@ void  leader_hb_handler(Queue_node_data* node)
 
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
-        sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
     }
