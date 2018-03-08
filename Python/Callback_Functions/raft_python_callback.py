@@ -158,11 +158,11 @@ def start_commit_process(log_id, cmd, key, val):
     global commit_flag
     commit_flag = False
 
-    if len(global_variables.redis_db_obj["logs"]) == log_id:
-        _raft.start_commit_process(ctypes.c_int(log_id),
-                                   ctypes.POINTER(ctypes.c_char(cmd)),
-                                   ctypes.POINTER(ctypes.c_char(key)),
-                                   ctypes.POINTER(ctypes.c_char(val)))
+    #if len(global_variables.redis_db_obj["logs"]) == log_id:
+    _raft.start_commit_process(ctypes.c_int(log_id),
+                               ctypes.c_char_p(cmd),
+                               ctypes.c_char_p(key),
+                               ctypes.c_char_p(val))
 
     signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
