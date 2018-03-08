@@ -155,23 +155,23 @@ def sig_handler(signum, frame):
         commit_flag = False
 
 
-def start_commit_process(log_id :int, cmd :bytes, key :bytes, val :bytes):
+def start_commit_process(log_id, cmd, key, val):
     global _raft
-    #global commit_flag
-    #commit_flag = False
+    global commit_flag
+    commit_flag = False
 
     print("entering raft c function start commit")
-    #if len(global_variables.redis_db_obj["logs"]) == log_id:
-    return _raft.start_commit_process(ctypes.c_int(log_id),
-                               ctypes.c_char_p(cmd),
-                               ctypes.c_char_p(key),
-                               ctypes.c_char_p(val))
+    if len(global_variables.redis_db_obj["logs"]) == log_id:
+        _raft.start_commit_process(ctypes.c_int(log_id),
+                                   ctypes.c_char_p(str.encode(cmd)),
+                                   ctypes.c_char_p(str.encode(key)),
+                                   ctypes.c_char_p(str.encode(str(val))))
 
-    #signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
+    signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
-    # if commit_flag:
-    #     return True
-    # return False
+    if commit_flag:
+        return True
+    return False
 
 
 # -----------------------------------------------------------------------------------------

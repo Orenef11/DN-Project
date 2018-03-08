@@ -5,7 +5,7 @@ import signal
 from Callback_Functions.raft_python_callback import python_run_raft
 from time import sleep
 from shutil import rmtree
-from concurrent.futures import ThreadPoolExecutor
+import threading
 
 from Moudles import RedisDB
 from Moudles import config_parser
@@ -13,6 +13,7 @@ from Moudles import RAFTCmd
 from Moudles import logger
 from Callback_Functions import cli_callback
 import global_variables
+
 
 
 def main():
@@ -44,11 +45,23 @@ def main():
     signal.signal(signal.SIGUSR1, signal.SIG_IGN)
     signal.signal(signal.SIGUSR2, signal.SIG_IGN)
 
-    with ThreadPoolExecutor(max_workers=2) as e:
-        e.submit(python_run_raft, config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
-                 config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
-                 config_dict["raft"]["leader_timeout"]).done()
-        e.submit(global_variables.raft_cmd_obj.cmdloop).done()
+    t1 = threading.Thread(target=python_run_raft, args=[config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
+                                                        config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
+                                                        config_dict["raft"]["leader_timeout"]])
+    t1.setDaemon(True)
+    t2 = threading.Thread(target=global_variables.raft_cmd_obj.cmdloop)
+    t2.setDaemon(True)
+    t1.start()
+    t2.start()
+    t1.join()
+    t2.join()
+
+
+    # with ThreadPoolExecutor(max_workers=2) as e:
+    #     e.submit(python_run_raft, config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
+    #              config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
+    #              config_dict["raft"]["leader_timeout"]).done()
+    #     e.submit(global_variables.raft_cmd_obj.cmdloop).done()
 
     print("exit successfully")
 

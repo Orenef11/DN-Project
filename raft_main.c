@@ -165,12 +165,12 @@ void create_new_log_command(int log_id,char * cmd,char * key, char * value,Queue
 }
 
 //main.c
-int start_commit_process(int log_id,char * cmd,char * key, char * value){
+void start_commit_process(int log_id,char * cmd,char * key, char * value){
+    puts("kiss my assssssssss");
     WRITE_TO_LOGGER(DEBUG_LEVEL," In fucking start commit process func you assholes mother fuckers!!!...",NO_VALUES,0);
     Queue_node_data new_node;
     create_new_log_command(log_id,cmd,key,value,&new_node);
     push_queue(&new_node);
-    return 0;
 }
 
 //main.c
