@@ -1,2477 +1,1324 @@
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  548 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  837 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:28
 MESSAGE:start
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  548 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  837 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:70
 MESSAGE:end
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  549 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  837 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:81
 MESSAGE:init multicast socket
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  549 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  838 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:88
 MESSAGE:multicast was opened successfully
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  549 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  838 root [DEBUG] 
 FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:13
 MESSAGE:first time
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  838 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:create_alarm_timer, LINE:42
 MESSAGE:create new alarm timer
-VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=6138 
+VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=4288 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=leader_id 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=0 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  556 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=commit_idx 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  556 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=0 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  558 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  846 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=applied_last_idx 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  558 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  846 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=0 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  559 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  848 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=status 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  560 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  848 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=-3 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  561 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  850 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=term 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  562 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  850 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=0 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  563 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  851 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:init_raft, LINE:151
 MESSAGE:init succeed
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  563 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_raft, LINE:187
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  851 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:186
 MESSAGE:start raft...
 VARIABLES:  raft_ip=230.1.1.10 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  563 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_raft, LINE:189
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  851 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:188
 MESSAGE:start raft...
 VARIABLES:  raft_port=12345  server_id=2  members_num=2  leader_timeout=1000 
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  563 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_raft, LINE:194
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  852 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:193
 MESSAGE:run raft...
 -----------------------------
 
-08/03/2018 04:22:34 PM	[raft_python_callback.py write_to_logger 60]  563 root [DEBUG] 
+08/03/2018 04:56:42 PM	[raft_python_callback.py write_to_logger 60]  852 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:46 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
 MESSAGE:add new timeout event- now in queue
 VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  551 root [DEBUG] 
+08/03/2018 04:56:46 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
 VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  601 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=20 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  601 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  601 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
-MESSAGE:check if msg is relevant
-VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=8  is_relevant_rv=1  node_message->term=24 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  601 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  601 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=8  sharedRaftData.raft_state.current_state=0 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  602 root [DEBUG] 
-FILE:./C/Code/follower_handlers.c, FUNCTION:follower_vote_req_handler, LINE:153
-MESSAGE:follower get vote request msg
-VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.did_I_vote=0  node->term=24  node->message_sent_by=1 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  602 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
-MESSAGE:update DB
-VARIABLES:  DB_flag=status  key=term 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  602 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
-MESSAGE:update DB
-VARIABLES:  value=24 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=7 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/follower_handlers.c, FUNCTION:follower_vote_req_handler, LINE:171
-MESSAGE:follower sending vote msg
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=20 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=20 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=20 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:40 PM	[raft_python_callback.py write_to_logger 60]  603 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:46 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
 MESSAGE:add new timeout event- now in queue
 VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:22:46 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
 VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=0 
------------------------------
-
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
------------------------------
-
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
 FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:23
 MESSAGE:not first time
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=term 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
-VARIABLES:  value=25 
+VARIABLES:  value=1 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  552 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  843 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=status 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  552 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  843 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=-2 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  553 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  845 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
 VARIABLES:  DB_flag=status  key=leader_id 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  553 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  845 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
 VARIABLES:  value=0 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  554 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  847 root [DEBUG] 
 FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
 MESSAGE:create new msg
 VARIABLES:  event=8 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  847 root [DEBUG] 
 FILE:./C/Code/follower_handlers.c, FUNCTION:follower_time_out_handler, LINE:252
 MESSAGE:follower became candidate and is sending request for vote msg
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  847 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
 MESSAGE:try to send msg
 VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  847 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
 MESSAGE:msg was successfully sent
 VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  848 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  848 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
 VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:22:52 PM	[raft_python_callback.py write_to_logger 60]  555 root [DEBUG] 
+08/03/2018 04:56:50 PM	[raft_python_callback.py write_to_logger 60]  848 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [DEBUG] 
+08/03/2018 04:56:54 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+
+08/03/2018 04:56:54 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+
+08/03/2018 04:56:54 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:141
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
 VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [INFO ] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:check_if_my_message, LINE:117
-MESSAGE:This is my msg- ignore!
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_for_candidate, LINE:91
 MESSAGE:candidate check if msg is relevant
-VARIABLES:  sharedRaftData.raft_state.term=25  sharedRaftData.raft_state.server_id=2  node_message->message_sent_to=2  node_message->term=25  node_message->event=7 
+VARIABLES:  sharedRaftData.raft_state.term=1  sharedRaftData.raft_state.server_id=2  node_message->message_sent_to=0  node_message->term=3  node_message->event=8 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_for_candidate, LINE:105
 MESSAGE:candidate:relevant msg
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  165 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
 MESSAGE:check if msg is relevant
-VARIABLES:  sharedRaftData.raft_state.current_state=1  node_message->event=7  is_relevant_rv=1  node_message->term=25 
+VARIABLES:  sharedRaftData.raft_state.current_state=1  node_message->event=8  is_relevant_rv=1  node_message->term=3 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=7  sharedRaftData.raft_state.current_state=1 
+VARIABLES:  node->event=8  sharedRaftData.raft_state.current_state=1 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_vote_for_me_handler, LINE:19
-MESSAGE:candidate got majority- becoming leader
-VARIABLES:  node->event=7 
-	 sharedRaftData.raft_state.term=25 
-	 sharedRaftData.raft_state.current_state=1 
-	 sharedRaftData.raft_state.vote_counter=2 
-	 node->message_sent_by=1 
-	 node->term=25 
-	
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
+FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_vote_req_handler, LINE:102
+MESSAGE:candidate get vote request msg
+VARIABLES:  sharedRaftData.raft_state.term=1  sharedRaftData.raft_state.did_I_vote=1  node->term=3  node->message_sent_by=1 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:create_alarm_timer, LINE:42
-MESSAGE:create new alarm timer
-VARIABLES:  sharedRaftData.raft_state.current_state=1  timeout=1000 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:23
-MESSAGE:not first time
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  62 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
 MESSAGE:update DB
-VARIABLES:  DB_flag=status  key=status 
+VARIABLES:  DB_flag=status  key=term 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  63 root [DEBUG] 
 FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
 MESSAGE:update DB
-VARIABLES:  value=-1 
+VARIABLES:  value=3 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
-MESSAGE:update DB
-VARIABLES:  DB_flag=status  key=leader_id 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
-MESSAGE:update DB
-VARIABLES:  value=2 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  63 root [DEBUG] 
 FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
 MESSAGE:create new msg
-VARIABLES:  event=1 
+VARIABLES:  event=7 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_vote_for_me_handler, LINE:40
-MESSAGE:candidate sending keep alive hb msg
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  63 root [DEBUG] 
+FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_vote_req_handler, LINE:117
+MESSAGE:candidate sending vote msg
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  63 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
 MESSAGE:try to send msg
-VARIABLES:  message_size=24 
+VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_vote_for_me_handler, LINE:64
-MESSAGE:end of vote event
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:53 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:54 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:55 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:56 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:57 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:58 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:22:59 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:00 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:01 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:02 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:03 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:04 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:05 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  172 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  172 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:06 PM	[raft_python_callback.py write_to_logger 60]  172 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:07 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:08 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:09 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:10 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:11 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:12 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:13 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:14 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:15 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
-MESSAGE:msg was successfully read
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
-MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
------------------------------
-
-08/03/2018 04:23:16 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
-MESSAGE:try to read message
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  128 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=20 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  128 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=20 
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
+FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:23
+MESSAGE:not first time
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=leader_id 
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
 VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  129 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=2 
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  64 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  65 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=status 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
-MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  65 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=-3 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  653 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  653 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:17 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  653 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  653 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  654 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  654 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=leader_id 
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
+08/03/2018 04:56:57 PM	[raft_python_callback.py write_to_logger 60]  654 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=1 
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  592 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  592 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:18 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  592 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  593 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  593 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
+08/03/2018 04:56:58 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:59 PM	[raft_python_callback.py write_to_logger 60]  530 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:59 PM	[raft_python_callback.py write_to_logger 60]  530 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:19 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:59 PM	[raft_python_callback.py write_to_logger 60]  530 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:56:59 PM	[raft_python_callback.py write_to_logger 60]  530 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:56:59 PM	[raft_python_callback.py write_to_logger 60]  530 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:01 PM	[raft_python_callback.py write_to_logger 60]  646 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:01 PM	[raft_python_callback.py write_to_logger 60]  646 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:20 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:01 PM	[raft_python_callback.py write_to_logger 60]  646 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:01 PM	[raft_python_callback.py write_to_logger 60]  647 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:01 PM	[raft_python_callback.py write_to_logger 60]  647 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  582 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  582 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:21 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  582 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  582 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
+08/03/2018 04:57:02 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:03 PM	[raft_python_callback.py write_to_logger 60]  524 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:03 PM	[raft_python_callback.py write_to_logger 60]  525 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:22 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:03 PM	[raft_python_callback.py write_to_logger 60]  525 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:03 PM	[raft_python_callback.py write_to_logger 60]  525 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:03 PM	[raft_python_callback.py write_to_logger 60]  525 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:05 PM	[raft_python_callback.py write_to_logger 60]  642 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:05 PM	[raft_python_callback.py write_to_logger 60]  642 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:23 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:05 PM	[raft_python_callback.py write_to_logger 60]  642 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:05 PM	[raft_python_callback.py write_to_logger 60]  642 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:05 PM	[raft_python_callback.py write_to_logger 60]  642 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:24 PM	[raft_python_callback.py write_to_logger 60]  171 root [DEBUG] 
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  583 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  843 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
+08/03/2018 04:57:06 PM	[raft_python_callback.py write_to_logger 60]  843 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:07 PM	[raft_python_callback.py write_to_logger 60]  526 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:07 PM	[raft_python_callback.py write_to_logger 60]  526 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:25 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:07 PM	[raft_python_callback.py write_to_logger 60]  526 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:07 PM	[raft_python_callback.py write_to_logger 60]  527 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
+08/03/2018 04:57:07 PM	[raft_python_callback.py write_to_logger 60]  527 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
+08/03/2018 04:57:09 PM	[raft_python_callback.py write_to_logger 60]  634 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
+08/03/2018 04:57:09 PM	[raft_python_callback.py write_to_logger 60]  635 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:26 PM	[raft_python_callback.py write_to_logger 60]  170 root [DEBUG] 
+08/03/2018 04:57:09 PM	[raft_python_callback.py write_to_logger 60]  635 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:09 PM	[raft_python_callback.py write_to_logger 60]  635 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:09 PM	[raft_python_callback.py write_to_logger 60]  635 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  580 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  580 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
-VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:27 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  580 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  580 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  166 root [DEBUG] 
-FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
-MESSAGE:add new timeout event- now in queue
-VARIABLES:  sharedRaftData.raft_state.current_state=2 
------------------------------
-
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  581 root [DEBUG] 
 FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
 MESSAGE:enter state function
-VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=2 
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  167 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:120
-MESSAGE:leader timeout event
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
-MESSAGE:create new msg
-VARIABLES:  event=1 
+08/03/2018 04:57:10 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/leader_handlers.c, FUNCTION:leader_time_out_handler, LINE:124
-MESSAGE:leader sending keep alive hb msg
------------------------------
-
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
-MESSAGE:try to send msg
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
-FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
-MESSAGE:msg was successfully sent
-VARIABLES:  message_size=24 
------------------------------
-
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  168 root [DEBUG] 
+08/03/2018 04:57:11 PM	[raft_python_callback.py write_to_logger 60]  512 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
 MESSAGE:msg was successfully read
 VARIABLES:  message_size=24 
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:11 PM	[raft_python_callback.py write_to_logger 60]  512 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:11 PM	[raft_python_callback.py write_to_logger 60]  512 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:11 PM	[raft_python_callback.py write_to_logger 60]  512 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:11 PM	[raft_python_callback.py write_to_logger 60]  512 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:13 PM	[raft_python_callback.py write_to_logger 60]  632 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:13 PM	[raft_python_callback.py write_to_logger 60]  632 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:13 PM	[raft_python_callback.py write_to_logger 60]  632 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:13 PM	[raft_python_callback.py write_to_logger 60]  632 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:13 PM	[raft_python_callback.py write_to_logger 60]  632 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  576 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  577 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  577 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  577 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  577 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:14 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:15 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:15 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:15 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:15 PM	[raft_python_callback.py write_to_logger 60]  510 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:15 PM	[raft_python_callback.py write_to_logger 60]  510 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:17 PM	[raft_python_callback.py write_to_logger 60]  625 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:17 PM	[raft_python_callback.py write_to_logger 60]  625 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:17 PM	[raft_python_callback.py write_to_logger 60]  626 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:17 PM	[raft_python_callback.py write_to_logger 60]  626 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:17 PM	[raft_python_callback.py write_to_logger 60]  626 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  571 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  571 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  571 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  571 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  571 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:18 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:21 PM	[raft_python_callback.py write_to_logger 60]  626 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:21 PM	[raft_python_callback.py write_to_logger 60]  627 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:21 PM	[raft_python_callback.py write_to_logger 60]  627 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:21 PM	[raft_python_callback.py write_to_logger 60]  627 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:21 PM	[raft_python_callback.py write_to_logger 60]  627 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  564 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  564 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  565 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  565 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  565 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:22 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:23 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:23 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:23 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:23 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:23 PM	[raft_python_callback.py write_to_logger 60]  509 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:25 PM	[raft_python_callback.py write_to_logger 60]  618 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:25 PM	[raft_python_callback.py write_to_logger 60]  618 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:25 PM	[raft_python_callback.py write_to_logger 60]  619 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:25 PM	[raft_python_callback.py write_to_logger 60]  619 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:25 PM	[raft_python_callback.py write_to_logger 60]  619 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  550 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  551 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  551 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  551 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  551 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:26 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:27 PM	[raft_python_callback.py write_to_logger 60]  498 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:27 PM	[raft_python_callback.py write_to_logger 60]  498 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:27 PM	[raft_python_callback.py write_to_logger 60]  498 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:27 PM	[raft_python_callback.py write_to_logger 60]  498 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:27 PM	[raft_python_callback.py write_to_logger 60]  499 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:29 PM	[raft_python_callback.py write_to_logger 60]  611 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:29 PM	[raft_python_callback.py write_to_logger 60]  611 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:29 PM	[raft_python_callback.py write_to_logger 60]  611 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:29 PM	[raft_python_callback.py write_to_logger 60]  611 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:29 PM	[raft_python_callback.py write_to_logger 60]  611 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  561 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=24 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  561 root [DEBUG] 
+FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
+MESSAGE:got new message and ids as followed:
+VARIABLES:  new_node.message_sent_by=1  sharedRaftData.raft_state.server_id=2 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  561 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:is_relevant_message, LINE:167
+MESSAGE:check if msg is relevant
+VARIABLES:  sharedRaftData.raft_state.current_state=0  node_message->event=1  is_relevant_rv=1  node_message->term=3 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  562 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
+MESSAGE:try to read message
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  562 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=1  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:30 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  838 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:23
+MESSAGE:not first time
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=term 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=4 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=status 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=-2 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:16
+MESSAGE:update DB
+VARIABLES:  DB_flag=status  key=leader_id 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  840 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:update_DB, LINE:17
+MESSAGE:update DB
+VARIABLES:  value=0 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/static_queue.c, FUNCTION:create_new_queue_node_data, LINE:107
+MESSAGE:create new msg
+VARIABLES:  event=8 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/follower_handlers.c, FUNCTION:follower_time_out_handler, LINE:252
+MESSAGE:follower became candidate and is sending request for vote msg
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  841 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:100
+MESSAGE:try to send msg
+VARIABLES:  message_size=20 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:155
+MESSAGE:msg was successfully read
+VARIABLES:  message_size=20 
+-----------------------------
+
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
 FILE:./raft_main.c, FUNCTION:run_multicast_listener, LINE:15
 MESSAGE:got new message and ids as followed:
 VARIABLES:  new_node.message_sent_by=2  sharedRaftData.raft_state.server_id=2 
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  169 root [DEBUG] 
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
 FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:131
 MESSAGE:try to read message
 -----------------------------
 
-08/03/2018 04:23:28 PM	[raft_python_callback.py write_to_logger 60]  694 root [DEBUG] 
-FILE:./raft_main.c, FUNCTION:exit_raft, LINE:54
-MESSAGE:exit from raft...
+08/03/2018 04:57:34 PM	[raft_python_callback.py write_to_logger 60]  842 root [DEBUG] 
+FILE:./C/Code/raft_server.c, FUNCTION:send_raft_message, LINE:118
+MESSAGE:msg was successfully sent
+VARIABLES:  message_size=20 
+-----------------------------
+
+08/03/2018 04:57:38 PM	[raft_python_callback.py write_to_logger 60]  838 root [DEBUG] 
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:76
+MESSAGE:add new timeout event- now in queue
+VARIABLES:  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+
+08/03/2018 04:57:38 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=1 
+-----------------------------
+
+08/03/2018 04:57:38 PM	[raft_python_callback.py write_to_logger 60]  839 root [DEBUG] 
+FILE:./C/Code/candidate_handlers.c, FUNCTION:candidate_time_out_handler, LINE:141
+MESSAGE:timeout event
+VARIABLES:  sharedRaftData.raft_state.wakeup_counter=0 
 -----------------------------
 
