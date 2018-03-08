@@ -19,7 +19,7 @@ def add_to_log_DB(log_id, command, key, val):
             print(py_cmd, type(py_cmd))
             print(py_key, type(py_key))
             print(py_val, type(py_val))
-            global_variables.redis_db_obj["logs"].append((py_cmd, py_key, py_val))
+            global_variables.redis_db_obj["logs"]+=[(py_cmd, py_key, py_val)]
             print(global_variables.redis_db_obj["logs"])
             return 0
         else:
@@ -38,21 +38,28 @@ def update_DB(db_flag, key, val):
     return 1
 
 
-def get_log_by_diff(start, end):
-    # we need +2. 1 to get real size of the list and 1 mode for null pointer
-    c_log_array, log_list = (ctypes.c_wchar_p * (end - start + 1))(), []
+def get_log_by_diff(log_idx):
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
             len(global_variables.redis_db_obj["logs"]) >= end:
-        for entry in range(start, end):
-
-            entry_data = [str(value) if type(value) is not str else value for value in
-                          global_variables.redis_db_obj["logs"][entry]]
-            log_list.append(','.join(entry_data))
-
-        c_log_array[:-1] = log_list
-        c_log_array[-1] = None
-    # log_list.append(ctypes.c_char_p)
-    return c_log_array[0]
+            entry_data = global_variables.redis_db_obj["logs"][entry]
+            entry_data.append(','.join(entry_data))
+            return ctypes.c_char_p(entry_data)
+    return ctypes.c_char_p()
+# def get_log_by_diff(start, end):
+#     # we need +2. 1 to get real size of the list and 1 mode for null pointer
+#     c_log_array, log_list = (ctypes.c_wchar_p * (end - start + 1))(), []
+#     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
+#             len(global_variables.redis_db_obj["logs"]) >= end:
+#         for entry in range(start, end):
+#
+#             entry_data = [str(value) if type(value) is not str else value for value in
+#                           global_variables.redis_db_obj["logs"][entry]]
+#             log_list.append(','.join(entry_data))
+#
+#         c_log_array[:-1] = log_list
+#         c_log_array[-1] = None
+#     # log_list.append(ctypes.c_char_p)
+#     return c_log_array[0]
 
 
 def write_to_logger(logger_level, logger_message):
@@ -187,4 +194,3 @@ def start_commit_process(log_id, cmd, key, val):
 #
 # if __name__ == '__main__':
 #     main()
-

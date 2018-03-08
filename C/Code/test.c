@@ -24,7 +24,7 @@ void _test_update_DB(char * DB_flag,char * key,char* value)
 }
 
 
-char** _test_get_log_by_diff(int from,int to)
+char* _test_get_log_by_diff(int flog_index)
 {
 	WRITE_TO_LOGGER(INFO_LEVEL,"WORK WORK WORK WORK WORK _test_get_log_by_diff",NO_VALUES,0);
 	char **abc = NULL;

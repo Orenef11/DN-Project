@@ -177,7 +177,7 @@ typedef struct configuration{
 typedef struct Python_function{
     int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value);
     int (*update_DB)(char * DB_flag,char * key,char* value);
-    char* (*get_log_by_diff)(int from,int to);
+    char* (*get_log_by_diff)(int log_idx);
     int (*write_to_logger)(int logger_level,char * logger_info);
     int (*execute_log)(int last_log_index);
     int (*clear_log_from_log_id)(int log_id);

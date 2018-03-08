@@ -17,24 +17,23 @@ void leader_sync_req_handler(Queue_node_data *node)
     int current_index = start_diff_index;
     char * msg_pointer, *elem;
 
-    char *x =NULL;
-    x[0] = 'T';
-
-    /*
-    char** diff = sharedRaftData.python_functions.get_log_by_diff(start_diff_index, end_diff_index);
+    
     node->msg_data.sync_res_msg.commit_id = start_diff_index;
     node->message_sent_to = node->message_sent_by;
     node->message_sent_by = sharedRaftData.raft_state.server_id;
     msg_pointer = (char *)&node->msg_data.sync_res_msg.cmd;
     //python return null at the end of the list
-    while(*diff){
-        elem = strtok(*diff, PYTHON_DELIMITER);
-
+    for(int log_index=start_diff_index;log_index<=end_diff_index;log_index++){
+		elem = sharedRaftData.python_functions.get_log_by_diff(log_index);
+		if(!elem){
+			WRITE_TO_LOGGER(INFO_LEVEL,"try to read log from Redis and get NULL value",INT_VALUES,1,LOG(log_index));
+		}
+		
+        elem = strtok(elem, PYTHON_DELIMITER);
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"first elemnt - command",CHARS_VALUES,1,
 			LOG(elem));
 #endif
-
         while(elem){
             strcpy(msg_pointer,elem);
             elem = strtok(NULL, PYTHON_DELIMITER);
@@ -62,9 +61,8 @@ void leader_sync_req_handler(Queue_node_data *node)
 
         send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg));
         current_index++;
-        diff++;
     }
-     */
+
 }
 
 //ido term [difficulte = 1 ]
