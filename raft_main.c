@@ -165,7 +165,7 @@ void create_new_log_command(int log_id,char * cmd,char * key, char * value,Queue
 }
 
 //main.c
-void start_commit_proccess(int log_id,char * cmd,char * key, char * value){
+void* start_commit_process(int log_id,char * cmd,char * key, char * value){
 	puts("11111111111111111dwedwdwdw");
     Queue_node_data new_node;
     create_new_log_command(log_id,cmd,key,value,&new_node);

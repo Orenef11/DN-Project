@@ -112,7 +112,7 @@ int check_if_my_message(int sent_to){
     if(sent_to)
     {
 #if DEBUG_MODE == 1
-        if(sent_to == sharedRaftData.raft_state.server_id)
+        if(sent_to == sharedRaftData.raft_state.server_id )
         {
             WRITE_TO_LOGGER(INFO_LEVEL,"This is my msg- ignore!", NO_VALUES,0);
         }
@@ -126,7 +126,8 @@ int check_if_my_message(int sent_to){
 int is_relevant_message(Queue_node_data * node_message)
 {
     int is_my_message = check_if_my_message(node_message->message_sent_to);
-    if(!is_my_message){
+    int did_I_sent = node_message->message_sent_by == sharedRaftData.raft_state.server_id;
+    if(!is_my_message || did_I_sent){
         return 0;
     }
 
