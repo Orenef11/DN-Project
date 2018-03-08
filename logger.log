@@ -1,0 +1,44 @@
+FILE:./C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:23
+MESSAGE:start
+-----------------------------
+FILE:./C/Code/state_machine.c, FUNCTION:init_state_functions_handler, LINE:63
+MESSAGE:end
+-----------------------------
+FILE:./C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:72
+MESSAGE:init multicast socket
+-----------------------------
+FILE:./C/Code/raft_server.c, FUNCTION:init_multicast_message, LINE:79
+MESSAGE:multicast was opened successfully
+-----------------------------
+FILE:./C/Code/static_queue.c, FUNCTION:init_raft_queue, LINE:12
+MESSAGE:first time
+-----------------------------
+FILE:./C/Code/handlers_utils.c, FUNCTION:create_timeout_event, LINE:33
+MESSAGE:create new event timer
+VARIABLES:  sharedRaftData.raft_state.current_state=0  timeout=2504 
+-----------------------------
+FILE:./raft_main.c, FUNCTION:init_raft, LINE:138
+MESSAGE:init succeed
+-----------------------------
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:171
+MESSAGE:start raft...
+VARIABLES:  raft_ip=224.1.1.1 
+-----------------------------
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:173
+MESSAGE:start raft...
+VARIABLES:  raft_port=6060  server_id=1  members_num=2  leader_timeout=1000 
+-----------------------------
+FILE:./raft_main.c, FUNCTION:run_raft, LINE:178
+MESSAGE:run raft...
+-----------------------------
+FILE:./C/Code/raft_server.c, FUNCTION:get_raft_message, LINE:111
+MESSAGE:try to read message
+-----------------------------
+FILE:./C/Code/handlers_utils.c, FUNCTION:time_out_hendler, LINE:63
+MESSAGE:add new timeout event
+VARIABLES:  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+FILE:./C/Code/state_machine.c, FUNCTION:operate_machine_state, LINE:8
+MESSAGE:enter state function
+VARIABLES:  node->event=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------

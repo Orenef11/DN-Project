@@ -47,6 +47,7 @@ def main():
 
         signal.signal(signal.SIGUSR1, signal.SIG_IGN)
         signal.signal(signal.SIGUSR2, signal.SIG_IGN)
+
         raft_args_list = [config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
                           config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
                           config_dict["raft"]["leader_timeout"]]

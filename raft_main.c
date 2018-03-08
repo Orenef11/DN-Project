@@ -22,6 +22,7 @@ void *run_multicast_listener(void * args){
 
 //main.c
 void* raft_manager(void * args){
+
     Queue_node_data new_node;
     while(1){
         sem_wait(&sharedRaftData.Raft_queue.sem_queue);
@@ -178,6 +179,11 @@ void start_commit_process(int log_id,char * cmd,char * key, char * value){
 int run_raft(char* raft_ip,int raft_port,int server_id,int members_num,
                 int leader_timeout,void(*set_callback_function)(void))
 {
+    sigset_t set;
+    int s;
+    sigemptyset(&set);
+    s = pthread_sigmask(SIG_BLOCK, &set, NULL);
+
     pthread_t server_thread,raft_handler_thread;
     init_raft(raft_ip,raft_port,server_id,members_num,leader_timeout,set_callback_function);
     //init raft must be callded before WRITE_TO_LOGGER
