@@ -95,7 +95,7 @@ int is_relevant_for_candidate(Queue_node_data * node_message)
     {
 
 #if DEBUG_MODE == 1
-        WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got's irrelevant msg", NO_VALUES,0);
+        WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate got irrelevant msg", NO_VALUES,0);
 #endif
 
         return 0;

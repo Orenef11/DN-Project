@@ -143,7 +143,7 @@ typedef struct Set_log_res{
 				sizeof(((Queue_node_data *)0)->message_sent_by) +sizeof(((Queue_node_data *)0)->message_sent_to))
 
 typedef struct queue_node_data{
-    eventType event;
+    int event;
     int term;
     int message_sent_by;
     int message_sent_to;
