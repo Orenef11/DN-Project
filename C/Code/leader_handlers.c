@@ -75,7 +75,6 @@ void leader_vote_handler(Queue_node_data *node)
     if(node->term > sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.current_state = FOLLOWER;
-        clear_queue();
         sharedRaftData.raft_state.commit_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
@@ -83,6 +82,10 @@ void leader_vote_handler(Queue_node_data *node)
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+        
+        
+        clear_queue();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
 
     }
     //else ignores and stays leader
@@ -140,18 +143,20 @@ void  leader_hb_handler(Queue_node_data* node)
     if(node->term > sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.current_state = FOLLOWER;
-        clear_queue();
         sharedRaftData.raft_state.did_I_vote = 0;
         sharedRaftData.raft_state.commit_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
 
-        //change timeout for leader
         sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
-        create_alarm_timer(sharedRaftData.raft_state.timeout);
 
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+        
+        
+        clear_queue();
+        //change timeout for leader
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
 
     }
     if(node->term == sharedRaftData.raft_state.term)

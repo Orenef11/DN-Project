@@ -235,7 +235,7 @@ void follower_time_out_handler(Queue_node_data * node)
     if(sharedRaftData.raft_state.wakeup_counter == 2 )
     {
         sharedRaftData.raft_state.current_state = CANDIDATE;
-        clear_queue();
+
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.vote_counter = 1;
         sharedRaftData.raft_state.did_I_vote = 1;
@@ -254,7 +254,7 @@ void follower_time_out_handler(Queue_node_data * node)
 #endif
 
         send_raft_message(node, CONST_QUEUE_MSG_SIZE);
-
+        clear_queue();
     }
 
 }

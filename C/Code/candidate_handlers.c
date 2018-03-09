@@ -48,7 +48,6 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
     else if(node->term > sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.current_state = FOLLOWER;
-        clear_queue();
         sharedRaftData.raft_state.vote_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
@@ -57,7 +56,8 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
 
-
+        clear_queue();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
     }
 
 #if DEBUG_MODE == 1
@@ -79,7 +79,6 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
     if(node->term >= sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.current_state = FOLLOWER;
-        clear_queue();
         sharedRaftData.raft_state.vote_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
@@ -87,6 +86,9 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+        
+        clear_queue();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
 
     }
 }
@@ -120,7 +122,6 @@ void candidate_vote_req_handler(Queue_node_data* node)
         send_raft_message(node,CONST_QUEUE_MSG_SIZE);
         sharedRaftData.raft_state.did_I_vote = 1;
 
-        clear_queue();
         sharedRaftData.raft_state.vote_counter = 0;
 
 
@@ -128,6 +129,9 @@ void candidate_vote_req_handler(Queue_node_data* node)
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+        
+        clear_queue();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
     }
 
 }
@@ -141,8 +145,8 @@ void candidate_time_out_handler(Queue_node_data* node)
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"timeout event",INT_VALUES,1,LOG(sharedRaftData.raft_state.wakeup_counter));
 #endif
 
-    if(++sharedRaftData.raft_state.wakeup_counter >= 2 )
-    {
+    //if(++sharedRaftData.raft_state.wakeup_counter >= 2 )
+    //{
         sharedRaftData.raft_state.term++;
         sharedRaftData.raft_state.vote_counter =1;
         sharedRaftData.raft_state.did_I_vote = 1;
@@ -158,7 +162,10 @@ void candidate_time_out_handler(Queue_node_data* node)
 #endif
 
         send_raft_message(node,CONST_QUEUE_MSG_SIZE);
-    }
+        //change the timer, Increase the propabilty that some candidate will be the leader
+        sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
+    //}
 
 }
 
