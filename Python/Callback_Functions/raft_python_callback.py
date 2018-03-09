@@ -36,8 +36,7 @@ def update_DB(db_flag, key, val):
 def get_log_by_diff(log_idx):
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
             len(global_variables.redis_db_obj["logs"]) >= log_idx:
-            entry_data = global_variables.redis_db_obj["logs"][log_idx]
-            entry_data.append(','.join(entry_data))
+            entry_data = ','.join(global_variables.redis_db_obj["logs"][log_idx])
             return ctypes.c_char_p(entry_data)
     return ctypes.c_char_p()
 # def get_log_by_diff(start, end):
