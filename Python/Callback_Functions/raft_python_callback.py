@@ -13,19 +13,19 @@ def add_to_log_DB(log_id, command, key, val):
     print("entering add to log db!!!!!!!!!!!!!!!")
     print(len(global_variables.redis_db_obj["logs"]))
     print(log_id)
-    if global_variables.redis_db_obj.is_valid_command("logs", None):
-        if len(global_variables.redis_db_obj["logs"]) == log_id:
-            py_cmd = ctypes.string_at(command).decode("utf-8")
-            py_key = ctypes.string_at(key).decode("utf-8")
-            py_val = ctypes.string_at(val).decode("utf-8")
-            print(py_cmd, type(py_cmd))
-            print(py_key, type(py_key))
-            print(py_val, type(py_val))
-            global_variables.redis_db_obj["logs"]+=[(py_cmd, py_key, py_val)]
-            print(global_variables.redis_db_obj["logs"])
-            return 0
-        else:
-            write_to_logger(4, "Trying to insert to invalid index to log_DB")
+    #if global_variables.redis_db_obj.is_valid_command("logs", None):
+    if len(global_variables.redis_db_obj["logs"]) == log_id-1:
+        py_cmd = ctypes.string_at(command).decode("utf-8")
+        py_key = ctypes.string_at(key).decode("utf-8")
+        py_val = ctypes.string_at(val).decode("utf-8")
+        print(py_cmd, type(py_cmd))
+        print(py_key, type(py_key))
+        print(py_val, type(py_val))
+        global_variables.redis_db_obj["logs"]+=[(py_cmd, py_key, py_val)]
+        print(global_variables.redis_db_obj["logs"])
+        return 0
+    else:
+        write_to_logger(4, "Trying to insert to invalid index to log_DB")
     return 1
 
 
@@ -42,8 +42,8 @@ def update_DB(db_flag, key, val):
 
 def get_log_by_diff(log_idx):
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
-            len(global_variables.redis_db_obj["logs"]) >= end:
-            entry_data = global_variables.redis_db_obj["logs"][entry]
+            len(global_variables.redis_db_obj["logs"]) >= log_idx:
+            entry_data = global_variables.redis_db_obj["logs"][log_idx]
             entry_data.append(','.join(entry_data))
             return ctypes.c_char_p(entry_data)
     return ctypes.c_char_p()
