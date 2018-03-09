@@ -11,6 +11,8 @@ _raft = ctypes.CDLL(path.join(getcwd(), "raft.so"))
 
 def add_to_log_DB(log_id, command, key, val):
     print("entering add to log db!!!!!!!!!!!!!!!")
+    print(len(global_variables.redis_db_obj["logs"]))
+    print(log_id)
     if global_variables.redis_db_obj.is_valid_command("logs", None):
         if len(global_variables.redis_db_obj["logs"]) == log_id:
             py_cmd = ctypes.string_at(command).decode("utf-8")
