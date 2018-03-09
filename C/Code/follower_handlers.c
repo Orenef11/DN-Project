@@ -86,9 +86,10 @@ void follower_hb_set_log_handler(Queue_node_data* node)
 void follower_commit_ok_handler(Queue_node_data* node)
 {
 #if DEBUG_MODE == 1
-		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower get commit ok msg",INT_VALUES,4,
+		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower get commit ok msg",INT_VALUES,5,
 			LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.last_log_index),
-			LOG(node->msg_data.commit_ok_msg.last_log_index),LOG(node->term));
+			LOG(node->msg_data.commit_ok_msg.last_log_index),LOG(node->term),
+			LOG(sharedRaftData.raft_state.last_commit_index));
 #endif
 
     sharedRaftData.raft_state.wakeup_counter = 0;
