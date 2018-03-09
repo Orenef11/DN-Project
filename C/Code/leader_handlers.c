@@ -61,7 +61,7 @@ void leader_sync_req_handler(Queue_node_data *node)
 
         send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg));
         current_index++;
-        free(py_elem);
+        //free(py_elem);
     }
 
 }

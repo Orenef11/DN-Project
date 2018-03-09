@@ -66,22 +66,6 @@ void create_alarm_timer(int timeout)
 }
 
 
-
-void time_out_hendler(int sig)
-{
-    Queue_node_data new_node;
-    new_node.event  = TIMEOUT;
-    push_queue(&new_node);
-    
-#if DEBUG_MODE == 1
-	WRITE_TO_LOGGER(DEBUG_LEVEL,"add new timeout event- now in queue",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
-#endif
-
-}
-
-
-
-
 int is_relevant_for_candidate(Queue_node_data * node_message)
 {
 

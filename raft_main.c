@@ -39,20 +39,32 @@ int exit_raft(int exit_rv){
 	exit(exit_rv);
 }
 
+void* raft_timer(void * args){
+{
+    Queue_node_data new_node;
+    new_node.event  = TIMEOUT;
+    while(1){
+		usleep(sharedRaftData.raft_state.timeout * MILISEC_CONVERT);
+		push_queue(&new_node);
+#if DEBUG_MODE == 1
+		WRITE_TO_LOGGER(DEBUG_LEVEL,"add new timeout event- now in queue",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
+#endif
+	}
+    
+}
 //utils.c
 //close raft server from CLI  - handler for SIGSTOP
 //every exit logic shuold be here
-#if DEBUG_MODE == 1
-int signal_cnt =0;
-#endif
 void signal_handler(int sig){
 	//puts("signal");
 	if(sig == SIGINT){
 		exit_raft(0);
 	}
+	/*
 	else if(sig == SIGALRM){
 		time_out_hendler(sig);
 	}
+	* */
 }
 //utils.c
 //set handlers for exit and timeout events
@@ -91,21 +103,24 @@ int init_sig_handler(int sig,void (*sig_handler)(int)){
 //main.c
 void* raft_manager(void * args){
     Queue_node_data new_node;
-	sigset_t set_new,set_old;
-	sigemptyset(&set_new);
-	sigemptyset(&set_old);
+	//sigset_t set_new,set_old;
+	//sigemptyset(&set_new);
+	//sigemptyset(&set_old);
 	//catch timeout event only
-	init_sig_handler(SIGALRM,signal_handler);
+	//init_sig_handler(SIGALRM,signal_handler);
     while(1){
         sem_wait(&sharedRaftData.Raft_queue.sem_queue);
         //block time out events in the middle of the handlers actions
-        pthread_sigmask(SIG_BLOCK, &set_new, &set_old);
+        //pthread_sigmask(SIG_BLOCK, &set_new, &set_old);
         pop_queue(&new_node);
         operate_machine_state(&new_node);
-        pthread_sigmask(SIG_UNBLOCK, &set_old, NULL);
+        //pthread_sigmask(SIG_UNBLOCK, &set_old, NULL);
     }
 }
 
+void* raft_manager(void * args){
+	
+}
 //c calls py func
 //set the callback function in the shared_raft_data struct
 void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),
@@ -210,7 +225,7 @@ int run_raft(char* raft_ip,int raft_port,int server_id,int members_num,
     sigemptyset(&set);
     s = pthread_sigmask(SIG_BLOCK, &set, NULL);
 
-    pthread_t server_thread,raft_handler_thread;
+    pthread_t server_thread,raft_handler_thread,raft_timer_thread;
     init_raft(raft_ip,raft_port,server_id,members_num,leader_timeout,set_callback_function);
     //init raft must be callded before WRITE_TO_LOGGER
 #if DEBUG_MODE == 1
@@ -221,11 +236,13 @@ int run_raft(char* raft_ip,int raft_port,int server_id,int members_num,
 #endif
     pthread_create(&raft_handler_thread, NULL, raft_manager, NULL);
     pthread_create(&server_thread, NULL, run_multicast_listener, NULL);
+    pthread_create(&raft_timer_thread, NULL, raft_timer, NULL);
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"run raft...",NO_VALUES,0);
 #endif
     pthread_join(raft_handler_thread, NULL);
     pthread_join(server_thread, NULL);
+    pthread_join(raft_timer_thread, NULL);
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"exit raft",NO_VALUES,0);
 #endif
