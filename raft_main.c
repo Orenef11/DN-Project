@@ -10,13 +10,16 @@ void *run_multicast_listener(void * args){
     int is_valid;
     while(1){
         is_valid = !get_raft_message(&new_node);
+        if(is_valid && is_relevant_message(&new_node)){
+			//got new event that its not time out - reset the wakeup counter
+			//decrease the time for new time out event to stop everthing (its signal) and forse the follower to become candidate
+			sharedRaftData.raft_state.wakeup_counter = 0;
+            push_queue(&new_node);
+        }
 #if DEBUG_MODE == 1
         WRITE_TO_LOGGER(DEBUG_LEVEL,"got new message and ids as followed:",INT_VALUES,2,LOG(new_node.message_sent_by),
                         LOG(sharedRaftData.raft_state.server_id));
 #endif
-        if(is_valid && is_relevant_message(&new_node)){
-            push_queue(&new_node);
-        }
     }
 }
 

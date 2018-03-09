@@ -190,7 +190,7 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
     {
         return ;
     }
-
+	
     else if(node->term > sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.term = node->term;
@@ -223,7 +223,8 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
 		update_DB(DB_STATUS,LAST_APPLIED,sharedRaftData.raft_state.last_commit_index);
 		update_DB(DB_STATUS,COMMIT_INDEX,sharedRaftData.raft_state.last_commit_index);
 	}
-
+	//reset the timer
+	create_alarm_timer(sharedRaftData.raft_state.timeout);
 }
 
 
