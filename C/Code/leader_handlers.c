@@ -85,6 +85,7 @@ void leader_vote_handler(Queue_node_data *node)
         
         
         clear_queue();
+        sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
         create_alarm_timer(sharedRaftData.raft_state.timeout);
 
     }
@@ -147,7 +148,6 @@ void  leader_hb_handler(Queue_node_data* node)
         sharedRaftData.raft_state.commit_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
 
-        sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
 
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
@@ -156,6 +156,7 @@ void  leader_hb_handler(Queue_node_data* node)
         
         clear_queue();
         //change timeout for leader
+        sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
         create_alarm_timer(sharedRaftData.raft_state.timeout);
 
     }
@@ -244,11 +245,10 @@ void leader_vote_req_handler(Queue_node_data* node)
 #endif
     if(node->term > sharedRaftData.raft_state.term)
     {
-
+        sharedRaftData.raft_state.current_state = FOLLOWER;
         //leader is in the middle of commit process
         if(sharedRaftData.raft_state.last_log_index > sharedRaftData.raft_state.last_commit_index){
             //leader must become a follower because there is a candidate with a grater term
-            sharedRaftData.raft_state.current_state = FOLLOWER;
             cancel_commit_proccess(node);
         }
         sharedRaftData.raft_state.wakeup_counter = 0;
@@ -264,13 +264,14 @@ void leader_vote_req_handler(Queue_node_data* node)
         send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
         sharedRaftData.raft_state.did_I_vote = 1;
 
-        clear_queue();
         sharedRaftData.raft_state.vote_counter = 0;
 
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
-        sharedRaftData.raft_state.current_state = FOLLOWER;
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
+        clear_queue();
+        sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
+        create_alarm_timer(sharedRaftData.raft_state.timeout);
     }
 
 }

@@ -37,6 +37,8 @@ int calculate_raft_rand_timeout()
 
 void create_alarm_timer(int timeout)
 {
+	//disable all previous timers
+    alarm(0);
 
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"create new alarm timer",INT_VALUES,2,LOG(sharedRaftData.raft_state.current_state),LOG(timeout));
@@ -59,8 +61,7 @@ void create_alarm_timer(int timeout)
 		timer.it_value.tv_usec = timeout * MILISEC_CONVERT /*1000 for milliseconds*/;
 		timer.it_interval.tv_usec = timeout * MILISEC_CONVERT /*1000 for milliseconds*/;
 	}
-    //disable all previous timers
-    alarm(0);
+
     setitimer(ITIMER_REAL, &timer, NULL);
 }
 

@@ -33,13 +33,13 @@
 #define LEADER_STATE_VALUE "leader"
 
 #if DEBUG_MODE == 1
-	#define MAX_RAFT_TIMEOUT 3000
-	#define MIN_RAFT_TIMEOUT 1000
+	#define MAX_RAFT_TIMEOUT 4000
+	#define MIN_RAFT_TIMEOUT 2000
 #else
-	#define MAX_RAFT_TIMEOUT 300
-	#define MIN_RAFT_TIMEOUT 150
+	#define MAX_RAFT_TIMEOUT 400
+	#define MIN_RAFT_TIMEOUT 200
 #endif
-#define QUEUE_SIZE       555
+#define QUEUE_SIZE       1024
 #define MAX_ELEM_SIZE     51
 
 #define PYTHON_DELIMITER ","

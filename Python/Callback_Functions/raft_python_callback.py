@@ -119,7 +119,7 @@ callback_type2 = ctypes.CFUNCTYPE(ctypes.c_int,
                                   ctypes.c_char_p)
 callback_func2 = callback_type2(update_DB)
 
-callback_type3 = ctypes.CFUNCTYPE(ctypes.c_char_p,  ctypes.c_int, ctypes.c_int)
+callback_type3 = ctypes.CFUNCTYPE(ctypes.c_char_p, ctypes.c_int)
 callback_func3 = callback_type3(get_log_by_diff)
 
 callback_type4 = ctypes.CFUNCTYPE(ctypes.c_int,
