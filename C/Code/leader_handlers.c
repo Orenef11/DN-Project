@@ -100,7 +100,9 @@ void cancel_commit_proccess(Queue_node_data* message_mem) {
                     LOG(sharedRaftData.raft_state.commit_counter), LOG(sharedRaftData.raft_state.last_commit_index),
                     LOG(sharedRaftData.raft_state.last_log_index));
     //send signal to inform CLI user
-    raise(SIGUSR2);
+    //raise(SIGUSR2);
+    int failed = 0;
+    sharedRaftData.python_functions.end_commit_process(failed);
     //delete enrty from redis log and decrease last_log_index
     sharedRaftData.python_functions.clear_log_from_log_id(sharedRaftData.raft_state.last_log_index--);
     update_DB(DB_STATUS, LAST_APPLIED, sharedRaftData.raft_state.last_log_index);
@@ -212,7 +214,6 @@ void  leader_log_res_handler(Queue_node_data* node)
 			LOG(sharedRaftData.raft_state.last_commit_index));
 #endif
     sharedRaftData.raft_state.commit_counter++;
-
     //check if he has the most votes and if he has, sends commit ok
     if( sharedRaftData.raft_state.commit_counter >= ((sharedRaftData.raft_state.members_amount/2) +1) )
     {
@@ -229,7 +230,9 @@ void  leader_log_res_handler(Queue_node_data* node)
 
         sharedRaftData.raft_state.wakeup_counter = 0;
         //inform python that commit proccess success
-        raise(SIGUSR1);
+        //raise(SIGUSR1);
+        int succsess =1 ; 
+        sharedRaftData.python_functions.end_commit_process(succsess);
     }
 
 }

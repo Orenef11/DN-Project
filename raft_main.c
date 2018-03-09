@@ -125,7 +125,8 @@ void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* 
                                 char* (*get_log_by_diff)(int log_idx),
 							    int (*write_to_logger)(int logger_level,char * logger_info),
                                 int (*execute_log)(int last_log_index),
-                                int (*clear_log_from_log_id)(int log_id))
+                                int (*clear_log_from_log_id)(int log_id),
+                                int (*end_commit_process)(int))
 {
     sharedRaftData.python_functions.add_to_log_DB         = add_to_log_DB;
     sharedRaftData.python_functions.update_DB             = update_DB;
@@ -133,6 +134,7 @@ void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* 
     sharedRaftData.python_functions.write_to_logger       = write_to_logger;
     sharedRaftData.python_functions.execute_log           = execute_log;
     sharedRaftData.python_functions.clear_log_from_log_id = clear_log_from_log_id;
+    sharedRaftData.python_functions.end_commit_process	  = end_commit_process;
 }
 
 

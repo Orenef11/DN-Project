@@ -7,7 +7,7 @@
 #include "static_queue.h"
 #include "raft_server.h"
 
-#define TIME_TO_CANCLE_COMMIT_PROC 10
+#define TIME_TO_CANCLE_COMMIT_PROC 20
 
 void leader_sync_req_handler(Queue_node_data* node);
 

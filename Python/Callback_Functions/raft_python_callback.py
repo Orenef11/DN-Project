@@ -1,11 +1,13 @@
 import ctypes
 import logging
 import signal
+import time
 import global_variables
 from os import path, getcwd
 
 commit_flag = False
-
+commit_res = 0
+timeout = 0
 _raft = ctypes.CDLL(path.join(getcwd(), "raft.so"))
 
 
@@ -98,9 +100,14 @@ def clear_log_from_log_id(log_id):
 
 def set_callback_funcs():
     global _raft
-    _raft.transfer_callback_function(callback_func1, callback_func2, callback_func3, callback_func4, callback_func5, callback_func6)
+    _raft.transfer_callback_function(callback_func1, callback_func2,callback_func3, callback_func4, callback_func5, callback_func6,c_end_commit_process)
 
 
+def end_commit_process(res):
+    global commit_flag,commit_res
+    commit_res = int(res)
+    commit_flag = True
+    return 1
 # -----------------------------------------------------------------------------------------
 
 # python transfer func pointers to c:
@@ -138,9 +145,12 @@ callback_func6 = callback_type6(clear_log_from_log_id)
 callback_type7 = ctypes.CFUNCTYPE(ctypes.c_void_p)
 c_set_callback_funcs = callback_type7(set_callback_funcs)
 
+callback_type8 = ctypes.CFUNCTYPE(ctypes.c_int,ctypes.c_int)
+c_end_commit_process = callback_type8(end_commit_process)
 
 def python_run_raft(raft_ip: bytes, raft_port: int, server_id: int, members_num: int, leader_timeout: int):
-    global _raft, c_set_callback_funcs
+    global _raft, c_set_callback_funcs,timeout
+    timeout = leader_timeout
     return _raft.run_raft(ctypes.c_char_p(raft_ip),
                           ctypes.c_int(raft_port),
                           ctypes.c_int(server_id),
@@ -174,10 +184,11 @@ def start_commit_process(log_id, cmd, key, val):
 
     #signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
-    # if commit_flag:
-    #     return True
+    while not commit_flag:
+        #sleep leader time out
+        time.sleep(timeout / 1000.0)
     # return False
-    return True
+    return bool(commit_res)
 
 
 # -----------------------------------------------------------------------------------------

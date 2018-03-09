@@ -181,6 +181,7 @@ typedef struct Python_function{
     int (*write_to_logger)(int logger_level,char * logger_info);
     int (*execute_log)(int last_log_index);
     int (*clear_log_from_log_id)(int log_id);
+    int (*end_commit_process)(int);
 }python_function;
 
 
