@@ -144,9 +144,10 @@ void candidate_time_out_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"timeout event",INT_VALUES,1,LOG(sharedRaftData.raft_state.wakeup_counter));
 #endif
-
-    //if(++sharedRaftData.raft_state.wakeup_counter >= 2 )
-    //{
+     //change the wake_up_timer,Increase the propabilty that some candidate will be the leader
+	int wake_up_timer = 1 + rand()%2;
+    if(++sharedRaftData.raft_state.wakeup_counter >= wake_up_timer)
+    {
         sharedRaftData.raft_state.term++;
         sharedRaftData.raft_state.vote_counter =1;
         sharedRaftData.raft_state.did_I_vote = 1;
@@ -165,7 +166,7 @@ void candidate_time_out_handler(Queue_node_data* node)
         //change the timer, Increase the propabilty that some candidate will be the leader
         sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
         create_alarm_timer(sharedRaftData.raft_state.timeout);
-    //}
+    }
 
 }
 
