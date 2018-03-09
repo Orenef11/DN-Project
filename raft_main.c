@@ -13,7 +13,7 @@ void *run_multicast_listener(void * args){
         if(is_valid && is_relevant_message(&new_node)){
 			//got new event that its not time out - reset the wakeup counter
 			//decrease the time for new time out event to stop everthing (its signal) and forse the follower to become candidate
-			sharedRaftData.raft_state.wakeup_counter = 0;
+			//sharedRaftData.raft_state.wakeup_counter = 0;
             push_queue(&new_node);
         }
 #if DEBUG_MODE == 1
@@ -22,35 +22,6 @@ void *run_multicast_listener(void * args){
 #endif
     }
 }
-
-//main.c
-void* raft_manager(void * args){
-
-    Queue_node_data new_node;
-    while(1){
-        sem_wait(&sharedRaftData.Raft_queue.sem_queue);
-        pop_queue(&new_node);
-        operate_machine_state(&new_node);
-    }
-}
-
-//c calls py func
-//set the callback function in the shared_raft_data struct
-void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),
-							    int (*update_DB)(char * DB_flag,char * key,char* value),
-                                char* (*get_log_by_diff)(int log_idx),
-							    int (*write_to_logger)(int logger_level,char * logger_info),
-                                int (*execute_log)(int last_log_index),
-                                int (*clear_log_from_log_id)(int log_id))
-{
-    sharedRaftData.python_functions.add_to_log_DB         = add_to_log_DB;
-    sharedRaftData.python_functions.update_DB             = update_DB;
-    sharedRaftData.python_functions.get_log_by_diff       = get_log_by_diff;
-    sharedRaftData.python_functions.write_to_logger       = write_to_logger;
-    sharedRaftData.python_functions.execute_log           = execute_log;
-    sharedRaftData.python_functions.clear_log_from_log_id = clear_log_from_log_id;
-}
-
 //utils.c
 //every exit logic shuold be here
 int exit_raft(int exit_rv){
@@ -83,9 +54,9 @@ void signal_handler(int sig){
 		time_out_hendler(sig);
 	}
 }
-
 //utils.c
 //set handlers for exit and timeout events
+/*
 int init_sig_handler(){
 	int rv = 0;
     //handler for raft timeout event
@@ -103,6 +74,57 @@ int init_sig_handler(){
     rv |=sigaction(SIGINT, &sa_exit, NULL);
     return  rv ;
 }
+*/
+int init_sig_handler(int sig,void (*sig_handler)(int)){
+    struct sigaction sig_act;
+    sigset_t set;
+	sigemptyset(&set);
+	pthread_sigmask(SIG_SETMASK, &set, NULL);
+    memset(&sig_act, 0, sizeof (sig_act));
+    sig_act.sa_handler = sig_handler;
+	if(sigaction(sig, &sig_act, NULL)){
+		return errno;
+	}
+	return 0;
+}
+
+//main.c
+void* raft_manager(void * args){
+    Queue_node_data new_node;
+	sigset_t set_new,set_old;
+	sigemptyset(&set_new);
+	sigemptyset(&set_old);
+	//catch timeout event only
+	init_sig_handler(SIGALRM,signal_handler);
+    while(1){
+        sem_wait(&sharedRaftData.Raft_queue.sem_queue);
+        //block time out events in the middle of the handlers actions
+        pthread_sigmask(SIG_BLOCK, &set_new, &set_old);
+        pop_queue(&new_node);
+        operate_machine_state(&new_node);
+        pthread_sigmask(SIG_UNBLOCK, &set_old, NULL);
+    }
+}
+
+//c calls py func
+//set the callback function in the shared_raft_data struct
+void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),
+							    int (*update_DB)(char * DB_flag,char * key,char* value),
+                                char* (*get_log_by_diff)(int log_idx),
+							    int (*write_to_logger)(int logger_level,char * logger_info),
+                                int (*execute_log)(int last_log_index),
+                                int (*clear_log_from_log_id)(int log_id))
+{
+    sharedRaftData.python_functions.add_to_log_DB         = add_to_log_DB;
+    sharedRaftData.python_functions.update_DB             = update_DB;
+    sharedRaftData.python_functions.get_log_by_diff       = get_log_by_diff;
+    sharedRaftData.python_functions.write_to_logger       = write_to_logger;
+    sharedRaftData.python_functions.execute_log           = execute_log;
+    sharedRaftData.python_functions.clear_log_from_log_id = clear_log_from_log_id;
+}
+
+
+
 
 //main.c / ?init_logic.c?
 void set_raft_data(int id,int members_num,int leader_timeout,void(*set_callback_function)(void)){
@@ -143,7 +165,8 @@ int init_raft(char* raft_ip,int raft_port,int id,int members_num,int leader_time
     }
 
     create_alarm_timer(sharedRaftData.raft_state.timeout);
-    if((rv=init_sig_handler())){
+    //catch SIGINT for exit raft
+    if((rv=init_sig_handler(SIGINT,signal_handler))){
 		exit_raft(rv);
     }
     //INIT DB VALUES
