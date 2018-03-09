@@ -221,7 +221,6 @@ void  leader_log_res_handler(Queue_node_data* node)
         sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
 
         sharedRaftData.raft_state.wakeup_counter = 0;
-        sharedRaftData.raft_state.wakeup_counter = 0;
         //inform python that commit proccess success
         raise(SIGUSR1);
     }

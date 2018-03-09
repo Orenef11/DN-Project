@@ -96,7 +96,7 @@ void follower_commit_ok_handler(Queue_node_data* node)
     if(node->term == sharedRaftData.raft_state.term)
     {
         sharedRaftData.raft_state.last_commit_index++ ;
-        update_DB(DB_STATUS,COMMIT_INDEX,node->term);
+        update_DB(DB_STATUS,COMMIT_INDEX,node->last_commit_index);
         sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
     }
 
