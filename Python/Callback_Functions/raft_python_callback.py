@@ -165,8 +165,6 @@ def start_commit_process(log_id, cmd, key, val):
     global _raft
     global commit_flag
     commit_flag = False
-
-    print("entering raft c function start commit")
     if len(global_variables.redis_db_obj["logs"]) == log_id:
         _raft.start_commit_process(ctypes.c_int(log_id),
                                    ctypes.c_char_p(str.encode(cmd)),
