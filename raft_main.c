@@ -39,7 +39,7 @@ int exit_raft(int exit_rv){
 	exit(exit_rv);
 }
 
-void* raft_timer(void * args){
+void* raft_timer(void * args)
 {
     Queue_node_data new_node;
     new_node.event  = TIMEOUT;
@@ -118,9 +118,6 @@ void* raft_manager(void * args){
     }
 }
 
-void* raft_manager(void * args){
-	
-}
 //c calls py func
 //set the callback function in the shared_raft_data struct
 void transfer_callback_function(int (*add_to_log_DB)(int log_id,char* cmd,char* key,char* value),

@@ -37,6 +37,7 @@ int calculate_raft_rand_timeout()
 
 void create_alarm_timer(int timeout)
 {
+	return;
 	//disable all previous timers
     alarm(0);
 
