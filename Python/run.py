@@ -20,9 +20,6 @@ import global_variables
 
 def main():
     try:
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-              "Common Logic!!!!!\n"
-              "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
         common_logic_file_path = path.join(getcwd(), "Log_Files", "common_logic.log")
         logs_folder_path = path.split(common_logic_file_path)[0]
         if path.isdir(logs_folder_path):
