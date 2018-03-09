@@ -37,8 +37,10 @@ def get_log_by_diff(log_idx):
     if global_variables.redis_db_obj.is_valid_command("logs", None) and\
             len(global_variables.redis_db_obj["logs"]) >= log_idx:
             entry_data = ','.join(global_variables.redis_db_obj["logs"][log_idx])
-            return ctypes.c_char_p(str.encode(entry_data))
-    return ctypes.c_char_p()
+            #return ctypes.c_char_p(str.encode(entry_data))
+            return str.encode(entry_data)
+
+    return None
 # def get_log_by_diff(start, end):
 #     # we need +2. 1 to get real size of the list and 1 mode for null pointer
 #     c_log_array, log_list = (ctypes.c_wchar_p * (end - start + 1))(), []
