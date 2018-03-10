@@ -15,7 +15,7 @@ void operate_machine_state(Queue_node_data * node)
 
 void do_nothing(Queue_node_data * node)
 {
-	WRITE_TO_LOGGER(FATAL_LEVEL,"enter with undefinned event",INT_VALUES,0,
+	WRITE_TO_LOGGER(FATAL_LEVEL,"enter with undefinned event",INT_VALUES,2,
 			LOG(node->event),LOG(sharedRaftData.raft_state.current_state));
 }
 
