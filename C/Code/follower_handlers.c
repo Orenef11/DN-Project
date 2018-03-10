@@ -126,7 +126,6 @@ void follower_sync_res_handler(Queue_node_data* node)
         if(node->msg_data.sync_res_msg.commit_id == sharedRaftData.raft_state.last_commit_index+1)
         {
             //accept the sync - add the log to redis and execute the log
-            sharedRaftData.raft_state.last_log_index++ ;
             sharedRaftData.python_functions.add_to_log_DB(node->msg_data.set_log_hb_msg.commit_id,
                                                           node->msg_data.set_log_hb_msg.cmd,
                                                           node->msg_data.set_log_hb_msg.key,
@@ -135,7 +134,7 @@ void follower_sync_res_handler(Queue_node_data* node)
             sharedRaftData.raft_state.last_commit_index++ ;
             update_DB(DB_STATUS,LAST_APPLIED,node->msg_data.set_log_hb_msg.commit_id);
             sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
-
+            sharedRaftData.raft_state.last_log_index++ ;
         }
 
     }
@@ -234,7 +233,6 @@ void follower_time_out_handler(Queue_node_data * node)
 
     if(sharedRaftData.raft_state.wakeup_counter == 2 )
     {
-		puts("foloower->candidate");
         sharedRaftData.raft_state.current_state = CANDIDATE;
 
         sharedRaftData.raft_state.wakeup_counter = 0;

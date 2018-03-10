@@ -72,8 +72,11 @@ def write_to_logger(logger_level, logger_message):
 
 
 def execute_log(log_id):
+    print(len(global_variables.redis_db_obj["logs"]))
+    print("123")
+    print(log_id)
     if global_variables.redis_db_obj.is_valid_command("logs", None):
-        if len(global_variables.redis_db_obj["logs"]) == log_id:
+        if len(global_variables.redis_db_obj["logs"]) == log_id-1:
             cmd = global_variables.redis_db_obj["logs"][log_id][0]
             if cmd in ["add", "edit"]:
                 key, val = global_variables.redis_db_obj["logs"][log_id][:2]
