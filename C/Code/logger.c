@@ -52,7 +52,7 @@ int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),in
 	if(args_num>0){
 		loc+=sprintf(logger_msg+loc, "\nVARIABLES: ");
 	}
-	for(int i=0;i<args_num && (is_valid>1);i++){
+	for(int i=0;i<args_num && (is_valid>0);i++){
 		loc+= sprintf(logger_msg+loc," %s=",va_arg(ap,char*));
 		if(msg_type == INT_VALUES){
 			loc+= sprintf(logger_msg+loc, "%d ",va_arg(ap,int));
@@ -67,13 +67,11 @@ int add_logger_msg(int (*write_to_logger)(int logger_level,char* logger_info),in
 		is_valid=MAX_LOGGER_MSG-loc;
 	}
 	va_end(ap);
-	if(is_valid<35){
-		loc=MAX_LOGGER_MSG-35;
+	if(is_valid<1){
+		loc=MAX_LOGGER_MSG-5;
 	}
 	logger_msg[loc]='\n';
-	//30 bytes
-	sprintf(logger_msg+loc+1,"-----------------------------\n");
-	logger_msg[loc+31]=0;
+	logger_msg[loc+1]=0;
 	//puts(logger_msg);
 	//puts("1111111111111111111111111");
     	//pthread_create(&IO_thread, NULL, write_to_logger_thread, (void*)data);

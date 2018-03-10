@@ -109,12 +109,18 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
 
     msg_data_memory->event = event;
     msg_data_memory->term = sharedRaftData.raft_state.term;
-    msg_data_memory->message_sent_to =0;
-    if(event == KEEP_ALIVE_HB || event == COMMIT_OK || event == SET_LOG_RES)
+    msg_data_memory->message_sent_to = 0;
+    if(event == KEEP_ALIVE_HB)
     {
         //msg_data is union so the filed is shared between the 3 struct
         msg_data_memory->msg_data.keep_alive_hb_msg.last_log_id = sharedRaftData.raft_state.last_log_index;
     }
+    else if(event == COMMIT_OK){
+		msg_data_memory->msg_data.commit_ok_msg.last_log_index = sharedRaftData.raft_state.last_log_index;
+	}
+	else if(event == SET_LOG_RES){
+		msg_data_memory->msg_data.set_log_res_msg.to_be_commit_index = sharedRaftData.raft_state.last_log_index;
+	}
     else if(event == SET_LOG_HB)
     {
         //CMD,KEY,VALUE is already in msg_data_memory
