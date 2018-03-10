@@ -52,6 +52,10 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
 
+		sharedRaftData.raft_state.term = node->term;
+        update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
+        
+        
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
@@ -82,7 +86,10 @@ void candidate_keep_alive_hb_handler(Queue_node_data *node)
         sharedRaftData.raft_state.vote_counter = 0;
         sharedRaftData.raft_state.wakeup_counter = 0;
         sharedRaftData.raft_state.did_I_vote = 0;
-
+        
+		sharedRaftData.raft_state.term = node->term;
+        update_DB(DB_STATUS,TERM,sharedRaftData.raft_state.term);
+        
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
         update_DB(DB_STATUS, STATUS, FOLLOWER_VALUE);
