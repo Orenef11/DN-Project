@@ -75,7 +75,6 @@ def execute_log(log_id):
     if global_variables.redis_db_obj.is_valid_command("logs", None):
         if len(global_variables.redis_db_obj["logs"]) == log_id:
             cmd = global_variables.redis_db_obj["logs"][log_id][0]
-
             if cmd in ["add", "edit"]:
                 key, val = global_variables.redis_db_obj["logs"][log_id][:2]
                 global_variables.redis_db_obj[("values", key)] = val
@@ -90,12 +89,15 @@ def execute_log(log_id):
                 write_to_logger(4, "The command we tried to execute from the log is invalid")
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
-    print(global_variables.redis_db_obj["values"])
+    print("should execute this command:")
+    print(global_variables.redis_db_obj[("logs"][log_id])
     return 1
 
 
 def clear_log_from_log_id(log_id):
-    del global_variables.redis_db_obj["logs"][int(log_id)]
+    logs = global_variables.redis_db_obj["logs"]
+    del logs[int(log_id)]
+    global_variables.redis_db_obj["logs"] = logs
     return 1
 
 
