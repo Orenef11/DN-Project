@@ -22,6 +22,7 @@ void leader_sync_req_handler(Queue_node_data *node)
     node->message_sent_to = node->message_sent_by;
     node->message_sent_by = sharedRaftData.raft_state.server_id;
     msg_pointer = (char *)&node->msg_data.sync_res_msg.cmd;
+    node->event = SYNC_RES;
     //python return null at the end of the list
     for(int log_index=start_diff_index;log_index<=end_diff_index;log_index++){
 		py_elem = sharedRaftData.python_functions.get_log_by_diff(log_index);
@@ -58,7 +59,6 @@ void leader_sync_req_handler(Queue_node_data *node)
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending sync response msg",NO_VALUES,0);
 #endif
-
         send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg),MAX_RAFT_MESSAGE);
         current_index++;
         //free(py_elem);

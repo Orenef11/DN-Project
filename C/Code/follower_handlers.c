@@ -203,7 +203,6 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
         sharedRaftData.raft_state.leader_id = node->message_sent_by;
         update_DB(DB_STATUS, LEADER_ID, sharedRaftData.raft_state.leader_id);
     }
-
     if(node->msg_data.keep_alive_hb_msg.last_log_id > sharedRaftData.raft_state.last_log_index)
     {
         sharedRaftData.raft_state.last_log_index = node->msg_data.keep_alive_hb_msg.last_log_id;
