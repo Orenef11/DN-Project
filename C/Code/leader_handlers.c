@@ -130,7 +130,7 @@ void  leader_time_out_handler(Queue_node_data* node)
 #endif
     send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
     //we are in commit procces
-    if(sharedRaftData.raft_state.last_log_index != sharedRaftData.raft_state.last_commit_index){
+    if(sharedRaftData.raft_state.last_log_index > sharedRaftData.raft_state.last_commit_index){
 		if(++sharedRaftData.raft_state.wakeup_counter == TIME_TO_CANCLE_COMMIT_PROC){
 			cancel_commit_proccess(node);
 			sharedRaftData.raft_state.wakeup_counter = 0;
