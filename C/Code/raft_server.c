@@ -93,21 +93,21 @@ int init_multicast_message(const char *ip, uint16_t port)
 
 
 
-int send_raft_message(void *message_obj, int message_size)
+int send_raft_message(void *message_obj, int message_size,int max_message_size)
 {
 
 #if DEBUG_MODE == 1
     WRITE_TO_LOGGER(DEBUG_LEVEL,"try to send msg",INT_VALUES,1,LOG(message_size));
 #endif
 
-
-    if (sendto(multicastMessage.multicast_sender.fd, &message_size, sizeof(message_size), 0, (struct sockaddr *)
+	int fixed_message_size = MIN(message_size,max_message_size);
+    if (sendto(multicastMessage.multicast_sender.fd, &fixed_message_size, sizeof(fixed_message_size), 0, (struct sockaddr *)
             &multicastMessage.multicast_sender.addr, sizeof(multicastMessage.multicast_sender.addr)) < 0)
     {
         return errno;
     }
 
-    if (sendto(multicastMessage.multicast_sender.fd, message_obj, message_size, 0, (struct sockaddr *)
+    if (sendto(multicastMessage.multicast_sender.fd, message_obj, fixed_message_size, 0, (struct sockaddr *)
             &multicastMessage.multicast_sender.addr, sizeof(multicastMessage.multicast_sender.addr)) < 0)
     {
         return errno;
@@ -115,7 +115,7 @@ int send_raft_message(void *message_obj, int message_size)
 
 
 #if DEBUG_MODE == 1
-    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully sent",INT_VALUES,1,LOG(message_size));
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully sent",INT_VALUES,2,LOG(message_size),LOG(fixed_message_size));
 #endif
 
     return 0;
@@ -124,14 +124,14 @@ int send_raft_message(void *message_obj, int message_size)
 
 
 
-int get_raft_message(void *message_memory_obj)
+int get_raft_message(void *message_memory_obj,int max_message_size)
 {
 
 #if DEBUG_MODE == 1
     WRITE_TO_LOGGER(DEBUG_LEVEL,"try to read message",NO_VALUES,0);
 #endif
 
-    int message_size;
+    int message_size,fixed_message_size;
     int addrlen = sizeof(multicastMessage.multicast_listener.addr);
 
     if ((recvfrom(multicastMessage.multicast_listener.fd , &message_size, sizeof(message_size), 0,
@@ -142,8 +142,8 @@ int get_raft_message(void *message_memory_obj)
         WRITE_TO_LOGGER(FATAL_LEVEL,"failed to read message",INT_VALUES,1,LOG(errno));
         return errno;
     }
-
-    if ((recvfrom(multicastMessage.multicast_listener.fd , message_memory_obj, message_size , 0,
+	fixed_message_size = MIN(message_size,max_message_size);
+    if ((recvfrom(multicastMessage.multicast_listener.fd , message_memory_obj, fixed_message_size , 0,
                   (struct sockaddr *) &multicastMessage.multicast_listener.addr,
                   &addrlen)) < 0)
     {
@@ -152,7 +152,7 @@ int get_raft_message(void *message_memory_obj)
     }
 
 #if DEBUG_MODE == 1
-    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully read",INT_VALUES,1,LOG(message_size));
+    WRITE_TO_LOGGER(DEBUG_LEVEL,"msg was successfully read",INT_VALUES,2,LOG(message_size),LOG(fixed_message_size));
 #endif
 
     return 0;

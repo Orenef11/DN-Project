@@ -16,6 +16,7 @@
 
 #include "general.h"
 
+#define MIN(a,b) ((a)<(b)? (a) : (b) )
 
 typedef struct sender{
     int fd;
@@ -37,7 +38,7 @@ typedef struct multicat_message{
 extern MulticastMessage multicastMessage;
 
 int init_multicast_message(const char *ip, uint16_t port);
-int send_raft_message(void *message_obj, int message_size);
-int get_raft_message(void *message_memory_obj);
+int send_raft_message(void *message_obj, int message_size,int max_size);
+int get_raft_message(void *message_memory_obj,int max_size);
 
 #endif //AMIRPROJEXT_MULTICAST_MESSAGE_H

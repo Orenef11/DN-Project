@@ -40,7 +40,7 @@ void candidate_vote_for_me_handler(Queue_node_data * node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending keep alive hb msg",NO_VALUES,0);
 #endif
 
-            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg));
+            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg),MAX_RAFT_MESSAGE);
 
         }
     }
@@ -119,7 +119,7 @@ void candidate_vote_req_handler(Queue_node_data* node)
         WRITE_TO_LOGGER(DEBUG_LEVEL,"candidate sending vote msg",NO_VALUES,0);
 #endif
 
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE);
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE,MAX_RAFT_MESSAGE);
         sharedRaftData.raft_state.did_I_vote = 1;
 
         sharedRaftData.raft_state.vote_counter = 0;
@@ -162,7 +162,7 @@ void candidate_time_out_handler(Queue_node_data* node)
                         LOG(sharedRaftData.raft_state.term));
 #endif
 
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE);
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE,MAX_RAFT_MESSAGE);
         //change the timer, Increase the propabilty that some candidate will be the leader
         sharedRaftData.raft_state.timeout = calculate_raft_rand_timeout();
         create_alarm_timer(sharedRaftData.raft_state.timeout);

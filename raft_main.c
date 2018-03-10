@@ -9,7 +9,7 @@ void *run_multicast_listener(void * args){
     Queue_node_data new_node;
     int is_valid;
     while(1){
-        is_valid = !get_raft_message(&new_node);
+        is_valid = !get_raft_message(&new_node,MAX_RAFT_MESSAGE);
         if(is_valid && is_relevant_message(&new_node)){
 			//got new event that its not time out - reset the wakeup counter
 			//decrease the time for new time out event to stop everthing (its signal) and forse the follower to become candidate

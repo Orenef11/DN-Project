@@ -168,7 +168,7 @@ typedef struct queue_node_data{
 
 }Queue_node_data;
 
-
+#define MAX_RAFT_MESSAGE (sizeof(Queue_node_data))
 typedef struct configuration{
     int leader_timeout;
 }configuration;

@@ -59,7 +59,7 @@ void leader_sync_req_handler(Queue_node_data *node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending sync response msg",NO_VALUES,0);
 #endif
 
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg));
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_res_msg),MAX_RAFT_MESSAGE);
         current_index++;
         //free(py_elem);
     }
@@ -95,10 +95,10 @@ void leader_vote_handler(Queue_node_data *node)
 
 
 void cancel_commit_proccess(Queue_node_data* message_mem) {
-    WRITE_TO_LOGGER(INFO_LEVEL, "leader cancel commit", INT_VALUES, 5,
+    WRITE_TO_LOGGER(INFO_LEVEL, "leader cancel commit", INT_VALUES, 6,
                     LOG(sharedRaftData.raft_state.current_state), LOG(sharedRaftData.raft_state.members_amount),
                     LOG(sharedRaftData.raft_state.commit_counter), LOG(sharedRaftData.raft_state.last_commit_index),
-                    LOG(sharedRaftData.raft_state.last_log_index));
+                    LOG(sharedRaftData.raft_state.last_log_index),LOG(sharedRaftData.raft_state.wakeup_counter));
     //send signal to inform CLI user
     //raise(SIGUSR2);
     int failed = 0;
@@ -113,7 +113,7 @@ void cancel_commit_proccess(Queue_node_data* message_mem) {
         WRITE_TO_LOGGER(DEBUG_LEVEL, "leader sending keep alive hb msg", NO_VALUES, 0);
     #endif
         send_raft_message(message_mem, CONST_QUEUE_MSG_SIZE +
-                                       sizeof(message_mem->msg_data.keep_alive_hb_msg));//TBD - check returned value
+                                       sizeof(message_mem->msg_data.keep_alive_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
     }
     sharedRaftData.raft_state.commit_counter = 0;
 }
@@ -128,11 +128,12 @@ void  leader_time_out_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending keep alive hb msg",NO_VALUES,0);
 #endif
-    send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg));//TBD - check returned value
+    send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
     //we are in commit procces
     if(sharedRaftData.raft_state.last_log_index != sharedRaftData.raft_state.last_commit_index){
 		if(++sharedRaftData.raft_state.wakeup_counter == TIME_TO_CANCLE_COMMIT_PROC){
 			cancel_commit_proccess(node);
+			sharedRaftData.raft_state.wakeup_counter = 0;
 		}
 	}
 }
@@ -199,7 +200,7 @@ void  leader_send_log_hb_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending set_log_hb msg",NO_VALUES,0);
 #endif
-    send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_hb_msg));//TBD - check returned value
+    send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
     //use wake up counter as a timer for commit 
     sharedRaftData.raft_state.wakeup_counter = 0;
 };
@@ -223,7 +224,7 @@ void  leader_log_res_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending commit ok msg",NO_VALUES,0);
 #endif
-        send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.commit_ok_msg));//TBD - check returned value
+        send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.commit_ok_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
 
         update_DB(DB_STATUS, COMMIT_INDEX,sharedRaftData.raft_state.last_commit_index );
         sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
@@ -265,7 +266,7 @@ void leader_vote_req_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
         WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending vote msg because someone else has a bigger term and now he's becoming a follower",NO_VALUES,0);
 #endif
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE,MAX_RAFT_MESSAGE /*+ sizeof(node->msg_data.vote_msg)*/);//check returned value
         sharedRaftData.raft_state.did_I_vote = 1;
 
         sharedRaftData.raft_state.vote_counter = 0;

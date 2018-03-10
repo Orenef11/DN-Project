@@ -37,7 +37,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending set log res msg",NO_VALUES,0);
 #endif
 
-            send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_res_msg));
+            send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_res_msg),MAX_RAFT_MESSAGE);
         }
 
         //I need an update
@@ -50,7 +50,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending sync request msg",NO_VALUES,0);
 #endif
 
-            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg));
+            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg),MAX_RAFT_MESSAGE);
         }
         //fatal error
         else{
@@ -74,7 +74,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending sync request msg",NO_VALUES,0);
 #endif
-            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg));//check returned value
+            send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg),MAX_RAFT_MESSAGE);//check returned value
 
         }
     }
@@ -172,7 +172,7 @@ void follower_vote_req_handler(Queue_node_data* node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending vote msg",NO_VALUES,0);
 #endif
 
-            send_raft_message(node,CONST_QUEUE_MSG_SIZE);
+            send_raft_message(node,CONST_QUEUE_MSG_SIZE,MAX_RAFT_MESSAGE);
 
         }
         // else ignore
@@ -213,7 +213,7 @@ void follower_hb_keep_alive_handler(Queue_node_data* node)
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending sync request msg",NO_VALUES,0);
 #endif
 
-        send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg));
+        send_raft_message(node,CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.sync_req_msg),MAX_RAFT_MESSAGE);
     }
     //the leader cancel the commit process and this follower already get the update
 	else if(node->msg_data.keep_alive_hb_msg.last_log_id < sharedRaftData.raft_state.last_commit_index)
@@ -254,7 +254,7 @@ void follower_time_out_handler(Queue_node_data * node)
         WRITE_TO_LOGGER(DEBUG_LEVEL, "follower became candidate and is sending request for vote msg", NO_VALUES, 0);
 #endif
 
-        send_raft_message(node, CONST_QUEUE_MSG_SIZE);
+        send_raft_message(node, CONST_QUEUE_MSG_SIZE,MAX_RAFT_MESSAGE);
         clear_queue();
     }
 

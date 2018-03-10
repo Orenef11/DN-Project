@@ -90,11 +90,12 @@ def execute_log(log_id):
                 write_to_logger(4, "The command we tried to execute from the log is invalid")
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
-
+    print(global_variables.redis_db_obj["values"])
     return 1
 
 
 def clear_log_from_log_id(log_id):
+    del global_variables.redis_db_obj["logs"][int(log_id)]
     return 1
 
 
