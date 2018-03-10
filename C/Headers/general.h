@@ -16,6 +16,8 @@
 //IMPORTANT!!! should be 1 if we are in DEBOG_MODE
 ///////////////////////////////////////////
 #define DEBUG_MODE 0
+#define PRINT_COMMIT_PROCESS 1
+#define PRINT_SET_LOG_PROCESS 1
 //////////////////////////////////////////
 //#define LEADER
 //#define CANDIDATE

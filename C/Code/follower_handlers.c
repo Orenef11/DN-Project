@@ -4,7 +4,7 @@
 void follower_hb_set_log_handler(Queue_node_data* node)
 {
 
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_SET_LOG_PROCESS == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"follower get set log msg",CHARS_VALUES,3,
 			LOG(node->msg_data.set_log_hb_msg.cmd),LOG(node->msg_data.set_log_hb_msg.key),
 			LOG(node->msg_data.set_log_hb_msg.value));
@@ -33,7 +33,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
             //send set log res to leader
             create_new_queue_node_data(SET_LOG_RES, node);
 
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_SET_LOG_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending set log res msg",NO_VALUES,0);
 #endif
 
@@ -46,7 +46,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
             //send an update request to the leader
             create_new_queue_node_data(SYNC_REQ, node);
 
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_SET_LOG_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"follower sending sync request msg",NO_VALUES,0);
 #endif
 

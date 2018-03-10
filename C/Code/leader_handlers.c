@@ -109,7 +109,7 @@ void cancel_commit_proccess(Queue_node_data* message_mem) {
     //send hb with new last_log_index to inform the follower to cance the last log entry
     if (sharedRaftData.raft_state.current_state == LEADER) {
         create_new_queue_node_data(KEEP_ALIVE_HB, message_mem);
-    #if DEBUG_MODE == 1
+    #if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
         WRITE_TO_LOGGER(DEBUG_LEVEL, "leader sending keep alive hb msg", NO_VALUES, 0);
     #endif
         send_raft_message(message_mem, CONST_QUEUE_MSG_SIZE +
@@ -121,11 +121,11 @@ void cancel_commit_proccess(Queue_node_data* message_mem) {
 //shany send hb message [difficulte = 2 ]
 void  leader_time_out_handler(Queue_node_data* node)
 {
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader timeout event",NO_VALUES,0);	
 #endif
     create_new_queue_node_data(KEEP_ALIVE_HB, node);
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending keep alive hb msg",NO_VALUES,0);
 #endif
     send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.keep_alive_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
@@ -177,7 +177,7 @@ void  leader_hb_handler(Queue_node_data* node)
 //receiving a command from CLI
 void  leader_send_log_hb_handler(Queue_node_data* node)
 {
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		int new_log_commit_id =node->msg_data.set_log_hb_msg.commit_id;
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader send new log entry",INT_VALUES,4,
 			LOG(sharedRaftData.raft_state.last_commit_index),LOG(sharedRaftData.raft_state.last_log_index),
@@ -192,24 +192,24 @@ void  leader_send_log_hb_handler(Queue_node_data* node)
                                                   node->msg_data.python_send_log_hb_msg.value);
 
     sharedRaftData.raft_state.last_log_index++;
-    sharedRaftData.raft_state.commit_counter++;//count himself for majority
+    sharedRaftData.raft_state.commit_counter = 1;//count himself for majority
 
     update_DB(DB_STATUS,LAST_APPLIED,sharedRaftData.raft_state.last_log_index);
 
     create_new_queue_node_data(SET_LOG_HB, node);
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending set_log_hb msg",NO_VALUES,0);
 #endif
     send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_hb_msg),MAX_RAFT_MESSAGE);//TBD - check returned value
     //use wake up counter as a timer for commit 
     sharedRaftData.raft_state.wakeup_counter = 0;
-};
+}
 
 
 //ido if majority -> update_dal_commit_id ->send_commit_ok ->send_signal_to_python (python update_dal_key-val_DB )
 void  leader_log_res_handler(Queue_node_data* node)
 {
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader log response msg",INT_VALUES,3,
 			LOG(sharedRaftData.raft_state.commit_counter),LOG(sharedRaftData.raft_state.members_amount),
 			LOG(sharedRaftData.raft_state.last_commit_index));
@@ -221,7 +221,7 @@ void  leader_log_res_handler(Queue_node_data* node)
         sharedRaftData.raft_state.last_commit_index++;
 
         create_new_queue_node_data(COMMIT_OK, node);
-#if DEBUG_MODE == 1
+#if DEBUG_MODE == 1 || PRINT_COMMIT_PROCESS == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"leader sending commit ok msg",NO_VALUES,0);
 #endif
         send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.commit_ok_msg),MAX_RAFT_MESSAGE);//TBD - check returned value

@@ -104,12 +104,14 @@ int send_raft_message(void *message_obj, int message_size,int max_message_size)
     if (sendto(multicastMessage.multicast_sender.fd, &fixed_message_size, sizeof(fixed_message_size), 0, (struct sockaddr *)
             &multicastMessage.multicast_sender.addr, sizeof(multicastMessage.multicast_sender.addr)) < 0)
     {
+		WRITE_TO_LOGGER(INFO_LEVEL,"failed to send msg:message size",INT_VALUES,1,LOG(fixed_message_size));
         return errno;
     }
 
     if (sendto(multicastMessage.multicast_sender.fd, message_obj, fixed_message_size, 0, (struct sockaddr *)
             &multicastMessage.multicast_sender.addr, sizeof(multicastMessage.multicast_sender.addr)) < 0)
     {
+		WRITE_TO_LOGGER(INFO_LEVEL,"failed to send msg:message",INT_VALUES,1,LOG(fixed_message_size));
         return errno;
     }
 
@@ -138,7 +140,6 @@ int get_raft_message(void *message_memory_obj,int max_message_size)
                   (struct sockaddr *) &multicastMessage.multicast_listener.addr,
                   &addrlen)) < 0)
     {
-
         WRITE_TO_LOGGER(FATAL_LEVEL,"failed to read message",INT_VALUES,1,LOG(errno));
         return errno;
     }
