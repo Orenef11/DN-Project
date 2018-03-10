@@ -43,6 +43,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
         //I need an update
         else if(sharedRaftData.raft_state.last_commit_index +1 < node->msg_data.set_log_hb_msg.commit_id)
         {
+			sharedRaftData.raft_state.last_log_index = node->msg_data.set_log_hb_msg.commit_id;
             //send an update request to the leader
             create_new_queue_node_data(SYNC_REQ, node);
 
@@ -67,7 +68,7 @@ void follower_hb_set_log_handler(Queue_node_data* node)
 
             sharedRaftData.raft_state.term = node->term;
             update_DB(DB_STATUS,TERM,node->term);
-
+			sharedRaftData.raft_state.last_commit_index = node->msg_data.set_log_hb_msg.commit_id;
             //send an update request to the leader
             create_new_queue_node_data(SYNC_REQ, node);
 

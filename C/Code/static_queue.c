@@ -128,7 +128,7 @@ void create_new_queue_node_data(eventType event, Queue_node_data* msg_data_memor
     }
     else if(event == SYNC_REQ)
     {
-        msg_data_memory->msg_data.sync_req_msg.start_log_index = sharedRaftData.raft_state.last_commit_index+1;
+        msg_data_memory->msg_data.sync_req_msg.start_log_index = 0;
         msg_data_memory->msg_data.sync_req_msg.last_log_id = sharedRaftData.raft_state.last_log_index;
     }
     else if(event == VOTE)
