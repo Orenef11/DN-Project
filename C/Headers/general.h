@@ -38,8 +38,8 @@
 	#define MAX_RAFT_TIMEOUT 4000
 	#define MIN_RAFT_TIMEOUT 2000
 #else
-	#define MAX_RAFT_TIMEOUT 400
-	#define MIN_RAFT_TIMEOUT 200
+	#define MAX_RAFT_TIMEOUT 800
+	#define MIN_RAFT_TIMEOUT 400
 #endif
 #define QUEUE_SIZE       1024
 #define MAX_ELEM_SIZE     51

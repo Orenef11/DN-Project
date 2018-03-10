@@ -122,9 +122,10 @@ int is_relevant_message(Queue_node_data * node_message)
 
     if(!is_relevant_term)
     {
-		WRITE_TO_LOGGER(INFO_LEVEL,"got msg with smaller term", INT_VALUES,4,
+		WRITE_TO_LOGGER(INFO_LEVEL,"got msg with smaller term", INT_VALUES,5,
 		LOG(sharedRaftData.raft_state.term),LOG(sharedRaftData.raft_state.current_state),
-		LOG(node_message->term),LOG(node_message->event));
+		LOG(node_message->term),LOG(node_message->event),
+		LOG(node_message->message_sent_by));
 	}
 
 #if DEBUG_MODE == 1

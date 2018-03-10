@@ -95,8 +95,13 @@ def execute_log(log_id):
 
 
 def clear_log_from_log_id(log_id):
+    logs_size = len(global_variables.redis_db_obj["logs"])
     logs = global_variables.redis_db_obj["logs"]
-    del logs[int(log_id)]
+    if int(log_id) > logs_size:
+        print("Error:failed to delete log:" +str(log_id) + " logs size:" + str(logs_size))
+        return 0
+    for i in range (int(log_id),logs_size):
+        del logs[int(log_id)]
     global_variables.redis_db_obj["logs"] = logs
     return 1
 

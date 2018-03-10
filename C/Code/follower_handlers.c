@@ -235,6 +235,7 @@ void follower_time_out_handler(Queue_node_data * node)
 
     if(sharedRaftData.raft_state.wakeup_counter == 2 )
     {
+		puts("foloower->candidate");
         sharedRaftData.raft_state.current_state = CANDIDATE;
 
         sharedRaftData.raft_state.wakeup_counter = 0;
