@@ -15,7 +15,7 @@
 #include "logger.h"
 //IMPORTANT!!! should be 1 if we are in DEBOG_MODE
 ///////////////////////////////////////////
-#define DEBUG_MODE 1
+#define DEBUG_MODE 0
 //////////////////////////////////////////
 //#define LEADER
 //#define CANDIDATE
@@ -210,7 +210,6 @@ typedef struct Shared_raft_data
 
 }shared_raft_data;
 
-extern int local_term;
 extern shared_raft_data sharedRaftData;
 
 #endif //RAFT_PROJECT_GENERAL_H

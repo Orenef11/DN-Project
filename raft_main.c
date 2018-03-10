@@ -1,7 +1,6 @@
 #include "raft_main.h"
 
 shared_raft_data sharedRaftData;
-int local_term=0;
 
 
 //main.c

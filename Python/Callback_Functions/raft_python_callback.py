@@ -90,7 +90,7 @@ def execute_log(log_id):
         else:
             write_to_logger(4, "Trying to insert to invalid index to log_DB")
     print("should execute this command:")
-    print(global_variables.redis_db_obj[("logs"][log_id])
+    print(global_variables.redis_db_obj["logs"][log_id])
     return 1
 
 
