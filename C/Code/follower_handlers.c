@@ -134,7 +134,7 @@ void follower_sync_res_handler(Queue_node_data* node)
 
             sharedRaftData.raft_state.last_commit_index++ ;
             update_DB(DB_STATUS,LAST_APPLIED,node->msg_data.set_log_hb_msg.commit_id);
-            sharedRaftData.python_functions.execute_log(sharedRaftData.raft_state.last_log_index);
+            sharedRaftData.python_functions.execute_log(node->msg_data.set_log_hb_msg.commit_id);
             sharedRaftData.raft_state.last_log_index++ ;
         }
 

@@ -21,11 +21,11 @@ void leader_sync_req_handler(Queue_node_data *node)
     node->msg_data.sync_res_msg.commit_id = start_diff_index;
     node->message_sent_to = node->message_sent_by;
     node->message_sent_by = sharedRaftData.raft_state.server_id;
-    msg_pointer = (char *)&node->msg_data.sync_res_msg.cmd;
     node->event = SYNC_RES;
     //python return null at the end of the list
     for(int log_index=start_diff_index;log_index<=end_diff_index;log_index++){
 		py_elem = sharedRaftData.python_functions.get_log_by_diff(log_index);
+		msg_pointer = (char *)&node->msg_data.sync_res_msg.cmd;
 		if(!py_elem){
 			WRITE_TO_LOGGER(INFO_LEVEL,"try to read log from Redis and get NULL value",INT_VALUES,1,LOG(log_index));
 		}
