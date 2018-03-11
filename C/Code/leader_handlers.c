@@ -219,7 +219,7 @@ void  leader_log_res_handler(Queue_node_data* node)
 			LOG(sharedRaftData.raft_state.commit_counter),LOG(sharedRaftData.raft_state.members_amount),
 			LOG(sharedRaftData.raft_state.last_commit_index));
 #endif
-	if(node->msg_data.set_log_hb_msg.commit_id == sharedRaftData.raft_state.last_log_index){
+	if(node->msg_data.set_log_hb_msg.commit_id == sharedRaftData.raft_state.last_log_index && sharedRaftData.raft_state.commit_counter){
         sharedRaftData.raft_state.commit_counter++;
         //check if he has the most votes and if he has, sends commit ok
         if( sharedRaftData.raft_state.commit_counter >= ((sharedRaftData.raft_state.members_amount/2) +1) )

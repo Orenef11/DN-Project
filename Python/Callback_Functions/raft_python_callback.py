@@ -21,7 +21,7 @@ def add_to_log_DB(log_id, command, key, val):
         py_cmd = ctypes.string_at(command).decode("utf-8")
         py_key = ctypes.string_at(key).decode("utf-8")
         py_val = ctypes.string_at(val).decode("utf-8")
-        global_variables.redis_db_obj["logs"] += [(py_cmd, py_key, py_val)]
+        global_variables.redis_db_obj["logs"] = global_variables.redis_db_obj["logs"] + [(py_cmd, py_key, py_val)]
         return 0
     else:
         write_to_logger(4, "Trying to insert to invalid index to log_DB")

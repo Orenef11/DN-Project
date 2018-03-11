@@ -29,7 +29,10 @@ class RedisDB(MutableMapping):
     def __delitem__(self, key):
         if isinstance(key, tuple):
             sub_dict_temp = loads(self.__db_data[dumps(key[0])])
-            del sub_dict_temp[key[1]]
+            if key[1] in sub_dict_temp:
+                del sub_dict_temp[key[1]]
+            else:
+                print("The '{}' key not exist in DB".format(key[1]))
             self.__db_data[dumps(key[0])] = dumps(sub_dict_temp)
         else:
             del self.__db_data[dumps(key.lower())]
