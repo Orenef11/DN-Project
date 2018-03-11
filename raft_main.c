@@ -44,7 +44,7 @@ void* raft_timer(void * args)
     new_node.event  = TIMEOUT;
     while(1){
 		if(sharedRaftData.raft_state.timeout>=MILISEC_CONVERT){
-			sleep(sharedRaftData.raft_state.timeout /MILISEC_CONVERT)
+			sleep(sharedRaftData.raft_state.timeout /MILISEC_CONVERT);
 		}
 		else
 		{
