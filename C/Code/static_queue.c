@@ -94,10 +94,7 @@ void pop_queue(Queue_node_data *ret)
 
 void clear_queue()
 {
-	pthread_mutex_lock(&sharedRaftData.Raft_queue.mutex_queue);
-	puts("aaaaaaaaaa");
     init_raft_queue();
-    pthread_mutex_unlock(&sharedRaftData.Raft_queue.mutex_queue);
 }
 
 

@@ -76,28 +76,23 @@ def write_to_logger(logger_level, logger_message):
 
 
 def execute_log(log_id):
-    print(len(global_variables.redis_db_obj["logs"]))
-    print("123")
-    print(log_id)
-    if global_variables.redis_db_obj.is_valid_command("logs", None):
-        if len(global_variables.redis_db_obj["logs"]) == log_id-1:
-            cmd = global_variables.redis_db_obj["logs"][log_id][0]
-            if cmd in ["add", "edit"]:
-                key, val = global_variables.redis_db_obj["logs"][log_id][:2]
-                global_variables.redis_db_obj[("values", key)] = val
-                return 0
+    #if global_variables.redis_db_obj.is_valid_command("logs", None):
+    if len(global_variables.redis_db_obj["logs"]) == log_id+1:
+        cmd = global_variables.redis_db_obj["logs"][log_id][0]
+        if cmd in ["add", "edit"]:
+            key, val = global_variables.redis_db_obj["logs"][log_id][1:]
+            global_variables.redis_db_obj[("values", key)] = val
+            return 0
 
-            elif cmd == "delete":
-                key = global_variables.redis_db_obj["logs"][log_id][1]
-                del global_variables.redis_db_obj["values"][key]
-                return 0
+        elif cmd == "delete":
+            key = global_variables.redis_db_obj["logs"][log_id][1]
+            del global_variables.redis_db_obj["values"][key]
+            return 0
 
-            else:
-                write_to_logger(4, "The command we tried to execute from the log is invalid")
         else:
-            write_to_logger(4, "Trying to insert to invalid index to log_DB")
-    print("should execute this command:")
-    print(global_variables.redis_db_obj["logs"][log_id])
+            write_to_logger(4, "The command we tried to execute from the log is invalid")
+    else:
+        write_to_logger(4, "Trying to insert to invalid index to log_DB")
     return 1
 
 
