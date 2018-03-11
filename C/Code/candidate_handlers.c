@@ -147,7 +147,7 @@ void candidate_vote_req_handler(Queue_node_data* node)
 
 void candidate_time_out_handler(Queue_node_data* node)
 {
-
+	puts("0000000000000000000");
 #if DEBUG_MODE == 1
 	WRITE_TO_LOGGER(DEBUG_LEVEL,"timeout event",INT_VALUES,1,LOG(sharedRaftData.raft_state.wakeup_counter));
 #endif
@@ -155,6 +155,7 @@ void candidate_time_out_handler(Queue_node_data* node)
 	int wake_up_timer = 1 + rand()%2;
     if(++sharedRaftData.raft_state.wakeup_counter >= wake_up_timer)
     {
+		puts("111111111111111");
         sharedRaftData.raft_state.term++;
         sharedRaftData.raft_state.vote_counter =1;
         sharedRaftData.raft_state.did_I_vote = 1;

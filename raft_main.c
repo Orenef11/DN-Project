@@ -43,7 +43,13 @@ void* raft_timer(void * args)
     Queue_node_data new_node;
     new_node.event  = TIMEOUT;
     while(1){
-		usleep(sharedRaftData.raft_state.timeout * MILISEC_CONVERT);
+		if(sharedRaftData.raft_state.timeout>=MILISEC_CONVERT){
+			sleep(sharedRaftData.raft_state.timeout /MILISEC_CONVERT)
+		}
+		else
+		{
+			usleep(sharedRaftData.raft_state.timeout * MILISEC_CONVERT);
+		}
 		push_queue(&new_node);
 #if DEBUG_MODE == 1
 		WRITE_TO_LOGGER(DEBUG_LEVEL,"add new timeout event- now in queue",INT_VALUES,1,LOG(sharedRaftData.raft_state.current_state));
