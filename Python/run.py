@@ -20,6 +20,8 @@ import global_variables
 
 def main():
     try:
+        event_names_dict = {0: "TIMEOUT", 1: "KA_HB", 2: "SET_LOG_HB", 3: "SET_LOF_RES", 4: "SYNC_REQ", 5: "SYNC_RES",
+                            6: "COMMIT_OK", 7: "VOTE", 8: "REQUEST_FOR_VOTE", 9: "RY_SEND_LOG"}
         common_logic_file_path = path.join(getcwd(), "Log_Files", "common_logic.log")
         logs_folder_path = path.split(common_logic_file_path)[0]
         if path.isdir(logs_folder_path):
@@ -60,12 +62,22 @@ def main():
         t1.join()
         t2.join()
 
+        lines = []
+        key_to_replace = "->event={}"
+        with open(common_logic_file_path, "r") as f:
+            lines = f.readlines()
 
-        # with ThreadPoolExecutor(max_workers=2) as e:
-        #     e.submit(python_run_raft, config_dict["multicast"]["ip"], config_dict["multicast"]["port"],
-        #              config_dict["raft"]["my_id"], config_dict["raft"]["members_size"],
-        #              config_dict["raft"]["leader_timeout"]).done()
-        #     e.submit(global_variables.raft_cmd_obj.cmdloop).done()
+        with open(path.join(logs_folder_path, "new_log.log"), "w") as f:
+            for line_idx, line in enumerate(lines):
+                if line.find("->event=") != -1:
+                    for event_id in event_names_dict:
+                        event_name = key_to_replace.format(event_id)
+                        new_event_name = key_to_replace.format(event_names_dict[event_id])
+                        if line.find(event_name) != -1:
+                            lines[line_idx] = line.replace(event_name, new_event_name)
+                            break
+
+            f.writelines(lines)
 
         print("exit successfully")
     except Exception as e:
