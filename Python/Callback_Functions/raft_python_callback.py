@@ -89,8 +89,6 @@ def execute_log(log_id):
         elif cmd == "delete":
             key = global_variables.redis_db_obj["logs"][log_id][1]
             del global_variables.redis_db_obj[("values", key)]
-            print(global_variables.redis_db_obj["values"])
-
             return 0
 
         else:
