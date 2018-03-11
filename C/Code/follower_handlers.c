@@ -131,11 +131,14 @@ void follower_sync_res_handler(Queue_node_data* node)
                                                           node->msg_data.set_log_hb_msg.cmd,
                                                           node->msg_data.set_log_hb_msg.key,
                                                           node->msg_data.set_log_hb_msg.value);
+		  //send set log res to leader
+		sharedRaftData.raft_state.last_log_index = node->msg_data.set_log_hb_msg.commit_id;
+            create_new_queue_node_data(SET_LOG_RES, node);
+            send_raft_message(node, CONST_QUEUE_MSG_SIZE + sizeof(node->msg_data.set_log_res_msg),MAX_RAFT_MESSAGE);
 
             sharedRaftData.raft_state.last_commit_index++ ;
             update_DB(DB_STATUS,LAST_APPLIED,node->msg_data.set_log_hb_msg.commit_id);
             sharedRaftData.python_functions.execute_log(node->msg_data.set_log_hb_msg.commit_id);
-            sharedRaftData.raft_state.last_log_index++ ;
         }
 
     }
