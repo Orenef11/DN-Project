@@ -12,7 +12,7 @@ void *run_multicast_listener(void * args){
         if(is_valid && is_relevant_message(&new_node)){
 			//got new event that its not time out - reset the wakeup counter
 			//decrease the time for new time out event to stop everthing (its signal) and forse the follower to become candidate
-			//sharedRaftData.raft_state.wakeup_counter = 0;
+			sharedRaftData.raft_state.wakeup_counter = 0;
             push_queue(&new_node);
         }
 #if DEBUG_MODE == 1

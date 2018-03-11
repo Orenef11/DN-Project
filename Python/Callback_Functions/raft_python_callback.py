@@ -16,7 +16,7 @@ _raft = ctypes.CDLL(path.join(getcwd(), "raft.so"))
 
 
 def add_to_log_DB(log_id, command, key, val):
-    #if global_variables.redis_db_obj.is_valid_command("logs", None):
+    # if global_variables.redis_db_obj.is_valid_command("logs", None):
     if len(global_variables.redis_db_obj["logs"]) == log_id:
         py_cmd = ctypes.string_at(command).decode("utf-8")
         py_key = ctypes.string_at(key).decode("utf-8")
@@ -40,13 +40,15 @@ def update_DB(db_flag, key, val):
 
 
 def get_log_by_diff(log_idx):
-    if global_variables.redis_db_obj.is_valid_command("logs", None) and\
+    if global_variables.redis_db_obj.is_valid_command("logs", None) and \
             len(global_variables.redis_db_obj["logs"]) >= log_idx:
-            entry_data = ','.join(global_variables.redis_db_obj["logs"][log_idx-1])
-            #return ctypes.c_char_p(str.encode(entry_data))
-            return str.encode(entry_data)
+        entry_data = ','.join(global_variables.redis_db_obj["logs"][log_idx - 1])
+        # return ctypes.c_char_p(str.encode(entry_data))
+        return str.encode(entry_data)
 
     return None
+
+
 # def get_log_by_diff(start, end):
 #     # we need +2. 1 to get real size of the list and 1 mode for null pointer
 #     c_log_array, log_list = (ctypes.c_wchar_p * (end - start + 1))(), []
@@ -65,7 +67,7 @@ def get_log_by_diff(log_idx):
 
 
 def write_to_logger(logger_level, logger_message):
-    py_logger_message = "\n"+ctypes.string_at(logger_message).decode("utf-8")
+    py_logger_message = "\n" + ctypes.string_at(logger_message).decode("utf-8")
     levels = {0: logging.debug,
               1: logging.info,
               2: logging.warning,
@@ -76,8 +78,8 @@ def write_to_logger(logger_level, logger_message):
 
 
 def execute_log(log_id):
-    #if global_variables.redis_db_obj.is_valid_command("logs", None):
-    if len(global_variables.redis_db_obj["logs"]) == log_id+1:
+    # if global_variables.redis_db_obj.is_valid_command("logs", None):
+    if len(global_variables.redis_db_obj["logs"]) == log_id + 1:
         cmd = global_variables.redis_db_obj["logs"][log_id][0]
         if cmd in ["add", "edit"]:
             key, val = global_variables.redis_db_obj["logs"][log_id][1:]
@@ -86,8 +88,9 @@ def execute_log(log_id):
 
         elif cmd == "delete":
             key = global_variables.redis_db_obj["logs"][log_id][1]
-            print(key)
             del global_variables.redis_db_obj[("values", key)]
+            print(global_variables.redis_db_obj["values"])
+
             return 0
 
         else:
@@ -101,9 +104,9 @@ def clear_log_from_log_id(log_id):
     logs_size = len(global_variables.redis_db_obj["logs"])
     logs = global_variables.redis_db_obj["logs"]
     if int(log_id) > logs_size:
-        print("Error:failed to delete log:" +str(log_id) + " logs size:" + str(logs_size))
+        print("Error:failed to delete log:" + str(log_id) + " logs size:" + str(logs_size))
         return 0
-    for i in range (int(log_id),logs_size):
+    for i in range(int(log_id), logs_size):
         del logs[int(log_id)]
     global_variables.redis_db_obj["logs"] = logs
     return 1
@@ -111,18 +114,20 @@ def clear_log_from_log_id(log_id):
 
 def set_callback_funcs():
     global _raft
-    _raft.transfer_callback_function(callback_func1, callback_func2,callback_func3, callback_func4, callback_func5, callback_func6,c_end_commit_process)
+    _raft.transfer_callback_function(callback_func1, callback_func2, callback_func3, callback_func4, callback_func5,
+                                     callback_func6, c_end_commit_process)
 
 
 def end_commit_process(res):
-    global commit_flag,commit_res
+    global commit_flag, commit_res
     commit_res = int(res)
     commit_flag = True
     return 1
+
+
 # -----------------------------------------------------------------------------------------
 
 # python transfer func pointers to c:
-
 
 
 callback_type1 = ctypes.CFUNCTYPE(ctypes.c_int,
@@ -150,17 +155,18 @@ callback_type5 = ctypes.CFUNCTYPE(ctypes.c_int,
                                   ctypes.c_int)
 callback_func5 = callback_type5(execute_log)
 
-callback_type6 = ctypes.CFUNCTYPE(ctypes.c_int,ctypes.c_int)
+callback_type6 = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.c_int)
 callback_func6 = callback_type6(clear_log_from_log_id)
 
 callback_type7 = ctypes.CFUNCTYPE(ctypes.c_void_p)
 c_set_callback_funcs = callback_type7(set_callback_funcs)
 
-callback_type8 = ctypes.CFUNCTYPE(ctypes.c_int,ctypes.c_int)
+callback_type8 = ctypes.CFUNCTYPE(ctypes.c_int, ctypes.c_int)
 c_end_commit_process = callback_type8(end_commit_process)
 
+
 def python_run_raft(raft_ip: bytes, raft_port: int, server_id: int, members_num: int, leader_timeout: int):
-    global _raft, c_set_callback_funcs,timeout
+    global _raft, c_set_callback_funcs, timeout
     timeout = leader_timeout
     return _raft.run_raft(ctypes.c_char_p(raft_ip),
                           ctypes.c_int(raft_port),
@@ -193,14 +199,13 @@ def start_commit_process(log_id, cmd, key, val):
                                    ctypes.c_char_p(str.encode(key)),
                                    ctypes.c_char_p(str.encode(str(val))))
 
-    #signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
+    # signal.sigwait([signal.SIGUSR1, signal.SIGUSR2])
 
     while not commit_flag:
-        #sleep leader time out
+        # sleep leader time out
         time.sleep(timeout / 1000.0)
     # return False
     return bool(commit_res)
-
 
 # -----------------------------------------------------------------------------------------
 

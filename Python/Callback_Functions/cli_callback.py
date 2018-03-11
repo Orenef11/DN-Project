@@ -98,8 +98,6 @@ def __add_new_entry(special_word: str, args: list) -> bool:
     elif special_word in ["add", "edit", "delete"]:
         if not global_variables.redis_db_obj["status"]["status"] == "leader":
             print(global_variables.PERMISSION_DENIED)
-        # elif not (global_variables.redis_db_obj.is_valid_command("values", None)):
-        #     print(global_variables.UNKNOW_VAR_REDIS_MSG.format(args[0], "values"))
         else:
             log_id = len(global_variables.redis_db_obj["logs"])
             if len(args) == 1:

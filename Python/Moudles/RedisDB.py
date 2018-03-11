@@ -28,8 +28,11 @@ class RedisDB(MutableMapping):
 
     def __delitem__(self, key):
         if isinstance(key, tuple):
-            key = key[-1]
-        del self.__db_data[dumps(key.lower())]
+            sub_dict_temp = loads(self.__db_data[dumps(key[0])])
+            del sub_dict_temp[key[1]]
+            self.__db_data[dumps(key[0])] = dumps(sub_dict_temp)
+        else:
+            del self.__db_data[dumps(key.lower())]
 
     def __iter__(self):
         return iter(self.keys())
@@ -96,8 +99,8 @@ class RedisDB(MutableMapping):
     def values(self):
         return [self.__db_data[key] for key in self.__db_data.keys()]
 
-    def items(self):
-        return [tuple(loads(key), self.__db_data[key]) for key in self.__db_data.keys()]
+    # def items(self):
+    #     return [tuple(loads(key), self.__db_data[key]) for key in self.__db_data.keys()]
 
     def clear(self):
         self.__db_data.flushdb()

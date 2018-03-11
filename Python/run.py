@@ -70,7 +70,7 @@ def main():
         print("exit successfully")
     except Exception as e:
         logging.debug("\n", str(e))
-        logging.debug("\n", print_exc())
+        logging.debug(print_exc())
 
 
 if __name__ == "__main__":
