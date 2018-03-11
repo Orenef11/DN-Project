@@ -1,2 +1,6 @@
-08/03/2018 07:10:05 PM	[config_parser.py __config_parser 46]  56 root [DEBUG] 
-FileNotExist: The '/home/ubuntu/Desktop/DN-Project/Python/Python/Configuration/config.ini' file that not found!
+11/03/2018 10:19:03.0200	[raft_python_callback.py write_to_logger 74]  200 root [INFO ] 
+FILE:./C/Code/static_queue.c, FUNCTION:clear_queue, LINE:98
+MESSAGE:clearing queue
+VARIABLES:  sharedRaftData.raft_state.term=0  sharedRaftData.raft_state.current_state=0 
+-----------------------------
+

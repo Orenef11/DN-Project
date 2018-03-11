@@ -28,7 +28,10 @@ def main():
         makedirs(logs_folder_path)
 
         logger.setting_up_logger("debug", "critical", common_logic_file_path)
-        config_dict = config_parser.get_config_variables(path.join(getcwd(), "Python", "Configuration", "config.ini"))
+        config_file_path = path.join(getcwd(), "Configuration", "config.ini")
+        if not path.isfile(config_file_path):
+            config_file_path = path.join(getcwd(), "Python", "Configuration", "config.ini")
+        config_dict = config_parser.get_config_variables(config_file_path)
         if config_dict["commandline"]["separator"] == '':
             config_dict["commandline"]["separator"] = ' '
 

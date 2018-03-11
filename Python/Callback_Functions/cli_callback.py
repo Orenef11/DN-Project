@@ -75,6 +75,13 @@ def __show_node_status() -> bool:
     return True
 
 
+def __show_db_values(special_word: str, args: list) -> bool:
+    if args[0] in ["logs", "values", "config", "status"]:
+        print(global_variables.redis_db_obj[args[0]])
+        return True
+    return False
+
+
 def __show_system_status():
     # DAL.get({"status": ["system"])})
     print("Show system status")
@@ -98,11 +105,14 @@ def __add_new_entry(special_word: str, args: list) -> bool:
             if len(args) == 1:
                 args.append(None)
 
-            result = raft_python_callback.start_commit_process(log_id, special_word, args[0], args[1])
-            if result:
-                print("command was successfully executed!")
+            if special_word == "add" and args[0] in global_variables.redis_db_obj["values"]:
+                print("The '{}' key exist in Values DB".format(args[0]))
             else:
-                print("Oh no! something went wrong... your command was not executed.")
+                result = raft_python_callback.start_commit_process(log_id, special_word, args[0], args[1])
+                if result:
+                    print("command was successfully executed!")
+                else:
+                    print("Oh no! something went wrong... your command was not executed.")
     else:
         return False
     return True
@@ -117,8 +127,9 @@ def init_trie_functions_and_info(separator: str) -> Tuple[StringTrie, StringTrie
     # Defining commands according to the amount of words in the command
     # 2 words command
     commands_trie["show log"] = __show_log
-    # commands_trie["show logs"] = __show_logs
     commands_trie["set timer"] = __add_new_entry
+    commands_trie["show db"] = __show_db_values
+
 
     # 3 words command
     commands_trie["show logs all"] = __show_logs_all
@@ -143,6 +154,7 @@ def init_trie_functions_and_info(separator: str) -> Tuple[StringTrie, StringTrie
     # commands_info_trie["show system"] = "action on system parameters (all nodes in RAFT)"
     commands_info_trie["show log"] = "shows last log in node"
     commands_info_trie["show logs"] = "shows all logs in node"
+    commands_info_trie["show db"] = "shows all logs in specific DB"
     commands_info_trie["set multicast"] = "action on multicast IP"
     commands_info_trie["set timer"] = "A number between 0.150 to 0.300"
     commands_info_trie["log value"] = "A set of actions functions like add, delete, edit ..."
@@ -160,7 +172,7 @@ def init_trie_functions_and_info(separator: str) -> Tuple[StringTrie, StringTrie
     commands_info_trie["log value edit"] = "Edits log <key> in the cluster"
 
     special_words_dict = {"range": (2, [int, int]), "add": (2, [str, int]), "ip": (1, [str]), "timer": (1, [float]),
-                          "delete": (1, [str]), "edit": (2, [str, int]), "top": (1, [int]), "last": (1, [int])}
-    # "node": (1, [int]), "status": (1, [int])
+                          "delete": (1, [str]), "edit": (2, [str, int]), "top": (1, [int]), "last": (1, [int]),
+                          "db": (1, [str])}
 
     return commands_trie, commands_info_trie, special_words_dict

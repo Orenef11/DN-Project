@@ -91,6 +91,12 @@ class RedisDB(MutableMapping):
     def keys(self):
         return [loads(x) for x in self.__db_data.keys()]
 
+    def values(self):
+        return [self.__db_data[key] for key in self.__db_data.keys()]
+
+    def items(self):
+        return [tuple(loads(key), self.__db_data[key]) for key in self.__db_data.keys()]
+
     def clear(self):
         self.__db_data.flushdb()
 
