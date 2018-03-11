@@ -27,6 +27,8 @@ class RedisDB(MutableMapping):
             self.__db_data[dumps(key.lower())] = dumps(value)
 
     def __delitem__(self, key):
+        if isinstance(key, tuple):
+            key = key[-1]
         del self.__db_data[dumps(key.lower())]
 
     def __iter__(self):
@@ -107,8 +109,3 @@ class RedisDB(MutableMapping):
             return True
 
         return False
-
-
-
-
-
